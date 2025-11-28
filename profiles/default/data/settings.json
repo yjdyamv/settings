@@ -6,6 +6,15 @@
 		"~/.condarc",
 		"~/.gitconfig",
 	],
+	"syncSettings.resources": [
+		"extensions",
+		"keybindings",
+		"settings",
+		"snippets",
+		"uiState",
+		"themes",
+		"keyboardShortcuts",
+	],
 	// 编辑器的字体字号等
 	"editor.fontFamily": "Maple Mono NF CN",
 	"editor.fontWeight": "normal",
@@ -30,7 +39,7 @@
 	"workbench.preferredLightColorTheme": "Catppuccin Latte",
 	"workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
 	// 使用preferred icon theme 插件来设置亮色和暗色主题的icon
-	"workbench.iconTheme": "catppuccin-latte",
+	"workbench.iconTheme": "catppuccin-frappe",
 	"preferredIconTheme.light": "catppuccin-latte",
 	"preferredIconTheme.dark": "catppuccin-frappe",
 
