@@ -1,0 +1,429 @@
+{
+	// 编辑器的字体字号等
+	"editor.fontFamily": "Maple Mono NF CN",
+	"editor.fontWeight": "normal",
+	"terminal.integrated.fontFamily": "Maple Mono NF CN",
+	"editor.minimap.showSlider": "always",
+	"editor.mouseWheelZoom": true,  // 设置Ctrl + 滚轮 来调整字体大小
+	"editor.autoClosingQuotes": "always",
+	"editor.cursorStyle": "block", // 光标设置为方块状
+	"editor.overtypeCursorStyle": "block-outline", // 按了insert键后的光标样式 
+	// "editor.cursorBlinking": "smooth", // 光滑的光标闪烁
+	// "editor.cursorSmoothCaretAnimation": "on", // 光标移动动画
+	"editor.smoothScrolling": true, // 平滑滚动
+	// "editor.scrollBeyondLastLine": false, // 不允许滚动到最后一行之后
+	// "editor.fontLigatures": true, // 启用连字，让代码更美观
+	"editor.linkedEditing": true, // 启用关联编辑标签
+
+	"window.newWindowProfile": "Default",
+
+	// 主题设置
+	"workbench.colorTheme": "Catppuccin Latte",
+	"window.autoDetectColorScheme": true,
+	"workbench.preferredLightColorTheme": "Catppuccin Latte",
+	"workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
+	// 使用preferred icon theme 插件来设置亮色和暗色主题的icon
+	"workbench.iconTheme": "catppuccin-latte",
+	"preferredIconTheme.light": "catppuccin-latte",
+	"preferredIconTheme.dark": "catppuccin-frappe",
+
+	"terminal.integrated.inheritEnv": false,
+
+	// latex-workshop setting
+	"latex-workshop.latex.tools": [
+	{
+		"name": "xelatex",
+		"command": "xelatex",
+		"args": [
+			"-synctex=1",
+			"-interaction=nonstopmode",
+			"-file-line-error",
+			"%DOC%"
+		]
+		}
+	],
+
+	"latex-workshop.latex.recipes": [
+		{
+		"name": "xelatex",
+		"tools": [
+		"xelatex"
+		]
+		}
+	],
+	"latex-workshop.latex.autoClean.run": "never",
+	"latex-workshop.latex.autoBuild.run": "never",
+	"latex-workshop.latex.outDir": "./build",
+
+	"biome.suggestInstallingGlobally": false,
+
+	"go.useLanguageServer": true,
+
+	"files.associations": {
+        ".clangd": "yaml", // clangd 配置文件关联为yaml
+	},
+
+	"[c]": {
+		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+		"editor.formatOnSave": true,
+		"editor.formatOnType": false,
+	},
+	"[cpp]": {
+		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+		"editor.formatOnSave": true,
+		"editor.formatOnType": false,
+	},
+
+	// xmake
+	"xmake.buildDirectory": "${workspaceRoot}/build",
+	"xmake.debugConfigType": "codelldb",
+
+	// clangd 及 微软C/C++扩展设置
+	"C_Cpp.intelliSenseEngine": "disabled", // 禁用微软的IntelliSense
+	"C_Cpp.errorSquiggles": "disabled",
+	"C_Cpp.vcpkg.enabled": true,
+	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
+	"clangd.enable": true,
+	"clangd.detectExtensionConflicts": false,
+	"clangd.checkUpdates": false,
+	"clangd.onConfigChanged": "prompt",
+	"clangd.onConfigChanged.forceEnable": true,
+	"clangd.arguments": [
+		// 让 Clangd 生成精简的日志 详细是verbose
+		"--log=info",
+		// 输出的 JSON 文件更美观
+		"--pretty",
+		// 全局补全
+		"--all-scopes-completion",
+		// 建议风格：打包(重载函数只会给出一个建议）
+		// 相反可以设置为detailed
+		"--completion-style=bundled",
+		// 跨文件重命名变量
+		"--cross-file-rename",
+		// 允许补充头文件
+		"--header-insertion=iwyu",
+		// 输入建议中，已包含头文件的项与还未包含头文件的项会以圆点加以区分
+		"--header-insertion-decorators",
+		// 在后台自动分析文件(基于 complie_commands，我们用CMake生成)
+		"--background-index",
+		// 启用 Clang-Tidy 以提供「静态检查」
+		"--clang-tidy",
+		// Clang-Tidy 静态检查的参数，指出按照哪些规则进行静态检查
+		// 参数后部分的*表示通配符
+		// 在参数前加入-，如-modernize-use-trailing-return-type，将会禁用某一规则
+		"--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*,google-*",
+		// 同时开启的任务数量
+		"-j=8",
+		// pch优化的位置(memory 或 disk，选择memory会增加内存开销，但会提升性能) 推荐在板子上使用disk
+		"--pch-storage=disk",
+		// 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符，乃至函数末
+		// 我选择禁用
+		"--function-arg-placeholders=false",
+		// compelie_commands.json 文件的目录位置
+		"--compile-commands-dir=${workspaceFolder}/build",
+		// 启用.clangd配置文件
+		"--enable-config",
+		// 设置格式化style
+		"--fallback-style=webkit",
+		"--pch-storage=memory",
+		"--ranking-model=heuristics",
+		"--suggest-missing-includes",
+	],
+	"clangd.fallbackFlags": [
+		// "--target=x86_64-pc-windows-gnu",
+		// 也建议直接写.clangd文件
+		// CompileFlags:
+		//   Add:
+		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
+	],
+
+	// xmake 设置
+	// 设置compile_commands.json位置
+	"xmake.compileCommandsDirectory": "build",
+
+	// CMake设置 适用于GCC/CLang 
+	"cmake.configureSettings": {
+		// 默认Debug模式
+		"CMAKE_BUILD_TYPE": "Debug",
+		// 生成编译命令数据库，供clangd使用
+		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+		// 为C/C++调试版本添加调试信息，使用DWARF-4格式
+		// -g: 生成调试信息
+		// -gdwarf-4: 指定使用DWARF-4调试信息格式，兼容性更好，目前dwarf-5是最新的
+		// win上lldb调试DWARF-4信息可以但也会有小问题，而linux上可以dwarf-5 
+		"CMAKE_CXX_FLAGS_DEBUG": "${CMAKE_CXX_FLAGS_DEBUG} -g -gdwarf-4 -fdiagnostics-color=always -fno-omit-frame-pointer",
+		"CMAKE_C_FLAGS_DEBUG": "${CMAKE_C_FLAGS_DEBUG} -g -gdwarf-4 -fdiagnostics-color=always -fno-omit-frame-pointer",
+		// Release版本优化
+        "CMAKE_CXX_FLAGS_RELEASE": "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG",
+        "CMAKE_C_FLAGS_RELEASE": "${CMAKE_C_FLAGS_RELEASE} -O3 -DNDEBUG",
+		// RelWithDebInfo版本（推荐用于性能分析）
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-4",
+        "CMAKE_C_FLAGS_RELWITHDEBINFO": "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-4",
+		// C/C++标准设置 
+		"CMAKE_CXX_STANDARD": "20", // 98 11 14 17 20 23 26
+		"CMAKE_C_STANDARD": "23", // 90 99 11 17 23
+		"CMAKE_CXX_STANDARD_REQUIRED": "ON",  // 强制要求指定的C++标准，如果不支持则编译失败
+		// 编译器警告设置 - 启用全面的代码质量检查
+    	// "CMAKE_CXX_FLAGS": "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic",  // -Wall:常见警告 -Wextra:额外警告 -Wpedantic:严格标准合规警告
+    	// "CMAKE_C_FLAGS": "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic",      // 同上，针对C语言代码
+    	// 显示详细的编译信息 - 用于调试构建过程
+    	"CMAKE_VERBOSE_MAKEFILE": "OFF",  // 设为ON可以看到完整的编译命令，用于调试构建问题，一般设置为OFF即可
+		// 生成位置无关代码 - 对于共享库和现代安全特性很重要
+		"CMAKE_POSITION_INDEPENDENT_CODE": "ON",
+		// 着色输出设置 - 让编译错误和警告信息更易读
+    	"CMAKE_COLOR_MAKEFILE": "ON",      // 在Makefile生成器中启用彩色输出
+    	"CMAKE_COLOR_DIAGNOSTICS": "ON",   // 在支持的编译器中启用彩色诊断信息
+		// 并行编译设置 - 提高编译速度
+		"CMAKE_BUILD_PARALLEL_LEVEL": "0",  // 0表示使用所有可用CPU核心进行并行编译
+		// 让CMake自动检测是否支持
+		"CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON",
+		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     // Debug版本关闭LTO
+		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",     // 仅Release版本启用
+	},
+	// // CMake设置 适用于MSVC
+	// "cmake.configureSettings": {
+	// 	// 默认Debug模式
+	// 	"CMAKE_BUILD_TYPE": "Debug",
+	// 	// 生成编译命令数据库，供clangd使用
+	// 	"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+	// 	// Debug 调试信息 - 修正了语法错误
+	// 	"CMAKE_CXX_FLAGS_DEBUG": "/ZI /Od /MDd",
+	// 	"CMAKE_C_FLAGS_DEBUG": "/ZI /Od /MDd",
+	// 	"CMAKE_EXE_LINKER_FLAGS_DEBUG": "/DEBUG:FULL /INCREMENTAL",
+	// 	// Release版本优化
+	// 	"CMAKE_CXX_FLAGS_RELEASE": "/O2 /DNDEBUG /MD",
+	// 	"CMAKE_C_FLAGS_RELEASE": "/O2 /DNDEBUG /MD",
+	// 	"CMAKE_EXE_LINKER_FLAGS_RELEASE": "/INCREMENTAL:NO /OPT:REF /OPT:ICF",
+	// 	// RelWithDebInfo版本（推荐用于性能分析）
+	// 	"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD",
+	// 	"CMAKE_C_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD",
+	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "/DEBUG /INCREMENTAL:NO /OPT:REF",
+	// 	// C/C++标准设置
+	// 	"CMAKE_CXX_STANDARD": "20",
+	// 	"CMAKE_C_STANDARD": "17",  // C23在MSVC中支持有限，建议用C17
+	// 	"CMAKE_CXX_STANDARD_REQUIRED": "ON",
+	// 	"CMAKE_C_STANDARD_REQUIRED": "ON",
+	// 	// MSVC 编译器警告设置
+	// 	"CMAKE_CXX_FLAGS": "/W4 /WX- /permissive- /EHsc", // W4高级警告，permissive-严格标准
+	// 	"CMAKE_C_FLAGS": "/W4 /WX-",
+	// 	// 调试和开发相关设置
+	// 	"CMAKE_VERBOSE_MAKEFILE": "OFF",
+	// 	"CMAKE_COLOR_DIAGNOSTICS": "ON",
+	// 	// MSVC 特定优化
+	// 	"CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDLL", // Release用MD，Debug会自动用MDd
+	// 	"CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD": "ON",
+	// 	// 并行编译
+	// 	"CMAKE_BUILD_PARALLEL_LEVEL": "0"
+	// },
+	"cmake.generator": "Ninja", 	// cmake的生成器为Ninja 
+	"cmake.preferredGenerators": ["Ninja", "Unix Makefiles", ], // 优先使用Ninja 快且跨平台
+    "cmake.buildBeforeRun": true,     // 运行前自动构建
+    "cmake.clearOutputBeforeBuild": true,  // 构建前清除输出
+	"cmake.launchBehavior": "reuseTerminal",
+	// 适用于GCC/Clang
+	"cmake.debugConfig": {
+		"type": "lldb",
+		"cwd": "${workspaceFolder}",
+		"environment": [],
+        "console": "integratedTerminal",
+	},
+	// // 适用于MSVC
+	// "cmake.debugConfig": {
+	// 	"type": "cppvsdbg", // 使用VS的调试器
+	// 	"cwd": "${workspaceFolder}", 
+	// 	"environment": [],
+	// 	"console": "integratedTerminal",
+	// },
+	
+	// lldb
+    // 启动时执行的初始化命令（在目标程序启动前执行）
+    "lldb.launch.initCommands": [],
+    // 运行前执行的命令（在目标程序启动后、断点命中前执行）
+    "lldb.launch.preRunCommands": [],
+    // 自动解引用指针，显示指针指向的实际值而不是地址
+    "lldb.dereferencePointers": true,
+    // 抑制缺失源文件的警告信息，避免调试时的干扰
+    "lldb.suppressMissingSourceFiles": true,
+    // 反汇编显示模式：never=从不显示，auto=自动，always=总是显示
+    "lldb.showDisassembly": "never",
+    // 启用详细日志记录，便于调试LLDB本身的问题
+    "lldb.verboseLogging": true,
+    // 启用命令自动补全功能，提高调试效率
+    "lldb.commandCompletions": true,
+    // 控制台模式：split=分割模式，可以直接在Debug Console中输入变量名查看值
+    // 其他选项：commands=仅命令模式，evaluate=仅求值模式
+    "lldb.consoleMode": "split",
+    "lldb.displayFormat": "auto",        // 变量显示格式
+    "lldb.launch.expressions": "simple", // 表达式求值模式
+
+	// python languageServer
+	"python.languageServer": "Pylance",
+	"python.analysis.autoImportCompletions": true, // 启用自动导入补全
+    "python.analysis.indexing": true,              // 启用索引以提高性能
+	"python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
+    "python.analysis.inlayHints.functionReturnTypes": true, // 显示函数返回值类型的内联提示（在函数定义处显示返回类型）
+	"python.analysis.inlayHints.callArgumentNames": "all", // 显示函数调用时所有参数名称的内联提示（帮助理解参数含义）
+	"ruff.enable": true,
+	"ruff.lint.enable": true,
+	"ruff.exclude": [ // 排除的文件或目录
+	],
+    "ruff.lint.ignore": [ // 忽略的规则列表
+        "F401",  // 忽略未使用的导入
+    ],
+	// Python配置 默认使用ruff格式化(记得在环境里装好ruff) `pip install ruff`
+    "[python]": {
+		"editor.inlayHints.enabled": "on",
+		"editor.formatOnType": true,
+		// 保存文件就格式化代码
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit",
+			"source.organizeImports": "explicit"
+		},
+	},
+	// jupyter配置
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit",
+        "notebook.source.organizeImports": "explicit"
+    },
+	"notebook.lineNumbers": "on",                  // 显示行号
+    "notebook.showCellStatusBar": "visible",       // 显示单元格状态栏
+
+	// 默认不格式化Typst代码
+	"tinymist.formatterMode": "typstyle",
+	"[typst]": {
+		"editor.formatOnSave": true,
+	},
+
+	// TS 和 JS
+	"[typescript]": {
+		"editor.maxTokenizationLineLength": 2500,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[javascript]": {
+		"editor.maxTokenizationLineLength": 2500,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[css]": {
+		"editor.suggest.insertMode": "replace",
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	
+
+	// rust
+	"rust-analyzer.procMacro.enable": true,
+	"[rust]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": false,
+		"editor.formatOnType": false,
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+	},
+
+	// markdown 
+	"markdown-preview-enhanced.codeBlockTheme": "auto.css", 
+	"markdown-preview-enhanced.previewTheme": "github-light.css", // 或 github-dark.css
+	"markdown-preview-enhanced.scrollSync": true, // 同步滚动
+	"markdown-preview-enhanced.liveUpdate": true, // 实时更新预览
+	"[markdown]": {
+		"editor.unicodeHighlight.ambiguousCharacters": false,
+		"editor.unicodeHighlight.invisibleCharacters": false,
+		"diffEditor.ignoreTrimWhitespace": false,
+		"editor.wordWrap": "on",
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		// 格式化配置
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.formatOnType": false, // 避免输入时过度格式化
+	},
+
+	// zig 
+	"zig.zls.enabled": "on",
+	"[zig]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "ziglang.vscode-zig",
+		"editor.stickyScroll.defaultModel": "foldingProviderModel",
+		"files.eol": "\n",
+	},
+
+	// svelte
+	"svelte.enable-ts-plugin": true,
+	// tauri
+	
+	// vscode-icons设置
+	"vsicons.presets.angular": false,
+	"vsicons.dontShowNewVersionMessage": false,
+	// drawio 
+	"hediet.vscode-drawio.resizeImages": null,
+
+	// Hex Editor
+	"hexeditor.columnWidth": 16,
+	"hexeditor.showDecodedText": true,
+	"hexeditor.defaultEndianness": "little",
+	"hexeditor.inspectorType": "aside",
+
+	// gitlens设置
+	"gitlens.views.scm.grouped.views": {
+		"commits": true,
+		"branches": true,
+		"remotes": true,
+		"stashes": true,
+		"tags": true,
+		"worktrees": false,
+		"contributors": true,
+		"fileHistory": true,
+		"repositories": true,
+		"searchAndCompare": false,
+		"launchpad": false,
+	},
+	"gitlens.codeLens.recentChange.enabled": false,
+	"gitlens.codeLens.authors.enabled": false,
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+	"git.openRepositoryInParentFolders": "never",
+	"git.autofetch": true,
+
+	"liveServer.settings.donotVerifyTags": true,
+
+	// 力扣默认登陆中国区
+	"leetcode.endpoint": "leetcode-cn",
+
+	// drawio 
+	"hediet.vscode-drawio.appearance": "automatic",
+
+	"liveServer.settings.donotShowInfoMsg": true,
+
+	// rainbow indent
+	"indentRainbow.ignoreLinePatterns" : [
+    "/[ \t]* [*]/g", // lines begining with <whitespace><space>*
+    "/[ \t]+[/]{2}/g" // lines begininning with <whitespace>//
+	],
+	"indentRainbow.indicatorStyle": "light",
+	
+	// telemetry settings
+	"telemetry.enableTelemetry": false,
+	"gitlens.telemetry.enabled": false,
+	"redhat.telemetry.enabled": false,
+	"jdk.telemetry.enabled": false,
+}
