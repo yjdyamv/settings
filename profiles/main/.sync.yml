@@ -1,0 +1,9 @@
+resources:
+  - extensions
+  - keybindings
+  - settings
+  - snippets
+  - uiState
+  - themes
+  - keyboardShortcuts
+additionalFiles: []
