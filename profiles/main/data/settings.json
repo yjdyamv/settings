@@ -47,7 +47,6 @@
 	},
 	"catppuccin.customUIColors": {
 		"latte": {
-			"activityBar.background": "base", // 活动栏背景
 		}
 	},
 
@@ -104,7 +103,7 @@
 
 	// clangd 及 微软C/C++扩展设置
 	"C_Cpp.intelliSenseEngine": "disabled", // 禁用微软的IntelliSense
-	"C_Cpp.errorSquiggles": "disabled",
+	"C_Cpp.errorSquiggles": "disabled", 
 	"C_Cpp.vcpkg.enabled": true,
 	"clangd.enable": true,
 	"clangd.detectExtensionConflicts": false,
@@ -173,7 +172,7 @@
 		// 为C/C++调试版本添加调试信息，使用DWARF-4格式
 		// -g: 生成调试信息
 		// -gdwarf-4: 指定使用DWARF-4调试信息格式，兼容性更好，目前dwarf-5是最新的
-		// win上lldb调试DWARF-4信息可以但也会有小问题，而linux上可以dwarf-5 
+		// win上lldb调试得使用DWARF-4，而linux上可以dwarf-5 
 		"CMAKE_CXX_FLAGS_DEBUG": "${CMAKE_CXX_FLAGS_DEBUG} -g -gdwarf-4 -fdiagnostics-color=always -fno-omit-frame-pointer",
 		"CMAKE_C_FLAGS_DEBUG": "${CMAKE_C_FLAGS_DEBUG} -g -gdwarf-4 -fdiagnostics-color=always -fno-omit-frame-pointer",
 		// Release版本优化
@@ -308,8 +307,6 @@
 	"python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
     "python.analysis.inlayHints.functionReturnTypes": true, // 显示函数返回值类型的内联提示（在函数定义处显示返回类型）
 	"python.analysis.inlayHints.callArgumentNames": "all", // 显示函数调用时所有参数名称的内联提示（帮助理解参数含义）
-	"ruff.enable": true,
-	"ruff.lint.enable": true,
 	"ruff.exclude": [ // 排除的文件或目录
 	],
     "ruff.lint.ignore": [ // 忽略的规则列表
@@ -467,10 +464,9 @@
 	"indentRainbow.indicatorStyle": "light",
 	
 	// telemetry settings
-	"telemetry.telemetryLevel": "off",
+	"telemetry.telemetryLevel": "off", // 关闭遥测
 	"gitlens.telemetry.enabled": false,
 	"redhat.telemetry.enabled": false,
 	"jdk.telemetry.enabled": false,
 	"gitlens.home.preview.enabled": false,
-
 }

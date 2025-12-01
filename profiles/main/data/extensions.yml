@@ -162,6 +162,8 @@ enabled:
     uuid: 06574cb4-e5dc-4631-8174-a543a4533621
   - id: saoudrizwan.claude-dev
     uuid: ad94c633-a9d5-4f78-b85f-c664e7d91a0f
+  - id: shd101wyy.markdown-preview-enhanced
+    uuid: 3b1db1fc-c7f7-4bd6-9fa4-b499dfa99a8a
   - id: sumneko.lua
     uuid: 3a15b5a7-be12-47e3-8445-88ee3eabc8b2
   - id: svelte.svelte-vscode
