@@ -6,7 +6,4 @@ resources:
   - uiState
   - themes
   - keyboardShortcuts
-additionalFiles:
-  - ~/.ssh/config
-  - ~/.condarc
-  - ~/.gitconfig
+additionalFiles: []
