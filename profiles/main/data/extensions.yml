@@ -1,4 +1,6 @@
 disabled:
+  - id: astral-sh.ty
+    uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: fortran-lang.linter-gfortran
@@ -28,8 +30,6 @@ disabled:
 enabled:
   - id: adpyke.codesnap
     uuid: 8c1fc960-44b1-45e8-89b5-85f982fdaf27
-  - id: astral-sh.ty
-    uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
   - id: astro-build.astro-vscode
     uuid: 1fbbc8b0-7432-4b7e-8774-3336151da2f3
   - id: batisteo.vscode-django
@@ -142,6 +142,8 @@ enabled:
     uuid: 15305aca-2588-4ca0-8147-ab2c64730b82
   - id: msjsdiag.vscode-react-native
     uuid: b35cd5b4-18db-46f9-ba9e-06096c3b22d3
+  - id: mutantdino.resourcemonitor
+    uuid: 6efd3abb-3c6e-49c8-b8ce-6df58982255b
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
   - id: oderwat.indent-rainbow
@@ -158,6 +160,8 @@ enabled:
     uuid: 46cc5bbd-b098-4568-9b87-f91e07d26f2d
   - id: rust-lang.rust-analyzer
     uuid: 06574cb4-e5dc-4631-8174-a543a4533621
+  - id: saoudrizwan.claude-dev
+    uuid: ad94c633-a9d5-4f78-b85f-c664e7d91a0f
   - id: sumneko.lua
     uuid: 3a15b5a7-be12-47e3-8445-88ee3eabc8b2
   - id: svelte.svelte-vscode
@@ -184,6 +188,8 @@ enabled:
     uuid: bee31e34-a44b-4a76-9ec2-e9fd1439a0f6
   - id: vscode-icons-team.vscode-icons
     uuid: 9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a
+  - id: WakaTime.vscode-wakatime
+    uuid: f2fd462f-f1bd-4c62-b54f-59a4e5ffc6a3
   - id: wmaurer.change-case
     uuid: 2aa040bf-c73a-455d-8946-5c6cc83b8019
   - id: xsro.vscode-dosbox

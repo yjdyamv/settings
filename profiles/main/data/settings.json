@@ -40,6 +40,16 @@
 	"workbench.iconTheme": "catppuccin-latte",
 	"preferredIconTheme.light": "catppuccin-latte",
 	"preferredIconTheme.dark": "catppuccin-frappe",
+	"catppuccin.colorOverrides": {
+		"latte": {
+			"base": "#fcf9f6", // 调节下背景颜色，更加暖色调，护眼
+		}
+	},
+	"catppuccin.customUIColors": {
+		"latte": {
+			"activityBar.background": "base", // 活动栏背景
+		}
+	},
 
 	"terminal.integrated.inheritEnv": false,
 
@@ -154,7 +164,7 @@
 	// 设置compile_commands.json位置
 	"xmake.compileCommandsDirectory": "build",
 
-	// CMake设置 适用于GCC/CLang 
+	// // 1. CMake设置 适用于GCC/CLang 
 	"cmake.configureSettings": {
 		// 默认Debug模式
 		"CMAKE_BUILD_TYPE": "Debug",
@@ -193,7 +203,7 @@
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     // Debug版本关闭LTO
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",     // 仅Release版本启用
 	},
-	// // CMake设置 适用于MSVC
+	// // 2. CMake设置 适用于MSVC
 	// "cmake.configureSettings": {
 	// 	// 默认Debug模式
 	// 	"CMAKE_BUILD_TYPE": "Debug",
@@ -233,14 +243,36 @@
     "cmake.buildBeforeRun": true,     // 运行前自动构建
     "cmake.clearOutputBeforeBuild": true,  // 构建前清除输出
 	"cmake.launchBehavior": "reuseTerminal",
-	// 适用于GCC/Clang
+	// // 1.适用于GCC/Clang的调试
+	// // 1.1 使用GDB
+	// "cmake.debugConfig": {
+	// 	"stopAtEntry": true, // 在代码开头设置断点
+	// 	"type": "cppdbg",
+	// 	"MIMode": "gdb", // 据说可以用lldb，但还没找到配置
+	// 	"cwd": "${workspaceFolder}",
+	// 	"setupCommands": [
+    //             {
+    //                 "description": "Enable pretty-printing for gdb",
+    //                 "text": "-enable-pretty-printing",
+    //                 "ignoreFailures": true
+    //             },
+    //             {
+    //                 "description": "Set Disassembly Flavor to Intel",
+    //                 "text": "-gdb-set disassembly-flavor intel",
+    //                 "ignoreFailures": true
+    //             }
+    //         ]
+	// },
+	// // 1.2 使用LLDB
 	"cmake.debugConfig": {
 		"type": "lldb",
 		"cwd": "${workspaceFolder}",
+		"stopOnEntry": true, // 在代码开头设置断点
 		"environment": [],
         "console": "integratedTerminal",
 	},
-	// // 适用于MSVC
+	// // 2. 适用于MSVC的调试
+	// // 使用MSVC的调试器
 	// "cmake.debugConfig": {
 	// 	"type": "cppvsdbg", // 使用VS的调试器
 	// 	"cwd": "${workspaceFolder}", 
@@ -248,7 +280,7 @@
 	// 	"console": "integratedTerminal",
 	// },
 	
-	// lldb
+	// lldb插件相关设置
     // 启动时执行的初始化命令（在目标程序启动前执行）
     "lldb.launch.initCommands": [],
     // 运行前执行的命令（在目标程序启动后、断点命中前执行）
@@ -435,9 +467,10 @@
 	"indentRainbow.indicatorStyle": "light",
 	
 	// telemetry settings
-	"telemetry.enableTelemetry": false,
+	"telemetry.telemetryLevel": "off",
 	"gitlens.telemetry.enabled": false,
 	"redhat.telemetry.enabled": false,
 	"jdk.telemetry.enabled": false,
 	"gitlens.home.preview.enabled": false,
+
 }
