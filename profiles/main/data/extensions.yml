@@ -3,14 +3,16 @@ disabled:
     uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
-  - id: fortran-lang.linter-gfortran
-    uuid: 64379b4d-40cd-415a-8643-b07572d4a243
   - id: fwcd.kotlin
     uuid: c86bc8a9-fd3b-44db-b28a-2d146cb78d3c
+  - id: golang.go
+    uuid: d6f6cfea-4b6f-41f4-b571-6ad2ab7918da
   - id: hediet.vscode-drawio
     uuid: ea6a6046-2132-421f-a984-664909fcf0b8
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
+  - id: Oracle.oracle-java
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: redhat.java
     uuid: 198a707e-28af-4e84-8610-6e2f628dd12d
   - id: vscjava.vscode-gradle
@@ -54,6 +56,8 @@ enabled:
     uuid: 0cb81da2-1880-4755-9995-0ae9cc728e20
   - id: dracula-theme.theme-dracula
     uuid: 4e44877c-1c8d-4f9c-ba86-1372d0fbeeb1
+  - id: dsznajder.es7-react-js-snippets
+    uuid: 19804510-b475-4dae-b0f7-6ca08fd1af0c
   - id: dzhavat.css-initial-value
     uuid: 8c2377ea-596d-46c3-92fa-1c5b66bb9d1c
   - id: eamodio.gitlens
@@ -74,14 +78,16 @@ enabled:
     uuid: 7328a705-91fc-49e6-8293-da6f112e482d
   - id: GitHub.remotehub
     uuid: fc7d7e85-2e58-4c1c-97a3-2172ed9a77cd
-  - id: golang.go
-    uuid: d6f6cfea-4b6f-41f4-b571-6ad2ab7918da
+  - id: hollowtree.vue-snippets
+    uuid: 3620b114-6fe8-459b-8c68-99943147069b
   - id: James-Yu.latex-workshop
     uuid: 61d03280-3919-4dd1-bce1-178ca21fdeaf
   - id: johnpapa.Angular2
     uuid: 214cbfb9-7c06-4467-bad4-357ae83eb587
   - id: kisstkondoros.vscode-gutter-preview
     uuid: eedfd044-d5ac-4389-973d-3ac1fdb98ad5
+  - id: konicy.conan-extension
+    uuid: edc1171f-618a-4985-8d5c-fc283687de70
   - id: kvoon.preferred-icon-theme
     uuid: 2e0d34f4-f7bd-4ee3-a6e8-341db09e58a8
   - id: LeetCode.vscode-leetcode
@@ -102,6 +108,8 @@ enabled:
     uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
   - id: ms-dotnettools.vscode-dotnet-runtime
     uuid: 1aab81a1-b3d9-4aef-976b-577d5d90fe3f
+  - id: ms-edgedevtools.vscode-edge-devtools
+    uuid: 11cb120c-f665-45bc-a21e-6de8a5685850
   - id: ms-python.debugpy
     uuid: 4bd5d2c9-9d65-401a-b0b2-7498d9f17615
   - id: ms-python.python
@@ -130,6 +138,8 @@ enabled:
     uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
   - id: ms-vscode.cpptools
     uuid: 690b692e-e8a9-493f-b802-8089d50ac1b2
+  - id: ms-vscode.hexeditor
+    uuid: cc7d2112-5178-4472-8e0e-25dced95e7f0
   - id: ms-vscode.js-debug-nightly
     uuid: 7acbb4ce-c85a-49d4-8d95-a8054406ae97
   - id: ms-vscode.remote-explorer
@@ -148,12 +158,12 @@ enabled:
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
-  - id: Oracle.oracle-java
-    uuid: 17ce260e-a479-4289-b71d-93cf366d3708
   - id: piotrpalarz.vscode-gitignore-generator
     uuid: c0c04a3d-f3cd-44ce-a9dd-61ad33504bc7
   - id: pranaygp.vscode-css-peek
     uuid: 0b8f8d63-11a2-4194-969c-ca7488b3413a
+  - id: rangav.vscode-thunder-client
+    uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.vscode-yaml
     uuid: 2061917f-f76a-458a-8da9-f162de22b97e
   - id: ritwickdey.LiveServer
@@ -190,8 +200,12 @@ enabled:
     uuid: bee31e34-a44b-4a76-9ec2-e9fd1439a0f6
   - id: vscode-icons-team.vscode-icons
     uuid: 9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a
+  - id: Vue.volar
+    uuid: a95ee795-1576-4ffa-acda-8d6e6a95c584
   - id: WakaTime.vscode-wakatime
     uuid: f2fd462f-f1bd-4c62-b54f-59a4e5ffc6a3
+  - id: WallabyJs.quokka-vscode
+    uuid: aae0701b-111f-49c1-9000-abd37a442f28
   - id: wmaurer.change-case
     uuid: 2aa040bf-c73a-455d-8946-5c6cc83b8019
   - id: xsro.vscode-dosbox

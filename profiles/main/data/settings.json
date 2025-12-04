@@ -171,16 +171,15 @@
 		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
 		// 为C/C++调试版本添加调试信息，使用DWARF-4格式
 		// -g: 生成调试信息
-		// -gdwarf-4: 指定使用DWARF-4调试信息格式，兼容性更好，目前dwarf-5是最新的
-		// win上lldb调试得使用DWARF-4，而linux上可以dwarf-5 
-		"CMAKE_CXX_FLAGS_DEBUG": "${CMAKE_CXX_FLAGS_DEBUG} -g -gdwarf-4 -fdiagnostics-color=always -fno-omit-frame-pointer",
-		"CMAKE_C_FLAGS_DEBUG": "${CMAKE_C_FLAGS_DEBUG} -g -gdwarf-4 -fdiagnostics-color=always -fno-omit-frame-pointer",
+		// -gdwarf-5是最新的
+		"CMAKE_CXX_FLAGS_DEBUG": "${CMAKE_CXX_FLAGS_DEBUG} -g -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
+		"CMAKE_C_FLAGS_DEBUG": "${CMAKE_C_FLAGS_DEBUG} -g -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
 		// Release版本优化
         "CMAKE_CXX_FLAGS_RELEASE": "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG",
         "CMAKE_C_FLAGS_RELEASE": "${CMAKE_C_FLAGS_RELEASE} -O3 -DNDEBUG",
 		// RelWithDebInfo版本（推荐用于性能分析）
-        "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-4",
-        "CMAKE_C_FLAGS_RELWITHDEBINFO": "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-4",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-5",
+        "CMAKE_C_FLAGS_RELWITHDEBINFO": "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-5",
 		// C/C++标准设置 
 		"CMAKE_CXX_STANDARD": "20", // 98 11 14 17 20 23 26
 		"CMAKE_C_STANDARD": "23", // 90 99 11 17 23
@@ -239,6 +238,7 @@
 	// },
 	"cmake.generator": "Ninja", 	// cmake的生成器为Ninja 
 	"cmake.preferredGenerators": ["Ninja", "Unix Makefiles", ], // 优先使用Ninja 快且跨平台
+	"cmake.configureOnOpen": false, // 打开文件夹不自动构建
     "cmake.buildBeforeRun": true,     // 运行前自动构建
     "cmake.clearOutputBeforeBuild": true,  // 构建前清除输出
 	"cmake.launchBehavior": "reuseTerminal",
@@ -250,25 +250,73 @@
 	// 	"MIMode": "gdb", // 据说可以用lldb，但还没找到配置
 	// 	"cwd": "${workspaceFolder}",
 	// 	"setupCommands": [
-    //             {
-    //                 "description": "Enable pretty-printing for gdb",
-    //                 "text": "-enable-pretty-printing",
-    //                 "ignoreFailures": true
-    //             },
-    //             {
-    //                 "description": "Set Disassembly Flavor to Intel",
-    //                 "text": "-gdb-set disassembly-flavor intel",
-    //                 "ignoreFailures": true
-    //             }
-    //         ]
+	// 		{
+	// 			"description": "Enable pretty printing for better data structure display",
+	// 			"text": "-enable-pretty-printing",
+	// 			"ignoreFailures": true
+	// 		},
+	// 		{
+	// 			"description": "Set assembly code display to Intel syntax format",
+	// 			"text": "-gdb-set disassembly-flavor intel",
+	// 			"ignoreFailures": true
+	// 		},
+	// 		{
+	// 			"description": "Set maximum string display length to 512 characters",
+	// 			"text": "set print elements 512",
+	// 			"ignoreFailures": true
+	// 		},
+	// 		{
+	// 			"description": "Enable printing of object's actual type (for polymorphic objects)",
+	// 			"text": "set print object on",
+	// 			"ignoreFailures": true
+	// 		},
+	// 		{
+	// 			"description": "Enable pretty printing of arrays",
+	// 			"text": "set print array on",
+	// 			"ignoreFailures": true
+	// 		},
+	// 		{
+	// 			"description": "Disable pagination for continuous output",
+	// 			"text": "set pagination off",
+	// 			"ignoreFailures": true
+	// 		}
+	// 	]
 	// },
 	// // 1.2 使用LLDB
 	"cmake.debugConfig": {
 		"type": "lldb",
+		// "MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
 		"cwd": "${workspaceFolder}",
 		"stopOnEntry": true, // 在代码开头设置断点
 		"environment": [],
         "console": "integratedTerminal",
+		"setupCommands": [
+			{
+				"description": "Set assembly code display to Intel syntax format",
+				"text": "settings set target.x86-disassembly-flavor intel",
+				"ignoreFailures": true
+			},
+			{
+				"description": "Customize stack frame format to include function name, arguments, and file location",
+				"text": "settings set frame-format \"frame #${frame.index}: ${frame.pc}{ ${module.file.basename}{`${function.name-with-args}{${frame.no-debug}${function.pc-offset}}}}{ at ${line.file.basename}:${line.number}}{${function.is-optimized} [opt]}\\n\"",
+				"ignoreFailures": true
+			},
+			{
+				"description": "Set thread format to display thread ID, name, and current execution position",
+				"text": "settings set thread-format \"thread #${thread.index}: tid = ${thread.id%tid}{, ${frame.pc}}{ ${module.file.basename}{`${function.name-with-args}{${frame.no-debug}${function.pc-offset}}}}{ at ${line.file.basename}:${line.number}}{, name = '${thread.name}'}\\n\"",
+				"ignoreFailures": true
+			},
+			{
+				"description": "Enable detailed type information display for dynamic objects",
+				"text": "settings set target.prefer-dynamic-value run-target",
+				"ignoreFailures": true
+			},
+			{
+				"description": "Set maximum string display length to 512 characters",
+				"text": "settings set target.max-string-summary-length 512",
+				"ignoreFailures": true
+			}
+		]
 	},
 	// // 2. 适用于MSVC的调试
 	// // 使用MSVC的调试器
@@ -335,6 +383,7 @@
 
 	// 默认不格式化Typst代码
 	"tinymist.formatterMode": "typstyle",
+	"tinymist.lint.enabled": true,
 	"[typst]": {
 		"editor.formatOnSave": true,
 	},
@@ -467,6 +516,11 @@
 	"telemetry.telemetryLevel": "off", // 关闭遥测
 	"gitlens.telemetry.enabled": false,
 	"redhat.telemetry.enabled": false,
-	"jdk.telemetry.enabled": false,
-	"gitlens.home.preview.enabled": false,
+	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
+	"workbench.editorAssociations": {
+		"*.copilotmd": "vscode.markdown.preview.editor",
+		"{hexdiff}:/**/*.*": "hexEditor.hexedit",
+		"{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui": "default",
+		"*.pdf": "latex-workshop-pdf-hook"
+	},
 }
