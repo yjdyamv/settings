@@ -1,4 +1,8 @@
 {
+	"files.associations": {
+        ".clangd": "yaml", // clangd 配置文件关联为yaml
+	},
+
 	// 使用zokugun.sync-settings插件同步设置
 	"syncSettings.hostname": "yjdyamv",
 	"syncSettings.notification": "major",
@@ -81,10 +85,6 @@
 	"biome.suggestInstallingGlobally": false,
 
 	"go.useLanguageServer": true,
-
-	"files.associations": {
-        ".clangd": "yaml", // clangd 配置文件关联为yaml
-	},
 
 	"[c]": {
 		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",

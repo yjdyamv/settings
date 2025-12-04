@@ -11,6 +11,10 @@ disabled:
     uuid: ea6a6046-2132-421f-a984-664909fcf0b8
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
+  - id: ms-dotnettools.csdevkit
+    uuid: 7ad42776-8f7e-4214-bf67-4f0b518ef629
+  - id: ms-dotnettools.csharp
+    uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
   - id: Oracle.oracle-java
     uuid: 00000000-0000-0000-0000-000000000000
   - id: redhat.java
@@ -29,6 +33,8 @@ disabled:
     uuid: b0f06c6b-24fb-4d7b-bd79-bc5e2fa17312
   - id: vscjava.vscode-spring-initializr
     uuid: a205ad34-542b-4c67-a9ed-f645103ad9c0
+  - id: vscode-icons-team.vscode-icons
+    uuid: 9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a
 enabled:
   - id: adpyke.codesnap
     uuid: 8c1fc960-44b1-45e8-89b5-85f982fdaf27
@@ -102,10 +108,6 @@ enabled:
     uuid: 3792588c-3d35-442d-91ea-fe6a755e8155
   - id: ms-azuretools.vscode-containers
     uuid: 2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d
-  - id: ms-dotnettools.csdevkit
-    uuid: 7ad42776-8f7e-4214-bf67-4f0b518ef629
-  - id: ms-dotnettools.csharp
-    uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
   - id: ms-dotnettools.vscode-dotnet-runtime
     uuid: 1aab81a1-b3d9-4aef-976b-577d5d90fe3f
   - id: ms-edgedevtools.vscode-edge-devtools
@@ -198,8 +200,6 @@ enabled:
     uuid: 575c4c5c-725b-4965-b037-bc3f9785cb27
   - id: vadimcn.vscode-lldb
     uuid: bee31e34-a44b-4a76-9ec2-e9fd1439a0f6
-  - id: vscode-icons-team.vscode-icons
-    uuid: 9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a
   - id: Vue.volar
     uuid: a95ee795-1576-4ffa-acda-8d6e6a95c584
   - id: WakaTime.vscode-wakatime
