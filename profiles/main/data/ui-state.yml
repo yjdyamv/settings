@@ -88,7 +88,7 @@ ms-python.python: "{\"PYTHON_WAS_DISCOVERY_TRIGGERED_C:\\\\USERS\\\\YUAN\\\\DES\
   TRIGGERED_C:\\\\USERS\\\\YUAN\\\\DOWNLOADS\\\\PYRTKLIB-MAIN\":true}"
 ms-toolsai.jupyter: '{"CACHE_KEY_FOR_JUPYTER_KERNELSPEC_ROOT_PATH.":"file:///c%3A/Users/yuan/AppData/Roaming/jupyter/kernels","INTERPRETER_PATH_WAS_SELECTED_FOR_JUPYTER_SERVER":true,"CONDA_INFORMATION_CACHE":{"version":"25.11.0","file":"d:\\miniforge3\\Scripts\\conda.exe","fileHash":"4046c156f1851e9170dc5ab98dd19fe6eb3200227ac99c67aed4eeaf7ed6a79062cee75c4f9b69c1c025ee21f6faebee79111c3ad0ca6f20060d660ce0c351ae"}}'
 ms-vscode-remote.remote-containers: "{}"
-ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":true,"wsl.lastUpdateCheck":1764832000835}'
+ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":true,"wsl.lastUpdateCheck":1764832270890}'
 ms-vscode.cmake-tools: '{"c:\\Users\\yuan\\Desktop\\testcactiveVariantSettings":[["buildType","debug"]],"c:\\Users\\yuan\\Desktop\\testcactiveKitName":"GCC
   15.2.0 x86_64-w64-mingw32
   (ucrt64)","kitsVersionSaved":2,"c:\\Users\\yuan\\Desktop\\testclaunchTargetName":"testc","c:\\Users\\yuan\\Downloads\\pyrtklib-mainactiveVariantSettings":[["buildType","debug"]]}'
@@ -180,9 +180,9 @@ workbench.activity.placeholderViewlets: "[{\"id\":\"workbench.view.explorer\",\
   explorer-view-icon\"},\"name\":\"Remote
   Explorer\",\"isBuiltin\":true,\"views\":[{},{},{\"when\":\"!hideConnectComman\
   ds\"},{\"when\":\"true\"},{\"when\":\"remote-containers:showDetails &&
-  !hideConnectCommands\"},{\"when\":\"!hideConnectCommands\"}]},{\"id\":\"workb\
-  ench.view.chat.sessions\",\"themeIcon\":{\"id\":\"chat-sessions-icon\",\"desc\
-  ription\":\"Icon for Agent Sessions
+  !hideConnectCommands\"},{\"when\":\"!hideConnectCommands\"},{}]},{\"id\":\"wo\
+  rkbench.view.chat.sessions\",\"themeIcon\":{\"id\":\"chat-sessions-icon\",\"d\
+  escription\":\"Icon for Agent Sessions
   View\",\"defaults\":{\"id\":\"comment-discussion-sparkle\"}},\"name\":\"Agent
   Sessions\",\"isBuiltin\":true,\"views\":[{\"when\":\"!chatSetupDisabled &&
   !chatSetupHidden && config.chat.agentSessionsViewLocation ==
