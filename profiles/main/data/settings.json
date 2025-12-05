@@ -181,7 +181,7 @@
         "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-5",
         "CMAKE_C_FLAGS_RELWITHDEBINFO": "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -gdwarf-5",
 		// C/C++标准设置 
-		"CMAKE_CXX_STANDARD": "20", // 98 11 14 17 20 23 26
+		"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 		"CMAKE_C_STANDARD": "23", // 90 99 11 17 23
 		"CMAKE_CXX_STANDARD_REQUIRED": "ON",  // 强制要求指定的C++标准，如果不支持则编译失败
 		// 编译器警告设置 - 启用全面的代码质量检查
@@ -466,6 +466,7 @@
 	"vsicons.dontShowNewVersionMessage": false,
 	// drawio 
 	"hediet.vscode-drawio.resizeImages": null,
+	"hediet.vscode-drawio.appearance": "automatic",
 
 	// Hex Editor
 	"hexeditor.columnWidth": 16,
@@ -499,9 +500,6 @@
 
 	// 力扣默认登陆中国区
 	"leetcode.endpoint": "leetcode-cn",
-
-	// drawio 
-	"hediet.vscode-drawio.appearance": "automatic",
 
 	"liveServer.settings.donotShowInfoMsg": true,
 
