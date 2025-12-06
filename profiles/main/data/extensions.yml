@@ -1,6 +1,6 @@
 disabled:
   - id: astral-sh.ty
-    uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: fwcd.kotlin
@@ -106,6 +106,8 @@ enabled:
     uuid: c7c7dabf-1f16-4ec3-8ec6-7862b0beca2a
   - id: mechatroner.rainbow-csv
     uuid: 3792588c-3d35-442d-91ea-fe6a755e8155
+  - id: mesonbuild.mesonbuild
+    uuid: 8d985901-944a-4bc1-8773-42041c4d40fb
   - id: ms-azuretools.vscode-containers
     uuid: 2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d
   - id: ms-dotnettools.vscode-dotnet-runtime

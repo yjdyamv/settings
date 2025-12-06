@@ -99,12 +99,13 @@
 
 	// xmake
 	"xmake.buildDirectory": "${workspaceRoot}/build",
+	"xmake.compileCommandsBackend": "clangd",
 	"xmake.debugConfigType": "codelldb",
+	"xmake.compileCommandsDirectory": "build", 	// 设置compile_commands.json位置
 
 	// clangd 及 微软C/C++扩展设置
 	"C_Cpp.intelliSenseEngine": "disabled", // 禁用微软的IntelliSense
-	"C_Cpp.errorSquiggles": "disabled", 
-	"C_Cpp.vcpkg.enabled": true,
+	"C_Cpp.errorSquiggles": "disabled",
 	"clangd.enable": true,
 	"clangd.detectExtensionConflicts": false,
 	"clangd.checkUpdates": false,
@@ -142,7 +143,7 @@
 		// 我选择禁用
 		"--function-arg-placeholders=false",
 		// compelie_commands.json 文件的目录位置
-		"--compile-commands-dir=${workspaceFolder}/build",
+		"--compile-commands-dir=${workspaceRoot}/build",
 		// 启用.clangd配置文件
 		"--enable-config",
 		// 设置格式化style
@@ -158,10 +159,6 @@
 		//   Add:
 		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
 	],
-
-	// xmake 设置
-	// 设置compile_commands.json位置
-	"xmake.compileCommandsDirectory": "build",
 
 	// // 1. CMake设置 适用于GCC/CLang 
 	"cmake.configureSettings": {
@@ -242,6 +239,7 @@
     "cmake.buildBeforeRun": true,     // 运行前自动构建
     "cmake.clearOutputBeforeBuild": true,  // 构建前清除输出
 	"cmake.launchBehavior": "reuseTerminal",
+	"cmake.installPrefix": "bin",
 	// // 1.适用于GCC/Clang的调试
 	// // 1.1 使用GDB
 	// "cmake.debugConfig": {
@@ -285,7 +283,7 @@
 	// // 1.2 使用LLDB
 	"cmake.debugConfig": {
 		"type": "lldb",
-		// "MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
+		"MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
 		"cwd": "${workspaceFolder}",
 		"stopOnEntry": true, // 在代码开头设置断点
 		"environment": [],

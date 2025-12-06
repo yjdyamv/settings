@@ -35,7 +35,7 @@
             "    \"request\": \"launch\",",
             "    \"program\": \"\\${workspaceFolder}/${2:build/program}\",",
             "    \"args\": [${3}],",
-            "    \"stopAtEntry\": ${4:false},",
+            "    \"stopAtEntry\": ${4:true},",
             "    \"cwd\": \"\\${workspaceFolder}\",",
             "    \"environment\": [],",
             "    \"externalConsole\": false,",
