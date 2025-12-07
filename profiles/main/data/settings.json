@@ -469,12 +469,16 @@
 	},
 	"go.trace.server": "off",
 	"go.diagnostic.vulncheck": "Imports",
+
+
 	// vscode-icons设置
 	"vsicons.presets.angular": false,
 	"vsicons.dontShowNewVersionMessage": false,
+	
 	// drawio
 	"hediet.vscode-drawio.resizeImages": null,
 	"hediet.vscode-drawio.appearance": "automatic",
+	
 	// Hex Editor
 	"hexeditor.columnWidth": 16,
 	"hexeditor.showDecodedText": true,
@@ -510,6 +514,7 @@
 		"/[ \t]+[/]{2}/g" // lines begininning with <whitespace>//
 	],
 	"indentRainbow.indicatorStyle": "light",
+	
 	// telemetry settings
 	"telemetry.telemetryLevel": "off", // 关闭遥测
 	"gitlens.telemetry.enabled": false,
@@ -523,5 +528,13 @@
 	},
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
-	}
+	},
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"/.docx.json"
+			],
+			"url": "https://raw.githubusercontent.com/Mehdi-Verfaillie/docx/main/src/config/.docx.schema.json"
+		}
+	]
 }

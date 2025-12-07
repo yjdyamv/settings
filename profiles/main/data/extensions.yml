@@ -1,6 +1,6 @@
 disabled:
   - id: astral-sh.ty
-    uuid: 00000000-0000-0000-0000-000000000000
+    uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: fwcd.kotlin
@@ -166,6 +166,8 @@ enabled:
     uuid: c0c04a3d-f3cd-44ce-a9dd-61ad33504bc7
   - id: pranaygp.vscode-css-peek
     uuid: 0b8f8d63-11a2-4194-969c-ca7488b3413a
+  - id: RandomFractalsInc.geo-data-viewer
+    uuid: d1b606b4-7db2-45fb-b5b9-6637d0895a3c
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.vscode-yaml
@@ -174,6 +176,8 @@ enabled:
     uuid: 06574cb4-e5dc-4631-8174-a543a4533621
   - id: saoudrizwan.claude-dev
     uuid: ad94c633-a9d5-4f78-b85f-c664e7d91a0f
+  - id: ShahilKumar.docxreader
+    uuid: ac7f37ee-52e3-4ff6-a0cf-95c8cb5cabf8
   - id: shd101wyy.markdown-preview-enhanced
     uuid: 3b1db1fc-c7f7-4bd6-9fa4-b499dfa99a8a
   - id: sumneko.lua
