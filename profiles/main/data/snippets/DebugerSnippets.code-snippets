@@ -12,6 +12,7 @@
             "    \"cwd\": \"\\${workspaceFolder}\",",
             "    \"stopOnEntry\": ${4:true},",
             "    \"terminal\": \"integrated\",",
+            "    \"console\": \"integratedTerminal\"",
             "    \"expressions\": \"native\",",
             "    \"initCommands\": [",
             "        \"settings set target.x86-disassembly-flavor intel\",",
@@ -55,5 +56,26 @@
             "},"
         ],
         "description": "Custom GDB debug configuration with enhanced setup"
-    }
+    },
+
+    "MSVC Debug Configuration": {
+        "prefix": "msvc-config",
+        "body": [
+            "{",
+            "    \"name\": \"${1:(MSVC) Launch}\",",
+            "    \"type\": \"cppvsdbg\",",
+            "    \"request\": \"launch\",",
+            "    \"program\": \"\\${workspaceFolder}/${2:build/<yourprogram>}\",",
+            "    \"args\": [${3}],",
+            "    \"stopAtEntry\": ${4:true},",
+            "    \"cwd\": \"\\${workspaceFolder}\",",
+            "    \"environment\": [],",
+            "    \"console\": \"${5|internalConsole,integratedTerminal,externalTerminal|}\",",
+            "    \"visualizerFile\": \"${6}\",",
+            "    \"enableDebugHeap\": ${7:true}",
+            "},"
+        ],
+        "description": "MSVC debug configuration"
+    },
+
 }

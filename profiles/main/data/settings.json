@@ -21,7 +21,7 @@
 	"terminal.integrated.fontFamily": "Maple Mono NF CN",
 	"editor.minimap.showSlider": "always",
 	"editor.mouseWheelZoom": true, // 设置Ctrl + 滚轮 来调整字体大小
-	"editor.autoClosingQuotes": "always",
+	// "editor.autoClosingQuotes": "always",
 	"editor.cursorStyle": "block", // 光标设置为方块状
 	"editor.overtypeCursorStyle": "block-outline", // 按了insert键后的光标样式
 	// "editor.cursorBlinking": "smooth", // 光滑的光标闪烁
@@ -30,9 +30,7 @@
 	// "editor.scrollBeyondLastLine": false, // 不允许滚动到最后一行之后
 	// "editor.fontLigatures": true, // 启用连字，让代码更美观
 	"editor.linkedEditing": true, // 启用关联编辑标签
-	"window.newWindowProfile": "Default", // 新窗口使用默认配置文件
-	// 当前主题
-	"workbench.colorTheme": "Catppuccin Latte",
+	"window.newWindowProfile": "Default",
 	// 当设置为true时，VSCode会根据系统的亮暗模式自动切换为以下主题
 	"window.autoDetectColorScheme": false,
 	"workbench.preferredLightColorTheme": "Catppuccin Latte",
@@ -87,7 +85,6 @@
 	// xmake
 	"xmake.buildDirectory": "${workspaceRoot}/build",
 	"xmake.compileCommandsBackend": "clangd",
-	"xmake.debugConfigType": "codelldb",
 	"xmake.compileCommandsDirectory": "build", // 设置compile_commands.json位置
 	// clangd 及 微软C/C++扩展设置
 	"C_Cpp.intelliSenseEngine": "disabled", // 禁用微软的IntelliSense
@@ -96,7 +93,6 @@
 	"clangd.detectExtensionConflicts": false,
 	"clangd.checkUpdates": false,
 	"clangd.onConfigChanged": "prompt",
-	"clangd.onConfigChanged.forceEnable": true,
 	"clangd.arguments": [
 		// 让 Clangd 生成精简的日志 详细是verbose
 		"--log=info",
@@ -145,7 +141,7 @@
 		//   Add:
 		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
 	],
-	// // 1. CMake设置 适用于GCC/CLang
+	// // 1. CMake设置 适用于GCC/CLang/Clang-cl
 	"cmake.configureSettings": {
 		// 默认Debug模式
 		"CMAKE_BUILD_TYPE": "Debug",
@@ -179,9 +175,9 @@
 		// 并行编译设置 - 提高编译速度
 		"CMAKE_BUILD_PARALLEL_LEVEL": "0", // 0表示使用所有可用CPU核心进行并行编译
 		// 让CMake自动检测是否支持
-		"CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON",
+		// "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON",
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF", // Debug版本关闭LTO
-		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON" // 仅Release版本启用
+		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON", // 仅Release版本启用
 	},
 	// // 2. CMake设置 适用于MSVC
 	// "cmake.configureSettings": {
@@ -220,15 +216,15 @@
 	// },
 	"cmake.generator": "Ninja", // cmake的生成器为Ninja
 	"cmake.preferredGenerators": [
-		"Ninja",
+		"Ninja", // 优先使用Ninja 快且跨平台
 		"Unix Makefiles"
-	], // 优先使用Ninja 快且跨平台
+	], 
 	"cmake.configureOnOpen": false, // 打开文件夹不自动构建
 	"cmake.buildBeforeRun": true, // 运行前自动构建
 	"cmake.clearOutputBeforeBuild": true, // 构建前清除输出
 	"cmake.launchBehavior": "reuseTerminal",
 	"cmake.installPrefix": "bin",
-	// // 1.适用于GCC/Clang的调试
+	// // 1.适用于GCC/Clang/Clang-cl的调试
 	// // 1.1 使用GDB
 	// "cmake.debugConfig": {
 	// 	"stopAtEntry": true, // 在代码开头设置断点
@@ -271,7 +267,7 @@
 	// // 1.2 使用LLDB
 	"cmake.debugConfig": {
 		"type": "lldb",
-		"MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
+		// "MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
 		"cwd": "${workspaceFolder}",
 		"stopOnEntry": true, // 在代码开头设置断点
 		"environment": [],
@@ -519,7 +515,6 @@
 	"telemetry.telemetryLevel": "off", // 关闭遥测
 	"gitlens.telemetry.enabled": false,
 	"redhat.telemetry.enabled": false,
-	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
 	"workbench.editorAssociations": {
 		"*.copilotmd": "vscode.markdown.preview.editor",
 		"{hexdiff}:/**/*.*": "hexEditor.hexedit",
@@ -536,5 +531,8 @@
 			],
 			"url": "https://raw.githubusercontent.com/Mehdi-Verfaillie/docx/main/src/config/.docx.schema.json"
 		}
-	]
+	],
+	"editor.unicodeHighlight.nonBasicASCII": false,
+	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
+	"workbench.colorTheme": "Catppuccin Latte"
 }
