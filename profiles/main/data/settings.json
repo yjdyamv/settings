@@ -595,8 +595,4 @@
 		"*.ply": "plyViewer.plyEditor"
 	},
 	
-
-	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\VSCodium\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
-	
-	
 }
