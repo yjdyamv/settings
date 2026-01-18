@@ -3,7 +3,5 @@ resources:
   - keybindings
   - settings
   - snippets
-  - uiState
   - themes
-  - keyboardShortcuts
 additionalFiles: []
