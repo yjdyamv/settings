@@ -182,8 +182,8 @@
 		"CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		"CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		// RelWithDebInfo版本（推荐用于性能分析）
-		"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
-		"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
+		"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5 -fstack-protector-strong -D_FORTIFY_SOURCE=2",
+		"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5 -fstack-protector-strong -D_FORTIFY_SOURCE=2",
 		// C/C++标准设置
 		"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 		"CMAKE_C_STANDARD": "23", // 90 99 11 17 23
