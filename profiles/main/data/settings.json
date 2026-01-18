@@ -378,6 +378,7 @@
 		// 忽略的规则列表
 		"F401" // 忽略未使用的导入
 	],
+	"ty.logLevel": "debug",
 	// Python配置 默认使用ruff格式化(记得在环境里装好ruff) `pip install ruff`
 	"[python]": {
 		"editor.inlayHints.enabled": "on",
