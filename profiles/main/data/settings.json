@@ -175,8 +175,8 @@
 		// -fstack-protector-strong: 强化的栈溢出保护
 		// -D_FORTIFY_SOURCE=2: 编译时检测缓冲区溢出和其他常见的内存安全问题，
 		// -fstack-clash-protection: 防止栈冲突攻击
-		"CMAKE_CXX_FLAGS_DEBUG": "-g -O -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-		"CMAKE_C_FLAGS_DEBUG": "-g -O -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		// Release版本优化
 		// -O3: 启用最高级别的优化（内联、循环展开、向量化等），显著提升性能但编译时间增长
 		// -DNDEBUG: 禁用assert宏，减少运行时开销（assert在Release版本应该被禁用）
