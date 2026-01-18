@@ -158,8 +158,8 @@
 	],
 	// // 1. CMake设置 适用于GCC/CLang/Clang-cl
 	"cmake.configureSettings": {
-		// 默认Debug模式
-		"CMAKE_BUILD_TYPE": "Debug",
+		// 不指定构建模式，在插件界面选择
+		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
 		// 库默认生成静态库，除非指定为`add_library(mylib SHARED test.c)` 或以下的选项打开
 		// "BUILD_SHARED_LIBS": "ON",
 		// 生成编译命令数据库，供clangd使用
