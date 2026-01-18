@@ -11,8 +11,6 @@ disabled:
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
-  - id: Oracle.oracle-java
-    uuid: 00000000-0000-0000-0000-000000000000
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.java
@@ -136,6 +134,8 @@ enabled:
     uuid: 57b4ceec-c35a-4a96-ab38-23c6338df406
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
+  - id: Oracle.oracle-java
+    uuid: 17ce260e-a479-4289-b71d-93cf366d3708
   - id: piotrpalarz.vscode-gitignore-generator
     uuid: c0c04a3d-f3cd-44ce-a9dd-61ad33504bc7
   - id: pranaygp.vscode-css-peek
@@ -148,8 +148,6 @@ enabled:
     uuid: 2061917f-f76a-458a-8da9-f162de22b97e
   - id: robincollins.gistfs-cursor
     uuid: null
-  - id: rust-lang.rust-analyzer
-    uuid: 06574cb4-e5dc-4631-8174-a543a4533621
   - id: saoudrizwan.claude-dev
     uuid: ad94c633-a9d5-4f78-b85f-c664e7d91a0f
   - id: shd101wyy.markdown-preview-enhanced

@@ -4,4 +4,5 @@ resources:
   - settings
   - snippets
   - themes
+  - uiState
 additionalFiles: []
