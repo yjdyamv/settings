@@ -12,6 +12,7 @@
 		"settings",
 		"snippets",
 		"themes",
+		"uiState"
 	],
 	// 编辑器的字体字号等
 	"editor.fontFamily": "Maple Mono NF CN",
