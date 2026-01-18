@@ -594,5 +594,4 @@
 		"*.pcd": "plyViewer.plyEditor",
 		"*.ply": "plyViewer.plyEditor"
 	},
-	
 }

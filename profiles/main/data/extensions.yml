@@ -146,6 +146,8 @@ enabled:
     uuid: 6703768d-d42f-474e-9f6e-5f288d53f6e8
   - id: redhat.vscode-yaml
     uuid: 2061917f-f76a-458a-8da9-f162de22b97e
+  - id: robincollins.gistfs-cursor
+    uuid: null
   - id: rust-lang.rust-analyzer
     uuid: 06574cb4-e5dc-4631-8174-a543a4533621
   - id: saoudrizwan.claude-dev
