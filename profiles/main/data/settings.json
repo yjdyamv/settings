@@ -12,6 +12,7 @@
 		"settings",
 		"snippets",
 		"themes",
+		"uiState"
 	],
 	// 编辑器的字体字号等
 	"editor.fontFamily": "Maple Mono NF CN",
@@ -158,8 +159,8 @@
 	],
 	// // 1. CMake设置 适用于GCC/CLang/Clang-cl
 	"cmake.configureSettings": {
-		// 默认Debug模式
-		"CMAKE_BUILD_TYPE": "Debug",
+		// 不指定构建模式，在插件界面选择
+		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
 		// 库默认生成静态库，除非指定为`add_library(mylib SHARED test.c)` 或以下的选项打开
 		// "BUILD_SHARED_LIBS": "ON",
 		// 生成编译命令数据库，供clangd使用
@@ -173,8 +174,8 @@
 		// -fstack-protector-strong: 强化的栈溢出保护
 		// -D_FORTIFY_SOURCE=2: 编译时检测缓冲区溢出和其他常见的内存安全问题，
 		// -fstack-clash-protection: 防止栈冲突攻击
-		"CMAKE_CXX_FLAGS_DEBUG": "-g -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-		"CMAKE_C_FLAGS_DEBUG": "-g -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		// Release版本优化
 		// -O3: 启用最高级别的优化（内联、循环展开、向量化等），显著提升性能但编译时间增长
 		// -DNDEBUG: 禁用assert宏，减少运行时开销（assert在Release版本应该被禁用）
@@ -182,8 +183,8 @@
 		"CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		"CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		// RelWithDebInfo版本（推荐用于性能分析）
-		"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
-		"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
+		"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5 -fstack-protector-strong -D_FORTIFY_SOURCE=2",
+		"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5 -fstack-protector-strong -D_FORTIFY_SOURCE=2",
 		// C/C++标准设置
 		"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 		"CMAKE_C_STANDARD": "23", // 90 99 11 17 23
@@ -362,7 +363,7 @@
 	
 	
 	// python languageServer
-	"python.languageServer": "Pylance",
+	"python.languageServer": "None",
 	"python.analysis.autoImportCompletions": true, // 启用自动导入补全
 	"python.analysis.indexing": true, // 启用索引以提高性能
 	"python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
@@ -375,6 +376,8 @@
 		// 忽略的规则列表
 		"F401" // 忽略未使用的导入
 	],
+	"ty.logLevel": "debug",
+	
 	// Python配置 默认使用ruff格式化(记得在环境里装好ruff) `pip install ruff`
 	"[python]": {
 		"editor.inlayHints.enabled": "on",
@@ -592,9 +595,7 @@
 		"*.pcd": "plyViewer.plyEditor",
 		"*.ply": "plyViewer.plyEditor"
 	},
-	
-
-	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
+	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.8\\clangd_21.1.8\\bin\\clangd.exe",
 	
 	
 }
