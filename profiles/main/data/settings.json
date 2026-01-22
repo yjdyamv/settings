@@ -172,7 +172,7 @@
 		"CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		"CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		// Debug版本
-		// 为C/C++调试版本添加调试信息，使用DWARF-4格式
+		// 为C/C++调试版本添加调试信息，使用DWARF-5格式
 		// -g: 生成调试信息
 		// -gdwarf-5是最新的
 		// -fdiagnostics-color=always: 编译器输出彩色诊断信息
