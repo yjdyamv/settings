@@ -40,8 +40,6 @@ disabled:
   - id: vscode-icons-team.vscode-icons
     uuid: 9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a
 enabled:
-  - id: adamraichu.zip-viewer
-    uuid: 51bca40f-a124-4202-9612-cb459f8c9690
   - id: astral-sh.ty
     uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
   - id: astro-build.astro-vscode

@@ -165,26 +165,29 @@
 		// "BUILD_SHARED_LIBS": "ON",
 		// 生成编译命令数据库，供clangd使用
 		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+		// 各构建类型均有的安全设置
+		// -fstack-protector-strong: 强化的栈溢出保护
+		// -D_FORTIFY_SOURCE=2: 编译时检测缓冲区溢出和其他常见的内存安全问题，
+		// -fstack-clash-protection: 防止栈冲突攻击
+		"CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		// Debug版本
 		// 为C/C++调试版本添加调试信息，使用DWARF-4格式
 		// -g: 生成调试信息
 		// -gdwarf-5是最新的
 		// -fdiagnostics-color=always: 编译器输出彩色诊断信息
 		// -fno-omit-frame-pointer: 保留帧指针，便于堆栈跟踪和性能分析工具（如perf）获取完整的调用栈
-		// -fstack-protector-strong: 强化的栈溢出保护
-		// -D_FORTIFY_SOURCE=2: 编译时检测缓冲区溢出和其他常见的内存安全问题，
-		// -fstack-clash-protection: 防止栈冲突攻击
-		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
+		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
 		// Release版本优化
 		// -O3: 启用最高级别的优化（内联、循环展开、向量化等），显著提升性能但编译时间增长
 		// -DNDEBUG: 禁用assert宏，减少运行时开销（assert在Release版本应该被禁用）
 		// 及如上的安全保护选项
-		"CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-		"CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG -fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+		"CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG",
 		// RelWithDebInfo版本（推荐用于性能分析）
-		"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5 -fstack-protector-strong -D_FORTIFY_SOURCE=2",
-		"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5 -fstack-protector-strong -D_FORTIFY_SOURCE=2",
+		"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
+		"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
 		// C/C++标准设置
 		"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 		"CMAKE_C_STANDARD": "23", // 90 99 11 17 23
@@ -210,33 +213,62 @@
 	},
 	// // 2. CMake设置 适用于MSVC
 	// "cmake.configureSettings": {
-	// 	// 默认Debug模式
-	// 	"CMAKE_BUILD_TYPE": "Debug",
+	// 	// 不指定构建模式，在插件界面选择
+	//  	// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" 
 	// 	// 生成编译命令数据库，供clangd使用
 	// 	"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
 	// 	// Debug 调试信息 
-	// 	"CMAKE_CXX_FLAGS_DEBUG": "/Zi /Od /MDd /RTC1 /D_DEBUG",
-	// 	"CMAKE_C_FLAGS_DEBUG": "/Zi /Od /MDd /RTC1 /D_DEBUG",
-	// 	"CMAKE_EXE_LINKER_FLAGS_DEBUG": "/DEBUG:FULL /INCREMENTAL",
+	// 	// /Zi: 生成完整的调试信息（PDB格式）
+	// 	// /Od: 禁用优化，确保代码按原始逻辑执行
+	// 	// /MDd: 使用多线程调试版DLL运行时库
+	// 	// /RTC1: 运行时错误检查（栈帧和未初始化变量）
+	// 	// /D_DEBUG: 定义_DEBUG宏
+	// 	// /fp:precise: 精确浮点模型，确保调试时浮点运算一致性
+	// 	// /Oy-: 禁用帧指针省略，保证完整的调用栈信息
+	// 	// // 安全设置
+	// 	// /GS: 启用缓冲区溢出检测
+	// 	// /guard:cf: 启用控制流保护，防止代码执行被篡改
+	// 	// /Qspectre: 启用Spectre漏洞缓解措施
+	// 	// /NXCOMPAT /DYNAMICBASE /GUARD:CF: 链接器选项，启用数据执行保护和地址空间布局随机化等安全特性
+	// 	"CMAKE_CXX_FLAGS_DEBUG": "/Zi /Od /MDd /RTC1 /D_DEBUG /fp:precise /Oy-",
+	// 	"CMAKE_C_FLAGS_DEBUG": "/Zi /Od /MDd /RTC1 /D_DEBUG /fp:precise /Oy-",
+	// 	"CMAKE_EXE_LINKER_FLAGS_DEBUG": "/DEBUG:FULL /INCREMENTAL /NXCOMPAT /DYNAMICBASE /GUARD:CF",
 	// 	// Release版本优化
-	// 	"CMAKE_CXX_FLAGS_RELEASE": "/Ox /DNDEBUG /MD /GL",
-	// 	"CMAKE_C_FLAGS_RELEASE": "/Ox /DNDEBUG /MD /GL",
-	// 	"CMAKE_EXE_LINKER_FLAGS_RELEASE": "/INCREMENTAL:NO /OPT:REF /OPT:ICF /LTCG",
+	// 	// /Ox: 最大速度优化（等同于 /Og /Oi /Ot /Oy /Ob2 /Gs /GF /Gy）
+	// 	// /DNDEBUG: 禁用assert宏，移除调试代码
+	// 	// /MD: 使用多线程发布版DLL运行时库
+	// 	// /GL: 启用全程序优化（需要配合链接时代码生成）,这个和/LTCG配合使用会有问题。关掉了
+	// 	// /Gw: 优化全局数据，移除未引用的全局数据
+	// 	// /LTCG: 启用链接时代码生成，允许跨模块优化
+	// 	// /INCREMENTAL:NO: 禁用增量链接，生成优化的可执行文件
+	// 	// /OPT:REF: 移除未引用的函数和数据
+	// 	// /OPT:ICF: 启用相同代码折叠，减少可执行文件大小
+	// 	"CMAKE_CXX_FLAGS_RELEASE": "/Ox /DNDEBUG /MD /Gw",
+	// 	"CMAKE_C_FLAGS_RELEASE": "/Ox /DNDEBUG /MD /Gw",
+	// 	"CMAKE_EXE_LINKER_FLAGS_RELEASE": "/INCREMENTAL:NO /OPT:REF /OPT:ICF /LTCG /NXCOMPAT /DYNAMICBASE /GUARD:CF",
 	// 	// RelWithDebInfo版本（推荐用于性能分析）
-	// 	"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD",
-	// 	"CMAKE_C_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD",
-	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "/DEBUG /INCREMENTAL:NO /OPT:REF",
+	// 	"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD /Oy- /fp:precise",
+	// 	"CMAKE_C_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD /Oy- /fp:precise",
+	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "/DEBUG /INCREMENTAL:NO /OPT:REF /NXCOMPAT /DYNAMICBASE /GUARD:CF",
 	// 	// C/C++标准设置
-	// 	"CMAKE_CXX_STANDARD": "20",
-	// 	"CMAKE_C_STANDARD": "17",  // C23在MSVC中支持有限，建议用C17
+	// 	"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
+	// 	"CMAKE_C_STANDARD": "23",  // 90 99 11 17 23
 	// 	"CMAKE_CXX_STANDARD_REQUIRED": "ON",
 	// 	"CMAKE_C_STANDARD_REQUIRED": "ON",
-	// 	// MSVC 编译器警告设置
-	// 	"CMAKE_CXX_FLAGS": "/W4 /WX- /permissive- /EHsc /utf-8", // W4高级警告，permissive-严格标准
-	// 	"CMAKE_C_FLAGS": "/W4 /WX- /utf-8",
+	// 	// MSVC 编译器警告及标准合规性设置
+	// 	// /W4: 启用4级警告（高级警告，推荐用于代码质量检查）
+	// 	// /WX-: 警告不视为错误（设为/WX则警告当错误处理）
+	// 	// /permissive-: 严格C++标准合规模式，禁用Microsoft扩展
+	// 	// /EHsc: C++异常处理模型（同步异常，extern "C"函数不抛异常）
+	// 	// /utf-8: 源代码和执行字符集都使用UTF-8编码
+	// 	// /Zc:__cplusplus: 正确设置__cplusplus宏值
+	// 	// /Zc:__STDC__: 在C模式下正确定义__STDC__宏
+	// 	"CMAKE_CXX_FLAGS": "/W4 /WX- /permissive- /EHsc /utf-8 /GS /guard:cf /Qspectre", // W4高级警告，permissive-严格标准
+	// 	"CMAKE_C_FLAGS": "/W4 /WX- /utf-8 /GS /guard:cf /Qspectre",
 	// 	// 调试和开发相关设置
 	// 	"CMAKE_VERBOSE_MAKEFILE": "OFF",
 	// 	"CMAKE_COLOR_DIAGNOSTICS": "ON",
+	// 	// LTO这个好像不能用在当前配置的Release模式下，关掉
 	// 	// MSVC 特定优化
 	// 	"CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDLL", // Release用MD，Debug会自动用MDd
 	// 	"CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD": "ON",
