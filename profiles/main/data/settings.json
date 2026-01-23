@@ -286,7 +286,6 @@
 	// 	"CMAKE_BUILD_PARALLEL_LEVEL": "0",
 	// 	// Windows 动态库导出全部符号（.dll, .lib等）对于使用动态库来说必不可少
 	// 	"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
-
 	// },
 	"cmake.buildDirectory": "${workspaceFolder}/build",
 	"cmake.generator": "Ninja", // cmake的生成器为Ninja
