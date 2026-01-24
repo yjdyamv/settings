@@ -100,7 +100,9 @@
 	// xmake
 	"xmake.buildDirectory": "${workspaceFolder}/build",
 	"xmake.compileCommandsBackend": "clangd",
-	"xmake.compileCommandsDirectory": "build", // 设置compile_commands.json位置
+	"xmake.autoGenerateCompileCommands": "onBuild", // 在每次构建时自动生成 compile_commands.json 文件
+	"xmake.compileCommandsDirectory": "build", // 设置compile_commands.json位置",
+	"xmake.debugConfigType": "codelldb",
 	// clangd 及 微软C/C++扩展设置
 	"C_Cpp.intelliSenseEngine": "disabled", // 禁用微软的IntelliSense
 	"C_Cpp.errorSquiggles": "disabled",
@@ -133,7 +135,7 @@
 		// 在参数前加入-，如-modernize-use-trailing-return-type，将会禁用某一规则
 		"--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*,google-*",
 		// 同时开启的任务数量
-		"-j=8",
+		"-j=16",
 		// pch优化的位置(memory 或 disk，选择memory会增加内存开销，但会提升性能) 推荐在板子上使用disk
 		"--pch-storage=disk",
 		// 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符，乃至函数末
@@ -157,7 +159,7 @@
 		//   Add:
 		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
 	],
-	// // 1. CMake设置 适用于GCC/CLang/Clang-cl
+	// // 1. CMake设置 适用于GCC(主要win+linux)/CLang(linux+win) Clang(msvc)有点诡异
 	"cmake.configureSettings": {
 		// 不指定构建模式，在插件界面选择
 		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
@@ -210,7 +212,8 @@
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",    // 只在 Release 开启
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO": "OFF",
-		// "CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",  // 对GCC无影响，仅对MSVC有用
+		// Windows 动态库导出全部符号（.dll, .lib等）对于使用动态库来说必不可少
+		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",  // 对GCC无影响，仅对MSVC有效
 		// RPATH设置 - 确保运行时能找到共享库
 		"CMAKE_MACOSX_RPATH": "ON",                // macOS RPATH设置
 		"CMAKE_SKIP_BUILD_RPATH": "OFF",           // 构建时保留RPATH
@@ -637,6 +640,7 @@
 		"*.pcd": "plyViewer.plyEditor",
 		"*.ply": "plyViewer.plyEditor"
 	},
+	"vscode-edge-devtools.webhintInstallNotification": true,
 	
 	
 }
