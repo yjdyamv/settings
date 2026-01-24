@@ -133,7 +133,7 @@
 		// 在参数前加入-，如-modernize-use-trailing-return-type，将会禁用某一规则
 		"--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*,google-*",
 		// 同时开启的任务数量
-		"-j=8",
+		"-j=16",
 		// pch优化的位置(memory 或 disk，选择memory会增加内存开销，但会提升性能) 推荐在板子上使用disk
 		"--pch-storage=disk",
 		// 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符，乃至函数末
@@ -171,7 +171,6 @@
 		// -fstack-clash-protection: 防止栈冲突攻击
 		"CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		"CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-		"CMAKE_EXE_LINKER_FLAGS": "-pie",  // 链接时安全选项，对于main.exe会产生类似libmain.dll.a的中间文件
 		// 1. Debug版本
 		// 为C/C++调试版本添加调试信息，使用DWARF-5格式
 		// -g: 生成调试信息
@@ -183,7 +182,6 @@
 		// 2. Release版本优化
 		// -O3: 启用最高级别的优化（内联、循环展开、向量化等），显著提升性能但编译时间增长
 		// -DNDEBUG: 禁用assert宏，减少运行时开销（assert在Release版本应该被禁用）
-		// 及如上的安全保护选项
 		"CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
 		"CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG",
 		// 3. RelWithDebInfo版本（推荐用于性能分析）
@@ -287,7 +285,6 @@
 	// 	"CMAKE_BUILD_PARALLEL_LEVEL": "0",
 	// 	// Windows 动态库导出全部符号（.dll, .lib等）对于使用动态库来说必不可少
 	// 	"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
-
 	// },
 	"cmake.buildDirectory": "${workspaceFolder}/build",
 	"cmake.generator": "Ninja", // cmake的生成器为Ninja
