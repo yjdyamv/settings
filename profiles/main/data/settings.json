@@ -100,7 +100,9 @@
 	// xmake
 	"xmake.buildDirectory": "${workspaceFolder}/build",
 	"xmake.compileCommandsBackend": "clangd",
-	"xmake.compileCommandsDirectory": "build", // 设置compile_commands.json位置
+	"xmake.autoGenerateCompileCommands": "onBuild", // 在每次构建时自动生成 compile_commands.json 文件
+	"xmake.compileCommandsDirectory": "build", // 设置compile_commands.json位置",
+	"xmake.debugConfigType": "codelldb",
 	// clangd 及 微软C/C++扩展设置
 	"C_Cpp.intelliSenseEngine": "disabled", // 禁用微软的IntelliSense
 	"C_Cpp.errorSquiggles": "disabled",
@@ -639,6 +641,7 @@
 		"*.ply": "plyViewer.plyEditor"
 	},
 	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.8\\clangd_21.1.8\\bin\\clangd.exe",
+	"vscode-edge-devtools.webhintInstallNotification": true,
 	
 	
 }
