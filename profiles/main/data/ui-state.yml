@@ -275,8 +275,8 @@ workbench.activity.placeholderViewlets: "[{\"id\":\"workbench.view.explorer\",\
   rces/LeetCode.svg\",\"scheme\":\"file\"},\"name\":\"LeetCode\",\"isBuiltin\":\
   false,\"views\":[{}]},{\"id\":\"workbench.view.extension.tinymist-activitybar\
   \",\"iconUrl\":{\"$mid\":1,\"path\":\"%%EXTENSION_DATA_PATH%%/myriad-dreamin.\
-  tinymist-0.14.8-linux-x64/icons/ti.png\",\"scheme\":\"file\"},\"name\":\"Tiny\
-  mist\",\"isBuiltin\":false,\"views\":[{\"when\":\"ext.tinymistActivated\"},{\
+  tinymist-0.14.10-linux-x64/icons/ti.png\",\"scheme\":\"file\"},\"name\":\"Tin\
+  ymist\",\"isBuiltin\":false,\"views\":[{\"when\":\"ext.tinymistActivated\"},{\
   \"when\":\"ext.tinymistActivated &&
   ext.tinymistDevKit\"},{\"when\":\"ext.tinymistActivated\"},{\"when\":\"ext.ti\
   nymistActivated\"},{\"when\":\"ext.tinymistActivated\"},{\"when\":\"ext.tinym\
@@ -330,7 +330,7 @@ workbench.auxiliarybar.placeholderPanels: '[{"id":"workbench.panel.chat","themeI
   || chatPanelParticipantRegistered || !chatSetupDisabled &&
   !chatSetupHidden"}]},{"id":"workbench.viewContainer.agentSessions","name":"Agents","isBuiltin":false},{"id":"workbench.view.extension.claude-dev-ActivityBar","iconUrl":{"$mid":1,"path":"%%EXTENSION_DATA_PATH%%/saoudrizwan.claude-dev-3.52.0/assets/icons/icon.svg","scheme":"file"},"name":"Cline","isBuiltin":false,"views":[{}]}]'
 workbench.auxiliaryBar.size: "300"
-workbench.editor.languageDetectionOpenedLanguages.global: '[["pip-requirements",true],["pyproject-toml",true],["yaml",true],["toml",true],["ignore",true],["cmake",true],["python",true],["plaintext",true],["cpp",true],["json",true],["markdown",true],["jsonc",true]]'
+workbench.editor.languageDetectionOpenedLanguages.global: '[["pip-requirements",true],["pyproject-toml",true],["yaml",true],["toml",true],["ignore",true],["cmake",true],["python",true],["cpp",true],["json",true],["markdown",true],["plaintext",true],["jsonc",true]]'
 workbench.explorer.views.state.hidden: '[{"id":"outline","isHidden":false},{"id":"timeline","isHidden":false},{"id":"workbench.explorer.openEditorsView","isHidden":true},{"id":"workbench.explorer.fileView","isHidden":false},{"id":"npm","isHidden":true},{"id":"dartDependencyTree","isHidden":false},{"id":"xmlTreeView","isHidden":false},{"id":"clangd.typeHierarchyView","isHidden":false},{"id":"clangd.memoryUsage","isHidden":false},{"id":"clangd.ast","isHidden":false},{"id":"asm-code-lens.calcview-explorer","isHidden":false},{"id":"rustDependencies","isHidden":false},{"id":"workbench.explorer.emptyView","isHidden":false},{"id":"claude-dev.SidebarProvider","isHidden":false},{"id":"latex-workshop-commands","isHidden":false},{"id":"latex-workshop-structure","isHidden":false},{"id":"latex-workshop-snippet-view","isHidden":false},{"id":"thunder-client-sidebar","isHidden":false},{"id":"workbench.panel.markers.view","isHidden":false,"order":1},{"id":"miseTasksView","isHidden":false},{"id":"miseToolsView","isHidden":false},{"id":"miseEnvsView","isHidden":false},{"id":"gl.chatView","isHidden":false},{"id":"issuesAndMrs","isHidden":false},{"id":"gl.webview.duo-chat-v2","isHidden":false},{"id":"remoteSecurityScanning","isHidden":false},{"id":"currentBranchInfo","isHidden":false},{"id":"gl.webview.agentic-tabs","isHidden":false},{"id":"foundProjects","isHidden":false},{"id":"run-config","isHidden":false}]'
 workbench.panel.alignment: center
 workbench.panel.chat.hidden: '[{"id":"workbench.panel.chat.view.copilot","isHidden":false}]'
