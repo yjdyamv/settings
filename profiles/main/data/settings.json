@@ -157,7 +157,7 @@
 		//   Add:
 		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
 	],
-	// // 1. CMake设置 适用于GCC/CLang/Clang-cl
+	// // 1. CMake设置 适用于GCC(主要win+linux)/CLang(linux+win) Clang(msvc)有点诡异
 	"cmake.configureSettings": {
 		// 不指定构建模式，在插件界面选择
 		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
@@ -171,6 +171,7 @@
 		// -fstack-clash-protection: 防止栈冲突攻击
 		"CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		"CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+		"CMAKE_EXE_LINKER_FLAGS": "-pie",  // 链接时安全选项，在win上对于main.exe会产生类似libmain.dll.a的中间文件
 		// 1. Debug版本
 		// 为C/C++调试版本添加调试信息，使用DWARF-5格式
 		// -g: 生成调试信息
@@ -209,7 +210,8 @@
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",    // 只在 Release 开启
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO": "OFF",
-		// "CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",  // 对GCC无影响，仅对MSVC有用
+		// Windows 动态库导出全部符号（.dll, .lib等）对于使用动态库来说必不可少
+		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",  // 对GCC无影响，仅对MSVC有效
 		// RPATH设置 - 确保运行时能找到共享库
 		"CMAKE_MACOSX_RPATH": "ON",                // macOS RPATH设置
 		"CMAKE_SKIP_BUILD_RPATH": "OFF",           // 构建时保留RPATH

@@ -46,6 +46,8 @@ enabled:
     uuid: 1fbbc8b0-7432-4b7e-8774-3336151da2f3
   - id: batisteo.vscode-django
     uuid: 4b41a5a8-170e-4156-b2c0-10efb270abbc
+  - id: BazelBuild.vscode-bazel
+    uuid: e21a6113-833a-4583-b519-869fd1c1c384
   - id: bmalehorn.vscode-fish
     uuid: efa79b03-91c5-4c6a-9846-0a7b6f7af05e
   - id: bradlc.vscode-tailwindcss
