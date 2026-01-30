@@ -420,7 +420,7 @@
 	
 	
 	// python languageServer
-	"python.languageServer": "None",
+	"python.languageServer": "Pylance",
 	"python.analysis.autoImportCompletions": true, // 启用自动导入补全
 	"python.analysis.indexing": true, // 启用索引以提高性能
 	"python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
@@ -434,7 +434,6 @@
 		"F401" // 忽略未使用的导入
 	],
 	"ty.logLevel": "debug",
-	
 	// Python配置 默认使用ruff格式化(记得在环境里装好ruff) `pip install ruff`
 	"[python]": {
 		"editor.inlayHints.enabled": "on",
