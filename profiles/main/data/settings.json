@@ -61,7 +61,9 @@
 		}
 	},
 	"terminal.integrated.inheritEnv": false,
-
+	// decompiler
+	"vscode-decompiler.tool.ghidra.path": "D:\\ghidra_12.0_PUBLIC\\support\\analyzeHeadless.bat",
+	
 	
 	// latex-workshop setting
 	"latex-workshop.latex.tools": [
@@ -153,7 +155,6 @@
 		"--enable-config",
 		// 设置格式化style
 		"--fallback-style=google",
-		"--pch-storage=memory",
 		"--ranking-model=heuristics",
 		"--suggest-missing-includes"
 	],
@@ -165,9 +166,9 @@
 		//   Add:
 		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
 	],
-
-
-	// // 1. CMake设置 主要适用于[GCC/Clang](linux+win(ucrt64)) clang(MSVC)有点诡异
+	
+	
+	// // 1. CMake设置 主要适用于[GCC/CLang](linux+win(ucrt64)) Clang(msvc)有点诡异
 	"cmake.configureSettings": {
 		// 不指定构建模式，在插件界面选择
 		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
@@ -187,8 +188,8 @@
 		// -gdwarf-5是最新的
 		// -fdiagnostics-color=always: 编译器输出彩色诊断信息
 		// -fno-omit-frame-pointer: 保留帧指针，便于堆栈跟踪和性能分析工具（如perf）获取完整的调用栈
-		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fno-omit-frame-pointer",
-		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fno-omit-frame-pointer",
+		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
+		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
 		// 2. Release版本优化
 		// -O3: 启用最高级别的优化（内联、循环展开、向量化等），显著提升性能但编译时间增长
 		// -DNDEBUG: 禁用assert宏，减少运行时开销（assert在Release版本应该被禁用）
@@ -220,12 +221,13 @@
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",    // 只在 Release 开启
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO": "OFF",
 		// RPATH设置 - 确保运行时能找到共享库
+		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
 		"CMAKE_MACOSX_RPATH": "ON",                // macOS RPATH设置
 		"CMAKE_SKIP_BUILD_RPATH": "OFF",           // 构建时保留RPATH
 		"CMAKE_BUILD_WITH_INSTALL_RPATH": "OFF",   // 构建时不使用安装RPATH
 		"CMAKE_INSTALL_RPATH_USE_LINK_PATH": "ON", // 安装时使用链接路径
 	},
-	// // 2. CMake设置 适用于[MSVC/clang-cl](clang-cl可以接受MSVC的编译选项)
+	// // 2. CMake设置 适用于MSVC/clang-cl(msvc) clang-cl可以接受大部分MSVC选项，及部分gcc/clang
 	// "cmake.configureSettings": {
 	// 	// 不指定构建模式，在插件界面选择
 	//  	// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" 
@@ -260,7 +262,7 @@
 	// 	// RelWithDebInfo版本（推荐用于性能分析）
 	// 	"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD /Oy- /fp:precise",
 	// 	"CMAKE_C_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD /Oy- /fp:precise",
-	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "/DEBUG /INCREMENTAL:NO /OPT:REF",
+	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "/DEBUG:FULL /INCREMENTAL:NO /OPT:REF",
 	// 	// C/C++标准设置
 	// 	"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 	// 	"CMAKE_C_STANDARD": "23",  // 90 99 11 17 23
@@ -351,9 +353,9 @@
 		"type": "lldb",
 		// "MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
 		"cwd": "${workspaceFolder}",
-		"stopOnEntry": true, // 在代码开头设置断点
 		"environment": [],
 		"console": "integratedTerminal",
+		"stopAtEntry": true, // 在代码开头设置断点
 		"setupCommands": [
 			{
 				"description": "Set assembly code display to Intel syntax format",
@@ -407,14 +409,15 @@
 	"lldb.verboseLogging": true,
 	// 启用命令自动补全功能，提高调试效率
 	"lldb.commandCompletions": true,
-	// 控制台模式：split=分割模式，可以直接在Debug Console中输入变量名查看值。commands=仅命令模式，evaluate=仅求值模式
+	// 控制台模式：split=分割模式，可以直接在Debug Console中输入变量名查看值
+	// 其他选项：commands=仅命令模式，evaluate=仅求值模式
 	"lldb.consoleMode": "split",
 	"lldb.displayFormat": "auto", // 变量显示格式
-	"lldb.launch.expressions": "native", // 表达式求值模式，对于漂亮的显示vector比较好
+	"lldb.launch.expressions": "native", // 表达式求值模式
 	
 	
 	// python languageServer
-	"python.languageServer": "None",
+	"python.languageServer": "Pylance",
 	"python.analysis.autoImportCompletions": true, // 启用自动导入补全
 	"python.analysis.indexing": true, // 启用索引以提高性能
 	"python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
@@ -428,7 +431,6 @@
 		"F401" // 忽略未使用的导入
 	],
 	"ty.logLevel": "debug",
-	
 	// Python配置 默认使用ruff格式化(记得在环境里装好ruff) `pip install ruff`
 	"[python]": {
 		"editor.inlayHints.enabled": "on",
@@ -540,6 +542,8 @@
 		"editor.stickyScroll.defaultModel": "foldingProviderModel",
 		"files.eol": "\n"
 	},
+
+
 	// svelte
 	"svelte.enable-ts-plugin": true,
 	// tauri
@@ -580,14 +584,20 @@
 	// vscode-icons设置
 	"vsicons.presets.angular": false,
 	"vsicons.dontShowNewVersionMessage": false,
+	
+	
 	// drawio
 	"hediet.vscode-drawio.resizeImages": null,
 	"hediet.vscode-drawio.appearance": "automatic",
+	
+	
 	// Hex Editor
 	"hexeditor.columnWidth": 16,
 	"hexeditor.showDecodedText": true,
 	"hexeditor.defaultEndianness": "little",
 	"hexeditor.inspectorType": "aside",
+	
+	
 	// gitlens设置
 	"gitlens.views.scm.grouped.views": {
 		"commits": true,
@@ -606,13 +616,12 @@
 	"gitlens.codeLens.authors.enabled": false,
 	"gitlens.ai.model": "vscode",
 	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
-	"git.openRepositoryInParentFolders": "never",
-	"git.autofetch": true,
 	"gitlens.graph.minimap.additionalTypes": [
 		"stashes",
 		"localBranches"
 	],
-
+	"git.openRepositoryInParentFolders": "never",
+	"git.autofetch": true,
 
 	// live server 设置
 	"liveServer.settings.donotVerifyTags": true,
@@ -647,6 +656,8 @@
 		"*.ply": "plyViewer.plyEditor"
 	},
 	"clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.8\\clangd_21.1.8\\bin\\clangd.exe",
+
+	
 	"vscode-edge-devtools.webhintInstallNotification": true,
 	
 	
