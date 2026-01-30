@@ -61,8 +61,8 @@
 		}
 	},
 	"terminal.integrated.inheritEnv": false,
-	// decompiler
-	"vscode-decompiler.tool.ghidra.path": "D:\\ghidra_12.0_PUBLIC\\support\\analyzeHeadless.bat",
+
+	
 	// latex-workshop setting
 	"latex-workshop.latex.tools": [
 		{
@@ -87,6 +87,8 @@
 	"latex-workshop.latex.autoClean.run": "never",
 	"latex-workshop.latex.autoBuild.run": "never",
 	"latex-workshop.latex.outDir": "./build",
+	
+	
 	"[c]": {
 		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
 		"editor.formatOnSave": true,
@@ -97,12 +99,16 @@
 		"editor.formatOnSave": true,
 		"editor.formatOnType": false
 	},
+	
+	
 	// xmake
 	"xmake.buildDirectory": "${workspaceFolder}/build",
 	"xmake.compileCommandsBackend": "clangd",
 	"xmake.autoGenerateCompileCommands": "onBuild", // 在每次构建时自动生成 compile_commands.json 文件
 	"xmake.compileCommandsDirectory": "build", // 设置compile_commands.json位置",
 	"xmake.debugConfigType": "codelldb",
+	
+	
 	// clangd 及 微软C/C++扩展设置
 	"C_Cpp.intelliSenseEngine": "disabled", // 禁用微软的IntelliSense
 	"C_Cpp.errorSquiggles": "disabled",
@@ -159,7 +165,9 @@
 		//   Add:
 		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
 	],
-	// // 1. CMake设置 适用于GCC(主要win+linux)/CLang(linux+win) Clang(msvc)有点诡异
+
+
+	// // 1. CMake设置 主要适用于[GCC/Clang](linux+win(ucrt64)) clang(MSVC)有点诡异
 	"cmake.configureSettings": {
 		// 不指定构建模式，在插件界面选择
 		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
@@ -173,15 +181,14 @@
 		// -fstack-clash-protection: 防止栈冲突攻击
 		"CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		"CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-		"CMAKE_EXE_LINKER_FLAGS": "-pie",  // 链接时安全选项，在win上对于main.exe会产生类似libmain.dll.a的中间文件
 		// 1. Debug版本
 		// 为C/C++调试版本添加调试信息，使用DWARF-5格式
 		// -g: 生成调试信息
 		// -gdwarf-5是最新的
 		// -fdiagnostics-color=always: 编译器输出彩色诊断信息
 		// -fno-omit-frame-pointer: 保留帧指针，便于堆栈跟踪和性能分析工具（如perf）获取完整的调用栈
-		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
-		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fdiagnostics-color=always -fno-omit-frame-pointer",
+		"CMAKE_CXX_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fno-omit-frame-pointer",
+		"CMAKE_C_FLAGS_DEBUG": "-g -O1 -gdwarf-5 -fno-omit-frame-pointer",
 		// 2. Release版本优化
 		// -O3: 启用最高级别的优化（内联、循环展开、向量化等），显著提升性能但编译时间增长
 		// -DNDEBUG: 禁用assert宏，减少运行时开销（assert在Release版本应该被禁用）
@@ -212,15 +219,13 @@
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",    // 只在 Release 开启
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO": "OFF",
-		// Windows 动态库导出全部符号（.dll, .lib等）对于使用动态库来说必不可少
-		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",  // 对GCC无影响，仅对MSVC有效
 		// RPATH设置 - 确保运行时能找到共享库
 		"CMAKE_MACOSX_RPATH": "ON",                // macOS RPATH设置
 		"CMAKE_SKIP_BUILD_RPATH": "OFF",           // 构建时保留RPATH
 		"CMAKE_BUILD_WITH_INSTALL_RPATH": "OFF",   // 构建时不使用安装RPATH
 		"CMAKE_INSTALL_RPATH_USE_LINK_PATH": "ON", // 安装时使用链接路径
 	},
-	// // 2. CMake设置 适用于MSVC
+	// // 2. CMake设置 适用于[MSVC/clang-cl](clang-cl可以接受MSVC的编译选项)
 	// "cmake.configureSettings": {
 	// 	// 不指定构建模式，在插件界面选择
 	//  	// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" 
@@ -385,6 +390,8 @@
 	// 	"environment": [],
 	// 	"console": "integratedTerminal",
 	// },
+
+
 	// lldb插件相关设置
 	// 启动时执行的初始化命令（在目标程序启动前执行）
 	"lldb.launch.initCommands": [],
@@ -400,11 +407,10 @@
 	"lldb.verboseLogging": true,
 	// 启用命令自动补全功能，提高调试效率
 	"lldb.commandCompletions": true,
-	// 控制台模式：split=分割模式，可以直接在Debug Console中输入变量名查看值
-	// 其他选项：commands=仅命令模式，evaluate=仅求值模式
+	// 控制台模式：split=分割模式，可以直接在Debug Console中输入变量名查看值。commands=仅命令模式，evaluate=仅求值模式
 	"lldb.consoleMode": "split",
 	"lldb.displayFormat": "auto", // 变量显示格式
-	"lldb.launch.expressions": "simple", // 表达式求值模式
+	"lldb.launch.expressions": "native", // 表达式求值模式，对于漂亮的显示vector比较好
 	
 	
 	// python languageServer

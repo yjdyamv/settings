@@ -19,6 +19,8 @@ disabled:
     uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
+  - id: Oracle.oracle-java
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.java
@@ -176,8 +178,6 @@ enabled:
     uuid: 6efd3abb-3c6e-49c8-b8ce-6df58982255b
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
-  - id: Oracle.oracle-java
-    uuid: 17ce260e-a479-4289-b71d-93cf366d3708
   - id: OrangeX4.vscode-typst-sync
     uuid: 1144f210-711a-4f9f-894c-7b027d2bf486
   - id: piotrpalarz.vscode-gitignore-generator
