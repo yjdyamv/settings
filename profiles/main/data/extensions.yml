@@ -98,8 +98,6 @@ enabled:
     uuid: 8f0e51b3-cc69-4cf9-abab-97289d29d6de
   - id: llvm-vs-code-extensions.vscode-clangd
     uuid: 103154cb-b81d-4e1b-8281-c5f4fa563d37
-  - id: mads-hartmann.bash-ide-vscode
-    uuid: b1b0f283-8246-4e90-832e-a6c409d378d1
   - id: maziac.asm-code-lens
     uuid: c7c7dabf-1f16-4ec3-8ec6-7862b0beca2a
   - id: mechatroner.rainbow-csv
@@ -130,6 +128,8 @@ enabled:
     uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
   - id: ms-vscode.hexeditor
     uuid: cc7d2112-5178-4472-8e0e-25dced95e7f0
+  - id: ms-vscode.powershell
+    uuid: 40d39ce9-c381-47a0-80c8-a6661f731eab
   - id: ms-vscode.vscode-typescript-next
     uuid: 15305aca-2588-4ca0-8147-ab2c64730b82
   - id: msjsdiag.vscode-react-native
@@ -150,8 +150,6 @@ enabled:
     uuid: 6703768d-d42f-474e-9f6e-5f288d53f6e8
   - id: redhat.vscode-yaml
     uuid: 2061917f-f76a-458a-8da9-f162de22b97e
-  - id: robincollins.gistfs-cursor
-    uuid: null
   - id: saoudrizwan.claude-dev
     uuid: ad94c633-a9d5-4f78-b85f-c664e7d91a0f
   - id: shd101wyy.markdown-preview-enhanced
