@@ -155,7 +155,6 @@
 		"--enable-config",
 		// 设置格式化style
 		"--fallback-style=google",
-		"--pch-storage=memory",
 		"--ranking-model=heuristics",
 		"--suggest-missing-includes"
 	],
@@ -169,7 +168,7 @@
 	],
 	
 	
-	// // 1. CMake设置 适用于GCC(主要win+linux)/CLang(linux+win) Clang(msvc)有点诡异
+	// // 1. CMake设置 主要适用于[GCC/CLang](linux+win(ucrt64)) Clang(msvc)有点诡异
 	"cmake.configureSettings": {
 		// 不指定构建模式，在插件界面选择
 		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
@@ -183,7 +182,6 @@
 		// -fstack-clash-protection: 防止栈冲突攻击
 		"CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
 		"CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-		"CMAKE_EXE_LINKER_FLAGS": "-pie",  // 链接时安全选项，在win上对于main.exe会产生类似libmain.dll.a的中间文件
 		// 1. Debug版本
 		// 为C/C++调试版本添加调试信息，使用DWARF-5格式
 		// -g: 生成调试信息
@@ -222,15 +220,14 @@
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",    // 只在 Release 开启
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO": "OFF",
-		// Windows 动态库导出全部符号（.dll, .lib等）对于使用动态库来说必不可少
-		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",  // 对GCC无影响，仅对MSVC有效
 		// RPATH设置 - 确保运行时能找到共享库
+		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
 		"CMAKE_MACOSX_RPATH": "ON",                // macOS RPATH设置
 		"CMAKE_SKIP_BUILD_RPATH": "OFF",           // 构建时保留RPATH
 		"CMAKE_BUILD_WITH_INSTALL_RPATH": "OFF",   // 构建时不使用安装RPATH
 		"CMAKE_INSTALL_RPATH_USE_LINK_PATH": "ON", // 安装时使用链接路径
 	},
-	// // 2. CMake设置 适用于MSVC
+	// // 2. CMake设置 适用于MSVC/clang-cl(msvc) clang-cl可以接受大部分MSVC选项，及部分gcc/clang
 	// "cmake.configureSettings": {
 	// 	// 不指定构建模式，在插件界面选择
 	//  	// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" 
@@ -265,7 +262,7 @@
 	// 	// RelWithDebInfo版本（推荐用于性能分析）
 	// 	"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD /Oy- /fp:precise",
 	// 	"CMAKE_C_FLAGS_RELWITHDEBINFO": "/O2 /Zi /DNDEBUG /MD /Oy- /fp:precise",
-	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "/DEBUG /INCREMENTAL:NO /OPT:REF",
+	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "/DEBUG:FULL /INCREMENTAL:NO /OPT:REF",
 	// 	// C/C++标准设置
 	// 	"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 	// 	"CMAKE_C_STANDARD": "23",  // 90 99 11 17 23
@@ -356,9 +353,9 @@
 		"type": "lldb",
 		// "MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
 		"cwd": "${workspaceFolder}",
-		"stopOnEntry": true, // 在代码开头设置断点
 		"environment": [],
 		"console": "integratedTerminal",
+		"stopAtEntry": true, // 在代码开头设置断点
 		"setupCommands": [
 			{
 				"description": "Set assembly code display to Intel syntax format",
