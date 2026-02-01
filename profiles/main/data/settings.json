@@ -308,8 +308,8 @@
 	"cmake.clearOutputBeforeBuild": true, // 构建前清除输出
 	"cmake.launchBehavior": "reuseTerminal",
 	"cmake.installPrefix": "bin",
-	// // 1.适用于GCC/Clang/Clang-cl的调试
-	// // 1.1 使用GDB
+	// // 1.适用于GCC/Clang的调试
+	// // 1.1.1 使用GDB(MS C/C++ Extension)
 	// "cmake.debugConfig": {
 	// 	"stopAtEntry": true, // 在代码开头设置断点
 	// 	"type": "cppdbg",
@@ -347,6 +347,15 @@
 	// 			"ignoreFailures": true
 	// 		}
 	// 	]
+	// },
+	// 1.1.2 GDB(Native Debug)
+	// "cmake.debugConfig": {
+	// 	"type": "gdb",
+	// 	"request": "launch",
+	// 	"cwd": "${workspaceRoot}",
+	// 	"target": "${command:cmake.launchTargetPath}", // 可执行文件路径。对于codelldb和MS C/C++则无须设置，会自动传到"program"里。
+    //     "valuesFormatting": "prettyPrinters",
+	// 	"stopAtEntry": true,
 	// },
 	// // 1.2 使用LLDB
 	"cmake.debugConfig": {
