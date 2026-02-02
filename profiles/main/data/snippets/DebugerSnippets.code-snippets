@@ -26,12 +26,27 @@
         ],
         "description": "CodeLLDB debug configuration with enhanced LLDB setup and formatting"
     },
-    
-    "GDB Debug Configuration": {
-        "prefix": "gdb-config",
+
+    "GDB (Native Debug) Configuration": {
+        "prefix": "gdb-native-debug",
         "body": [
             "{",
-            "    \"name\": \"${1:GDB Debug}\",",
+            "    \"name\": \"${1:GDB Debug (Native Debug)}\",",
+            "    \"type\": \"gdb\",",
+            "    \"request\": \"launch\",",
+            "    \"target\": \"\\${workspaceFolder}/${2:build/testc}\",",
+            "    \"cwd\": \"\\${workspaceRoot}\",",
+            "    \"valuesFormatting\": \"prettyPrinters\"",
+            "},"
+        ],
+        "description": "GDB debug configuration with NATIVE DEBUG"
+    },
+    
+    "GDB (MS C/C++ Extension) Debug Configuration": {
+        "prefix": "gdb-cppdbg",
+        "body": [
+            "{",
+            "    \"name\": \"${1:GDB (MS C/C++ Extension) Debug}\",",
             "    \"type\": \"cppdbg\",",
             "    \"request\": \"launch\",",
             "    \"program\": \"\\${workspaceFolder}/${2:build/program}\",",
@@ -55,7 +70,7 @@
             "    ]",
             "},"
         ],
-        "description": "Custom GDB debug configuration with enhanced setup"
+        "description": "Custom GDB debug configuration with MS C/C++ extension"
     },
 
     "MSVC Debug Configuration": {

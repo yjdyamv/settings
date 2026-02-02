@@ -110,6 +110,8 @@ enabled:
     uuid: 2e0d34f4-f7bd-4ee3-a6e8-341db09e58a8
   - id: LeetCode.vscode-leetcode
     uuid: 66682185-9f80-4b70-8b8c-9e492935c105
+  - id: llvm-vs-code-extensions.lldb-dap
+    uuid: 8f0e51b3-cc69-4cf9-abab-97289d29d6de
   - id: llvm-vs-code-extensions.vscode-clangd
     uuid: 103154cb-b81d-4e1b-8281-c5f4fa563d37
   - id: loilo.snazzy-light
@@ -160,6 +162,8 @@ enabled:
     uuid: cc7d2112-5178-4472-8e0e-25dced95e7f0
   - id: ms-vscode.js-debug-nightly
     uuid: 7acbb4ce-c85a-49d4-8d95-a8054406ae97
+  - id: ms-vscode.makefile-tools
+    uuid: e09cf600-90a1-414e-92a0-031f1a5391c6
   - id: ms-vscode.powershell
     uuid: 40d39ce9-c381-47a0-80c8-a6661f731eab
   - id: ms-vscode.remote-explorer
