@@ -101,10 +101,10 @@ ms-python.python: "{\"PYTHON_WAS_DISCOVERY_TRIGGERED_C:\\\\USERS\\\\YUAN\\\\DES\
   KEYGUARD-APP\":true}"
 ms-toolsai.jupyter: '{"CACHE_KEY_FOR_JUPYTER_KERNELSPEC_ROOT_PATH.":"file:///c%3A/Users/yuan/AppData/Roaming/jupyter/kernels","INTERPRETER_PATH_WAS_SELECTED_FOR_JUPYTER_SERVER":true,"CONDA_INFORMATION_CACHE":{"version":"25.9.1","file":"\\conda","fileHash":""}}'
 ms-vscode-remote.remote-containers: "{}"
-ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":true,"wsl.lastUpdateCheck":1770043167561}'
-ms-vscode.cmake-tools: '{"c:\\Users\\yuan\\Desktop\\testcactiveVariantSettings":[["buildType","debug"]],"kitsVersionSaved":2,"c:\\Users\\yuan\\Desktop\\testcactiveKitName":"Clang-cl
-  21.1.8
-  x86_64-pc-windows-msvc","c:\\Users\\yuan\\Desktop\\testclaunchTargetName":"testc","c:\\Users\\yuan\\Desktop\\testcactiveBuildTarget":"all","c:\\Users\\yuan\\Desktop\\xmakeactiveVariantSettings":[["buildType","debug"]]}'
+ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":true,"wsl.lastUpdateCheck":1770043587643}'
+ms-vscode.cmake-tools: '{"c:\\Users\\yuan\\Desktop\\testcactiveVariantSettings":[["buildType","debug"]],"kitsVersionSaved":2,"c:\\Users\\yuan\\Desktop\\testcactiveKitName":"GCC
+  15.2.0 x86_64-w64-mingw32
+  (ucrt64)","c:\\Users\\yuan\\Desktop\\testclaunchTargetName":"testc","c:\\Users\\yuan\\Desktop\\testcactiveBuildTarget":"all","c:\\Users\\yuan\\Desktop\\xmakeactiveVariantSettings":[["buildType","debug"]]}'
 ms-vscode.cpptools: '{"CPP.1.29.3.Progress":400,"CPP.1.29.3.ignoreMismatchedCompatibleVsix":false,"CPP.displayedPreReleasePrompt":true,"CPP.isOnPreRelease":false}'
 Oracle.oracle-java: '{"telemetryConsentResponseTime":"1769772952251","telemetryConsentSchemaVersion":"v1","telemetrySettingValue":"false"}'
 redhat.vscode-yaml: '{"json-schema-key":{"https://www.schemastore.org/clangd.json":{"eTag":"W/\"697bc8db-77dc\"","schemaPath":"c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.vscode-yaml\\schemas_cache\\71e290ba31ea1b04f8013b25fabc799e"},"https://json.schemastore.org/base.json":{"eTag":"W/\"697bc8db-4e7d\"","schemaPath":"c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.vscode-yaml\\schemas_cache\\f4c39abf46f6c45c7f234f6682be90ca"}}}'
