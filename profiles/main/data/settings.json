@@ -36,14 +36,15 @@
 	"window.autoDetectColorScheme": false,
 	"workbench.colorTheme": "Catppuccin Latte",
 	"workbench.preferredLightColorTheme": "Catppuccin Latte",
-	"workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+	"workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
 	// 使用preferred icon theme 插件来设置亮色和暗色主题的icon
 	"workbench.iconTheme": "catppuccin-latte",
 	"preferredIconTheme.light": "catppuccin-latte",
-	"preferredIconTheme.dark": "catppuccin-frappe",
+	"preferredIconTheme.dark": "catppuccin-macchiato",
 	"catppuccin.colorOverrides": {
 		"latte": {
-			"base": "#fcf9f6", // 调节下背景颜色，更加暖色调，护眼
+			"base": "#FAF9F5", // 调节下背景颜色，更加暖色调，护眼
+			// tuta 主题 #fcf9f6 claude 主题 #FAF9F5
 			// "mantle": "#f5eeea", // 活动栏（如file explorer还有顶部栏）的背景颜色
 			// "crust": "#f5eeea", // 侧边栏（插件栏等放图标的地方）的颜色
 			
@@ -278,10 +279,9 @@
 	// 	// /Zc:__STDC__: 在C模式下正确定义__STDC__宏
 	// 	// /Gs: 启用堆栈保护，防止栈溢出攻击
 	// 	// /guard:cf: 启用控制流保护，防止代码执行被篡改
-	// 	// /Qspectre: 启用Spectre漏洞缓解措施
 	// 	// /NXCOMPAT /DYNAMICBASE /GUARD:CF: 链接器选项，启用数据执行保护和地址空间布局随机化等安全特性
-	// 	"CMAKE_CXX_FLAGS": "/W4 /WX- /permissive- /EHsc /utf-8 /GS /guard:cf /Qspectre", // W4高级警告，permissive-严格标准
-	// 	"CMAKE_C_FLAGS": "/W4 /WX- /utf-8 /GS /guard:cf /Qspectre",
+	// 	"CMAKE_CXX_FLAGS": "/W4 /WX- /permissive- /EHsc /utf-8 /GS /guard:cf", // W4高级警告，permissive-严格标准
+	// 	"CMAKE_C_FLAGS": "/W4 /WX- /utf-8 /GS /guard:cf",
 	// 	"CMAKE_EXE_LINKER_FLAGS": "/NXCOMPAT /DYNAMICBASE /GUARD:CF",
 	// 	// 生成位置无关代码
 	// 	"CMAKE_POSITION_INDEPENDENT_CODE": "ON",
@@ -307,7 +307,7 @@
 	"cmake.buildBeforeRun": true, // 运行前自动构建
 	"cmake.clearOutputBeforeBuild": true, // 构建前清除输出
 	"cmake.launchBehavior": "reuseTerminal",
-	"cmake.installPrefix": "bin",
+	"cmake.installPrefix": "./bin",
 	// // 1.适用于GCC/Clang的调试
 	// // 1.1.1 使用GDB(MS C/C++ Extension)
 	// "cmake.debugConfig": {
@@ -400,6 +400,7 @@
 	// 	"cwd": "${workspaceFolder}",
 	// 	"environment": [],
 	// 	"console": "integratedTerminal",
+	// 	"stopAtEntry": true
 	// },
 
 
@@ -468,7 +469,7 @@
 	"[typst]": {
 		"editor.formatOnSave": true,
 	},
-	
+	"tinymist.formatterPrintWidth": 200,
 	
 	// TS 和 JS
 	"[typescript]": {

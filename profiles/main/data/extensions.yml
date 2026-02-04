@@ -120,6 +120,8 @@ enabled:
     uuid: 3792588c-3d35-442d-91ea-fe6a755e8155
   - id: mesonbuild.mesonbuild
     uuid: 8d985901-944a-4bc1-8773-42041c4d40fb
+  - id: monokai.theme-monokai-pro-vscode
+    uuid: f5d7ffda-c1d6-4070-ba80-803c705a1ee6
   - id: ms-azuretools.vscode-containers
     uuid: 2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d
   - id: ms-dotnettools.vscode-dotnet-runtime
@@ -158,6 +160,8 @@ enabled:
     uuid: cc7d2112-5178-4472-8e0e-25dced95e7f0
   - id: ms-vscode.js-debug-nightly
     uuid: 7acbb4ce-c85a-49d4-8d95-a8054406ae97
+  - id: ms-vscode.makefile-tools
+    uuid: e09cf600-90a1-414e-92a0-031f1a5391c6
   - id: ms-vscode.powershell
     uuid: 40d39ce9-c381-47a0-80c8-a6661f731eab
   - id: ms-vscode.remote-explorer
