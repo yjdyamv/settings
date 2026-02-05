@@ -16,7 +16,7 @@ disabled:
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
   - id: ms-dotnettools.csdevkit
-    uuid: 7ad42776-8f7e-4214-bf67-4f0b518ef629
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: ms-dotnettools.csharp
     uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
   - id: oderwat.indent-rainbow
