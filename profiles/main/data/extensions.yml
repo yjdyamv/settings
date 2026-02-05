@@ -126,6 +126,8 @@ enabled:
     uuid: e153ca70-b543-4865-b4c5-b31d34185948
   - id: ms-vscode.cmake-tools
     uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
+  - id: ms-vscode.cpptools
+    uuid: null
   - id: ms-vscode.hexeditor
     uuid: cc7d2112-5178-4472-8e0e-25dced95e7f0
   - id: ms-vscode.powershell
