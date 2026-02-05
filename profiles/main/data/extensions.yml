@@ -124,6 +124,8 @@ enabled:
     uuid: 3792588c-3d35-442d-91ea-fe6a755e8155
   - id: mesonbuild.mesonbuild
     uuid: 8d985901-944a-4bc1-8773-42041c4d40fb
+  - id: monokai.theme-monokai-pro-vscode
+    uuid: f5d7ffda-c1d6-4070-ba80-803c705a1ee6
   - id: ms-azuretools.vscode-containers
     uuid: 2cd1d691-3d69-4d2d-ae39-fda4bc4cfd3d
   - id: ms-dotnettools.vscode-dotnet-runtime
