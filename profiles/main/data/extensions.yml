@@ -18,7 +18,7 @@ disabled:
   - id: ms-dotnettools.csdevkit
     uuid: 7ad42776-8f7e-4214-bf67-4f0b518ef629
   - id: ms-dotnettools.csharp
-    uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
   - id: Oracle.oracle-java
