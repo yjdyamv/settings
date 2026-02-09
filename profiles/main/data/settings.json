@@ -252,7 +252,7 @@
 	//  	// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" 
 	// 	// 生成编译命令数据库，供clangd使用
 	// 	"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-	// 	// Debug 调试信息 
+	// 	// 1. Debug 调试信息 
 	// 	// /Zi: 生成完整的调试信息（PDB格式）
 	// 	// /Od: 禁用优化，确保代码按原始逻辑执行
 	// 	// /MDd: 使用多线程调试版DLL运行时库
@@ -265,7 +265,7 @@
 	// 	"CMAKE_CXX_FLAGS_DEBUG": "-Zi -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
 	// 	"CMAKE_C_FLAGS_DEBUG": "-Zi -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
 	// 	"CMAKE_EXE_LINKER_FLAGS_DEBUG": "-DEBUG:FULL -INCREMENTAL",
-	// 	// Release版本优化
+	// 	// 2. Release版本优化
 	// 	// /Ox: 最大速度优化（等同于 /Og /Oi /Ot /Oy /Ob2 /Gs /GF /Gy）
 	// 	// /DNDEBUG: 禁用assert宏，移除调试代码
 	// 	// /MD: 使用多线程发布版DLL运行时库
@@ -278,10 +278,16 @@
 	// 	"CMAKE_CXX_FLAGS_RELEASE": "-Ox -DNDEBUG -MD -Gw",
 	// 	"CMAKE_C_FLAGS_RELEASE": "-Ox -DNDEBUG -MD -Gw",
 	// 	"CMAKE_EXE_LINKER_FLAGS_RELEASE": "-INCREMENTAL:NO -OPT:REF -OPT:ICF -LTCG",
-	// 	// RelWithDebInfo版本（推荐用于性能分析）
+	// 	// 3. RelWithDebInfo版本（推荐用于性能分析）
 	// 	"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -Zi -DNDEBUG -MD -Oy- -fp:precise",
 	// 	"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -Zi -DNDEBUG -MD -Oy- -fp:precise",
 	// 	"CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO": "-DEBUG:FULL -INCREMENTAL:NO -OPT:REF",
+	// 	// 4. MinSizeRel版本
+	// 	// /O1: 最小化大小优化（等同于 /Og /Os /Oy /Ob2 /GF /Gy）
+	// 	// /Os: 优化代码大小，优先选择较小的代码
+	// 	"CMAKE_CXX_FLAGS_MINSIZEREL": "-O1 -Os -DNDEBUG -MD -Gw",
+	// 	"CMAKE_C_FLAGS_MINSIZEREL": "-O1 -Os -DNDEBUG -MD -Gw",
+	// 	"CMAKE_EXE_LINKER_FLAGS_MINSIZEREL": "-INCREMENTAL:NO -OPT:REF -OPT:ICF -LTCG",
 	// 	// C/C++标准设置
 	// 	"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 	// 	"CMAKE_C_STANDARD": "23",  // 90 99 11 17 23
