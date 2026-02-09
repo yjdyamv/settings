@@ -319,7 +319,6 @@
 	"cmake.generator": "Ninja Multi-Config", // cmake的生成器为Ninja Multi-Config
 	"cmake.preferredGenerators": [
 		"Ninja Multi-Config", // 优先使用Ninja Multi-Config/Ninja 快且跨平台
-		// 且Ninja Multi-Config使用多重配置
 		"Ninja",
 		"Unix Makefiles",
 	],

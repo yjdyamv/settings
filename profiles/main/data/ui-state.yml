@@ -118,7 +118,7 @@ ms-python.python: "{\"PYTHON_WAS_DISCOVERY_TRIGGERED_C:\\\\USERS\\\\YUAN\\\\DES\
   ther\\\\.venv\\\\Scripts\\\\python.exe\"}"
 ms-toolsai.jupyter: '{"CACHE_KEY_FOR_JUPYTER_KERNELSPEC_ROOT_PATH.":"file:///c%3A/Users/yuan/AppData/Roaming/jupyter/kernels","INTERPRETER_PATH_WAS_SELECTED_FOR_JUPYTER_SERVER":true,"CONDA_INFORMATION_CACHE":{"version":"25.9.1","file":"\\conda","fileHash":""}}'
 ms-vscode-remote.remote-containers: "{}"
-ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":true,"wsl.lastUpdateCheck":1770615775019}'
+ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":true,"wsl.lastUpdateCheck":1770615865026}'
 ms-vscode.cmake-tools: '{"c:\\Users\\yuan\\Desktop\\testcactiveVariantSettings":[["buildType","debug"]],"kitsVersionSaved":2,"c:\\Users\\yuan\\Desktop\\testcactiveKitName":"GCC
   15.2.0 x86_64-w64-mingw32
   (ucrt64)","c:\\Users\\yuan\\Desktop\\testclaunchTargetName":"testc","c:\\Users\\yuan\\Desktop\\testcactiveBuildTarget":"all","c:\\Users\\yuan\\Desktop\\xmakeactiveVariantSettings":[["buildType","debug"]]}'
