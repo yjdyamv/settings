@@ -7,7 +7,7 @@ disabled:
     uuid: 78e8b630-2e7d-4cb6-ba8a-f6d34d3769f1
   - id: fwcd.kotlin
     uuid: c86bc8a9-fd3b-44db-b28a-2d146cb78d3c
-  - id: GitHub.copilot
+  - id: GitLab.gitlab-workflow
     uuid: 00000000-0000-0000-0000-000000000000
   - id: golang.go
     uuid: d6f6cfea-4b6f-41f4-b571-6ad2ab7918da
@@ -16,7 +16,7 @@ disabled:
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
   - id: ms-dotnettools.csdevkit
-    uuid: 00000000-0000-0000-0000-000000000000
+    uuid: 7ad42776-8f7e-4214-bf67-4f0b518ef629
   - id: ms-dotnettools.csharp
     uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
   - id: oderwat.indent-rainbow

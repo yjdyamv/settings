@@ -168,11 +168,13 @@
 		//     - --target=x86_64-pc-windows-gnu // 根据实际情况修改
 	],
 	
-	
+
 	// // 1. CMake设置 主要适用于[GCC/CLang](linux+win(ucrt64)) Clang(msvc)有点诡异
 	"cmake.configureSettings": {
+		// 定义Ninja Multi-Config列表 效果和传`-DCMAKE_CONFIGURATION_TYPES=Debug;Release;RelWithDebInfo;MinSizeRel`一样
+		"CMAKE_CONFIGURATION_TYPES": ["Debug","Release","RelWithDebInfo","MinSizeRel"],
 		// 不指定构建模式，在插件界面选择
-		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , 
+		// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" , "MinSizeRel"
 		// 库默认生成静态库，除非指定为`add_library(mylib SHARED test.c)` 或以下的选项打开
 		// "BUILD_SHARED_LIBS": "ON",
 		// 生成编译命令数据库，供clangd使用
@@ -199,6 +201,18 @@
 		// 3. RelWithDebInfo版本（推荐用于性能分析）
 		"CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
 		"CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -gdwarf-5",
+		// 4. MinSizeRel版本（最小大小优化，适用于嵌入式或存储受限环境）
+		// -Os: 针对可执行文件大小优化，比-O2更激进地减小代码尺寸
+		// -DNDEBUG: 禁用assert宏，减少代码大小
+		// -ffunction-sections: 将每个函数放在独立的section中，便于链接器删除未使用代码
+		// -fdata-sections: 将数据放在独立的section中
+		// -Wl,--gc-sections: 链接时删除未使用的sections（需要-ffunction-sections和-fdata-sections）
+		// -s: 删除符号表，进一步减小文件大小
+		"CMAKE_CXX_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
+		"CMAKE_C_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
+		// MinSizeRel链接器设置
+		"CMAKE_EXE_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
+		"CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
 		// C/C++标准设置
 		"CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
 		"CMAKE_C_STANDARD": "23", // 90 99 11 17 23
@@ -221,6 +235,7 @@
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",    // 只在 Release 开启
 		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO": "OFF",
+		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_MINSIZEREL": "ON", // 也在MinSizeRel 开启
 		// RPATH设置 - 确保运行时能找到共享库
 		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
 		"CMAKE_MACOSX_RPATH": "ON",                // macOS RPATH设置
@@ -229,8 +244,10 @@
 		"CMAKE_INSTALL_RPATH_USE_LINK_PATH": "ON", // 安装时使用链接路径
 	},
 	// // 2. CMake设置 适用于MSVC/clang-cl(msvc) clang-cl可以接受大部分MSVC选项，及部分gcc/clang
-	// // cl选项以"/"或"-"开头，但是不用跨平台也没什么
+	// // cl选项以"/"或"-"开头，都可以
 	// "cmake.configureSettings": {
+	// 	// 定义Ninja Multi-Config列表 效果和传`-DCMAKE_CONFIGURATION_TYPES=Debug;Release;RelWithDebInfo;MinSizeRel`一样
+	// 	"CMAKE_CONFIGURATION_TYPES": ["Debug","Release","RelWithDebInfo","MinSizeRel"],
 	// 	// 不指定构建模式，在插件界面选择
 	//  	// "CMAKE_BUILD_TYPE": "Debug", // "Release" , "RelWithDebInfo" 
 	// 	// 生成编译命令数据库，供clangd使用
@@ -299,9 +316,10 @@
 	// 	"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
 	// },
 	"cmake.buildDirectory": "${workspaceFolder}/build",
-	"cmake.generator": "Ninja", // cmake的生成器为Ninja
+	"cmake.generator": "Ninja Multi-Config", // cmake的生成器为Ninja Multi-Config
 	"cmake.preferredGenerators": [
-		"Ninja", // 优先使用Ninja 快且跨平台
+		"Ninja Multi-Config", // 优先使用Ninja Multi-Config/Ninja 快且跨平台
+		"Ninja",
 		"Unix Makefiles",
 	],
 	"cmake.configureOnOpen": false, // 打开文件夹不自动构建
@@ -392,7 +410,7 @@
 				"text": "settings set target.max-string-summary-length 512",
 				"ignoreFailures": true
 			}
-		]
+		],
 	},
 	// // 2. 适用于MSVC的调试
 	// // 使用MSVC的调试器
