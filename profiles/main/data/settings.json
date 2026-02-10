@@ -230,12 +230,7 @@
 		"CMAKE_POSITION_INDEPENDENT_CODE": "ON",
 		// 并行编译设置 - 提高编译速度
 		"CMAKE_BUILD_PARALLEL_LEVEL": "0", // 0表示使用所有可用CPU核心进行并行编译
-		// 过程间优化(ITO)设置 - 跨文件优化以提升性能
-		"CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON",  
-		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG": "OFF",     
-		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE": "ON",    // 只在 Release 开启
-		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO": "OFF",
-		"CMAKE_INTERPROCEDURAL_OPTIMIZATION_MINSIZEREL": "ON", // 也在MinSizeRel 开启
+		// IPO/LTO似乎有点问题就不启用了
 		// RPATH设置 - 确保运行时能找到共享库
 		"CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
 		"CMAKE_MACOSX_RPATH": "ON",                // macOS RPATH设置
@@ -312,7 +307,7 @@
 	// 	// 调试和开发相关设置
 	// 	"CMAKE_VERBOSE_MAKEFILE": "OFF",
 	// 	"CMAKE_COLOR_DIAGNOSTICS": "ON",
-	// 	// LTO这个优化在MSVC下有问题，关掉
+	// 	// LTO/IPO这个优化在MSVC下有问题，关掉
 	// 	// MSVC 特定优化
 	// 	"CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDLL", // Release用MD，Debug会自动用MDd
 	// 	"CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD": "ON", // 在Visual Studio中包含安装目标
