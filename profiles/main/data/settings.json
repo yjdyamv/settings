@@ -320,8 +320,11 @@
 	"cmake.generator": "Ninja Multi-Config", // cmake的生成器为Ninja Multi-Config
 	"cmake.preferredGenerators": [
 		"Ninja Multi-Config", // 优先使用Ninja Multi-Config/Ninja 快且跨平台
-		"Ninja",
-		"Unix Makefiles",
+		"Ninja", // Ninja单配置
+		"Unix Makefiles", // 类Unix makefile
+		"NMake Makefiles", // Windows NMake
+		"MinGW Makefiles", // Windows MinGW make
+		// "Visual Studio 18 2026"
 	],
 	"cmake.configureOnOpen": false, // 打开文件夹不自动构建
 	"cmake.buildBeforeRun": true, // 运行前自动构建
