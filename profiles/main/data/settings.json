@@ -175,12 +175,6 @@
     // "BUILD_SHARED_LIBS": "ON",
     // 生成编译命令数据库，供clangd使用
     "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-    // 各构建类型均有的安全设置
-    // -fstack-protector-strong: 强化的栈溢出保护
-    // -D_FORTIFY_SOURCE=2: 编译时检测缓冲区溢出和其他常见的内存安全问题，
-    // -fstack-clash-protection: 防止栈冲突攻击
-    "CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-    "CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
     // 1. Debug版本
     // 为C/C++调试版本添加调试信息，使用DWARF-5格式
     // -g: 生成调试信息
@@ -209,6 +203,12 @@
     // MinSizeRel链接器设置
     "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
     "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
+    // 各构建类型均有的安全设置
+    // -fstack-protector-strong: 强化的栈溢出保护
+    // -D_FORTIFY_SOURCE=2: 编译时检测缓冲区溢出和其他常见的内存安全问题，
+    // -fstack-clash-protection: 防止栈冲突攻击
+    "CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+    "CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
     // C/C++标准设置
     "CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
     "CMAKE_C_STANDARD": "23", // 90 99 11 17 23
