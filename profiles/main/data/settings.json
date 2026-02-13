@@ -674,4 +674,5 @@
   },
 
   "vscode-edge-devtools.webhintInstallNotification": true,
+  "workbench.sideBar.location": "right",
 }

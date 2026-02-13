@@ -96,6 +96,8 @@ enabled:
     uuid: 61d03280-3919-4dd1-bce1-178ca21fdeaf
   - id: johnpapa.Angular2
     uuid: 214cbfb9-7c06-4467-bad4-357ae83eb587
+  - id: kilocode.kilo-code
+    uuid: 849d53b8-0eb4-4e6b-b73f-870eefcbbf1b
   - id: kisstkondoros.vscode-gutter-preview
     uuid: eedfd044-d5ac-4389-973d-3ac1fdb98ad5
   - id: kleinicke.ply-visualizer
@@ -180,6 +182,8 @@ enabled:
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
   - id: OrangeX4.vscode-typst-sync
     uuid: 1144f210-711a-4f9f-894c-7b027d2bf486
+  - id: oxc.oxc-vscode
+    uuid: 1303f9b3-746c-42de-869c-5f72364302f5
   - id: piotrpalarz.vscode-gitignore-generator
     uuid: c0c04a3d-f3cd-44ce-a9dd-61ad33504bc7
   - id: pranaygp.vscode-css-peek
@@ -192,8 +196,6 @@ enabled:
     uuid: 2061917f-f76a-458a-8da9-f162de22b97e
   - id: rust-lang.rust-analyzer
     uuid: 06574cb4-e5dc-4631-8174-a543a4533621
-  - id: saoudrizwan.claude-dev
-    uuid: ad94c633-a9d5-4f78-b85f-c664e7d91a0f
   - id: ShahilKumar.docxreader
     uuid: ac7f37ee-52e3-4ff6-a0cf-95c8cb5cabf8
   - id: shd101wyy.markdown-preview-enhanced
