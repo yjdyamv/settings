@@ -227,8 +227,9 @@
     // 并行编译设置 - 提高编译速度
     "CMAKE_BUILD_PARALLEL_LEVEL": "0", // 0表示使用所有可用CPU核心进行并行编译
     // IPO/LTO似乎有点问题就不启用了
-    // RPATH设置 - 确保运行时能找到共享库
+    // 还是设置下好...
     "CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
+    // RPATH设置 - 确保运行时能找到共享库
     "CMAKE_MACOSX_RPATH": "ON", // macOS RPATH设置
     "CMAKE_SKIP_BUILD_RPATH": "OFF", // 构建时保留RPATH
     "CMAKE_BUILD_WITH_INSTALL_RPATH": "OFF", // 构建时不使用安装RPATH
@@ -249,7 +250,8 @@
   //   // 生成编译命令数据库，供clangd使用
   //   "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
   //   // 1. Debug 调试信息
-  //   // /Zi: 生成完整的调试信息（PDB格式）
+  //   // /Z7: 生成的对象文件还包含完整符号化调试信息（链接器传递 /Debug 可以把调试信息放到PDB（程序数据库）里）
+  //   // /Zi: 生成.pdb文件（对象文件不包含调试信息）
   //   // /Od: 禁用优化，确保代码按原始逻辑执行
   //   // /MDd: 使用多线程调试版DLL运行时库
   //   // /RTC1: 运行时错误检查（栈帧和未初始化变量）
@@ -258,8 +260,8 @@
   //   // /Oy-: 禁用帧指针省略，保证完整的调用栈信息
   //   // /DEBUG:FULL: 生成完整的调试信息
   //   // /INCREMENTAL: 启用增量链接，加快链接速度
-  //   "CMAKE_CXX_FLAGS_DEBUG": "-Zi -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
-  //   "CMAKE_C_FLAGS_DEBUG": "-Zi -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
+  //   "CMAKE_CXX_FLAGS_DEBUG": "-Z7 -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
+  //   "CMAKE_C_FLAGS_DEBUG": "-Z7 -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
   //   "CMAKE_EXE_LINKER_FLAGS_DEBUG": "-DEBUG:FULL -INCREMENTAL",
   //   // 2. Release版本优化
   //   // /Ox: 最大速度优化（等同于 /Og /Oi /Ot /Oy /Ob2 /Gs /GF /Gy）
@@ -447,6 +449,7 @@
   "lldb.consoleMode": "split",
   "lldb.displayFormat": "auto", // 变量显示格式
   "lldb.launch.expressions": "native", // 表达式求值模式
+  "lldb.useNativePDBReader": true,
 
   // python languageServer
   "python.languageServer": "Pylance",
@@ -674,5 +677,7 @@
   },
 
   "vscode-edge-devtools.webhintInstallNotification": true,
-  "workbench.sideBar.location": "right",
+  "kilo-code.debug": false,
+  "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
+  "kilo-code.deniedCommands": [],
 }

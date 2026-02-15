@@ -23,6 +23,8 @@ disabled:
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
   - id: Oracle.oracle-java
     uuid: 00000000-0000-0000-0000-000000000000
+  - id: oxc.oxc-vscode
+    uuid: 1303f9b3-746c-42de-869c-5f72364302f5
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.java
@@ -182,8 +184,6 @@ enabled:
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
   - id: OrangeX4.vscode-typst-sync
     uuid: 1144f210-711a-4f9f-894c-7b027d2bf486
-  - id: oxc.oxc-vscode
-    uuid: 1303f9b3-746c-42de-869c-5f72364302f5
   - id: piotrpalarz.vscode-gitignore-generator
     uuid: c0c04a3d-f3cd-44ce-a9dd-61ad33504bc7
   - id: pranaygp.vscode-css-peek
