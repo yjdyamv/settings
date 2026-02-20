@@ -1,5 +1,4 @@
-{	
-
+{
     "CodeLLDB Debug Configuration": {
         "prefix": "codelldb-config",
         "body": [
@@ -26,7 +25,6 @@
         ],
         "description": "CodeLLDB debug configuration with enhanced LLDB setup and formatting"
     },
-
     "GDB (Native Debug) Configuration": {
         "prefix": "gdb-native-debug",
         "body": [
@@ -41,7 +39,6 @@
         ],
         "description": "GDB debug configuration with NATIVE DEBUG"
     },
-    
     "GDB (MS C/C++ Extension) Debug Configuration": {
         "prefix": "gdb-cppdbg",
         "body": [
@@ -72,7 +69,6 @@
         ],
         "description": "Custom GDB debug configuration with MS C/C++ extension"
     },
-
     "MSVC Debug Configuration": {
         "prefix": "msvc-config",
         "body": [
@@ -92,5 +88,4 @@
         ],
         "description": "MSVC debug configuration"
     },
-
 }

@@ -1,6 +1,8 @@
 disabled:
   - id: astral-sh.ty
     uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
+  - id: BazelBuild.vscode-bazel
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: cweijan.vscode-excel
@@ -19,14 +21,24 @@ disabled:
     uuid: 7ad42776-8f7e-4214-bf67-4f0b518ef629
   - id: ms-dotnettools.csharp
     uuid: d0bfc4ab-1d3a-4487-8782-7cf6027b4fff
+  - id: NimLang.nimlang
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
   - id: Oracle.oracle-java
     uuid: 00000000-0000-0000-0000-000000000000
+  - id: oxc.oxc-vscode
+    uuid: 1303f9b3-746c-42de-869c-5f72364302f5
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.java
     uuid: 198a707e-28af-4e84-8610-6e2f628dd12d
+  - id: Shopify.ruby-lsp
+    uuid: 00000000-0000-0000-0000-000000000000
+  - id: sorbet.sorbet-vscode-extension
+    uuid: 67d58bf5-9c4f-495f-bee0-d1d3f5898a8b
+  - id: swiftlang.swift-vscode
+    uuid: a262b033-b635-48e5-a110-0882eedcc504
   - id: vscjava.vscode-gradle
     uuid: a226f06e-9b5e-493b-b92a-553d3572f969
   - id: vscjava.vscode-java-debug
@@ -43,13 +55,13 @@ disabled:
     uuid: a205ad34-542b-4c67-a9ed-f645103ad9c0
   - id: vscode-icons-team.vscode-icons
     uuid: 9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a
+  - id: webfreak.code-d
+    uuid: bf217d41-312b-4d39-9536-82fd0d9c6f94
 enabled:
   - id: astro-build.astro-vscode
     uuid: 1fbbc8b0-7432-4b7e-8774-3336151da2f3
   - id: batisteo.vscode-django
     uuid: 4b41a5a8-170e-4156-b2c0-10efb270abbc
-  - id: BazelBuild.vscode-bazel
-    uuid: e21a6113-833a-4583-b519-869fd1c1c384
   - id: bmalehorn.vscode-fish
     uuid: efa79b03-91c5-4c6a-9846-0a7b6f7af05e
   - id: bradlc.vscode-tailwindcss
@@ -92,6 +104,8 @@ enabled:
     uuid: 7328a705-91fc-49e6-8293-da6f112e482d
   - id: GitHub.remotehub
     uuid: fc7d7e85-2e58-4c1c-97a3-2172ed9a77cd
+  - id: hbenl.vscode-test-explorer
+    uuid: ff96f1b4-a4b8-45ef-8ecf-c232c0cb75c8
   - id: hediet.vscode-drawio
     uuid: ea6a6046-2132-421f-a984-664909fcf0b8
   - id: hollowtree.vue-snippets
@@ -100,6 +114,8 @@ enabled:
     uuid: 61d03280-3919-4dd1-bce1-178ca21fdeaf
   - id: johnpapa.Angular2
     uuid: 214cbfb9-7c06-4467-bad4-357ae83eb587
+  - id: kilocode.kilo-code
+    uuid: 849d53b8-0eb4-4e6b-b73f-870eefcbbf1b
   - id: kisstkondoros.vscode-gutter-preview
     uuid: eedfd044-d5ac-4389-973d-3ac1fdb98ad5
   - id: kleinicke.ply-visualizer
@@ -158,6 +174,8 @@ enabled:
     uuid: 25cfa506-1433-4595-a73f-61666807126d
   - id: ms-vscode.cmake-tools
     uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
+  - id: ms-vscode.cpp-devtools
+    uuid: a71e0b52-0402-498f-a148-d2e344390f14
   - id: ms-vscode.cpptools
     uuid: 690b692e-e8a9-493f-b802-8089d50ac1b2
   - id: ms-vscode.hexeditor
@@ -174,6 +192,8 @@ enabled:
     uuid: cf5142f0-3701-4992-980c-9895a750addf
   - id: ms-vscode.remote-server
     uuid: 105c0b3c-07a9-4156-a4fc-4141040eb07e
+  - id: ms-vscode.test-adapter-converter
+    uuid: 47210ec2-0324-4cbb-9523-9dff02a5f9ec
   - id: ms-vscode.vscode-typescript-next
     uuid: 15305aca-2588-4ca0-8147-ab2c64730b82
   - id: msjsdiag.vscode-react-native
@@ -188,16 +208,12 @@ enabled:
     uuid: c0c04a3d-f3cd-44ce-a9dd-61ad33504bc7
   - id: pranaygp.vscode-css-peek
     uuid: 0b8f8d63-11a2-4194-969c-ca7488b3413a
-  - id: RandomFractalsInc.geo-data-viewer
-    uuid: d1b606b4-7db2-45fb-b5b9-6637d0895a3c
   - id: redhat.vscode-xml
     uuid: 6703768d-d42f-474e-9f6e-5f288d53f6e8
   - id: redhat.vscode-yaml
     uuid: 2061917f-f76a-458a-8da9-f162de22b97e
   - id: rust-lang.rust-analyzer
     uuid: 06574cb4-e5dc-4631-8174-a543a4533621
-  - id: saoudrizwan.claude-dev
-    uuid: ad94c633-a9d5-4f78-b85f-c664e7d91a0f
   - id: ShahilKumar.docxreader
     uuid: ac7f37ee-52e3-4ff6-a0cf-95c8cb5cabf8
   - id: shd101wyy.markdown-preview-enhanced
