@@ -31,9 +31,7 @@
   // "editor.scrollBeyondLastLine": false, // 不允许滚动到最后一行之后
   // "editor.fontLigatures": true, // 启用连字，让代码更美观
   "editor.linkedEditing": true, // 启用关联编辑标签
-  "editor.unicodeHighlight.nonBasicASCII": false, // 关闭非基本ASCII字符高亮
-  // 窗口和主题设置
-  "window.newWindowProfile": "Default",
+  "editor.unicodeHighlight.nonBasicASCII": false,
   // 当设置为true时，VSCode会根据系统的亮暗模式自动切换为以下主题
   "window.autoDetectColorScheme": false,
   "workbench.colorTheme": "Catppuccin Latte",
@@ -454,7 +452,7 @@
   "lldb.useNativePDBReader": true,
 
   // python languageServer
-  "python.languageServer": "Pylance",
+  "python.languageServer": "None",
   "python.analysis.autoImportCompletions": true, // 启用自动导入补全
   "python.analysis.indexing": true, // 启用索引以提高性能
   "python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
