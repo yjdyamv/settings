@@ -668,6 +668,8 @@
   "telemetry.telemetryLevel": "off", // 关闭遥测
   "gitlens.telemetry.enabled": false,
   "redhat.telemetry.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
 
   // 文件关联设置
   "workbench.editorAssociations": {
