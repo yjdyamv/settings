@@ -202,7 +202,6 @@
     // -s: 删除符号表，进一步减小文件大小
     "CMAKE_CXX_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
     "CMAKE_C_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
-    // MinSizeRel链接器设置
     "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
     "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
     // 各构建类型均有的安全设置
