@@ -1,6 +1,8 @@
 {
   "files.associations": {
-    ".clangd": "yaml", // clangd 配置文件关联为yaml
+    ".clangd": "yaml",
+    "*.{a80,z80,asm,inc,s}": "asm-collection",
+    "*.{list,lis}": "asm-collection-list",
   },
   // 使用zokugun.sync-settings插件同步设置
   "syncSettings.hostname": "yjdyamv",
@@ -452,7 +454,7 @@
   "lldb.useNativePDBReader": true,
 
   // python languageServer
-  "python.languageServer": "None",
+  "python.languageServer": "Pylance",
   "python.analysis.autoImportCompletions": true, // 启用自动导入补全
   "python.analysis.indexing": true, // 启用索引以提高性能
   "python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
@@ -680,4 +682,6 @@
   "kilo-code.debug": false,
   "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
   "kilo-code.deniedCommands": [],
+  "d.servedPath": "/home/dony/.local/share/code-d/bin/serve-d",
+  "chat.mcp.gallery.enabled": true,
 }

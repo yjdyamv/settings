@@ -1,6 +1,8 @@
 disabled:
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
+  - id: dotnetdev-kr-custom.csharp
+    uuid: 4989b14b-e817-4835-96bf-0e514c9ab8aa
   - id: fwcd.kotlin
     uuid: c86bc8a9-fd3b-44db-b28a-2d146cb78d3c
   - id: golang.go
@@ -9,6 +11,10 @@ disabled:
     uuid: 92fb523e-77c1-43a6-81f9-859a220809ec
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
+  - id: muhammad-sammy.csharp
+    uuid: 57b4ceec-c35a-4a96-ab38-23c6338df406
+  - id: nimsaem.nimvscode
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
   - id: rangav.vscode-thunder-client
@@ -31,6 +37,8 @@ disabled:
     uuid: a205ad34-542b-4c67-a9ed-f645103ad9c0
   - id: vscode-icons-team.vscode-icons
     uuid: 9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a
+  - id: webfreak.code-d
+    uuid: bf217d41-312b-4d39-9536-82fd0d9c6f94
 enabled:
   - id: astral-sh.ty
     uuid: 06854e4c-1253-4639-aa05-1fe79daa704a
@@ -58,8 +66,6 @@ enabled:
     uuid: 583b2b34-2c1e-4634-8c0b-0b82e283ea3a
   - id: DotJoshJohnson.xml
     uuid: 0cb81da2-1880-4755-9995-0ae9cc728e20
-  - id: dotnetdev-kr-custom.csharp
-    uuid: 4989b14b-e817-4835-96bf-0e514c9ab8aa
   - id: dracula-theme.theme-dracula
     uuid: 4e44877c-1c8d-4f9c-ba86-1372d0fbeeb1
   - id: dsznajder.es7-react-js-snippets
@@ -76,6 +82,8 @@ enabled:
     uuid: a6a0c5b2-d078-4bf5-a9ee-4e37054414b3
   - id: GitHub.github-vscode-theme
     uuid: 7328a705-91fc-49e6-8293-da6f112e482d
+  - id: hbenl.vscode-test-explorer
+    uuid: ff96f1b4-a4b8-45ef-8ecf-c232c0cb75c8
   - id: hediet.vscode-drawio
     uuid: ea6a6046-2132-421f-a984-664909fcf0b8
   - id: hollowtree.vue-snippets
@@ -132,12 +140,12 @@ enabled:
     uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
   - id: ms-vscode.hexeditor
     uuid: cc7d2112-5178-4472-8e0e-25dced95e7f0
+  - id: ms-vscode.test-adapter-converter
+    uuid: 47210ec2-0324-4cbb-9523-9dff02a5f9ec
   - id: ms-vscode.vscode-typescript-next
     uuid: 15305aca-2588-4ca0-8147-ab2c64730b82
   - id: msjsdiag.vscode-react-native
     uuid: b35cd5b4-18db-46f9-ba9e-06096c3b22d3
-  - id: muhammad-sammy.csharp
-    uuid: 57b4ceec-c35a-4a96-ab38-23c6338df406
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
   - id: Oracle.oracle-java
