@@ -2,7 +2,7 @@ disabled:
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: dotnetdev-kr-custom.csharp
-    uuid: 4989b14b-e817-4835-96bf-0e514c9ab8aa
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: fwcd.kotlin
     uuid: c86bc8a9-fd3b-44db-b28a-2d146cb78d3c
   - id: golang.go
@@ -14,7 +14,7 @@ disabled:
   - id: muhammad-sammy.csharp
     uuid: 57b4ceec-c35a-4a96-ab38-23c6338df406
   - id: nimsaem.nimvscode
-    uuid: 00000000-0000-0000-0000-000000000000
+    uuid: be03d67e-ad80-49be-8d43-4980217403b0
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
   - id: rangav.vscode-thunder-client
