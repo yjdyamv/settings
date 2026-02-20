@@ -1,6 +1,8 @@
 {
   "files.associations": {
-    ".clangd": "yaml", // clangd 配置文件关联为yaml
+    ".clangd": "yaml",
+    "*.{a80,z80,asm,inc,s}": "asm-collection",
+    "*.{list,lis}": "asm-collection-list",
   },
   // 使用zokugun.sync-settings插件同步设置
   "syncSettings.hostname": "yjdyamv",
@@ -200,7 +202,6 @@
     // -s: 删除符号表，进一步减小文件大小
     "CMAKE_CXX_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
     "CMAKE_C_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
-    // MinSizeRel链接器设置
     "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
     "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
     // 各构建类型均有的安全设置
@@ -251,7 +252,7 @@
   //   "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
   //   // 1. Debug 调试信息
   //   // /Z7: 生成的对象文件还包含完整符号化调试信息（链接器传递 /Debug 可以把调试信息放到PDB（程序数据库）里）
-  //   // /Zi: 生成.pdb文件（对象文件不包含调试信息）
+  //   // /Zi: 生成.pdb文件（对象文件不包含调试信息），推荐使用，最终的库和可执行文件更小
   //   // /Od: 禁用优化，确保代码按原始逻辑执行
   //   // /MDd: 使用多线程调试版DLL运行时库
   //   // /RTC1: 运行时错误检查（栈帧和未初始化变量）
@@ -260,8 +261,8 @@
   //   // /Oy-: 禁用帧指针省略，保证完整的调用栈信息
   //   // /DEBUG:FULL: 生成完整的调试信息
   //   // /INCREMENTAL: 启用增量链接，加快链接速度
-  //   "CMAKE_CXX_FLAGS_DEBUG": "-Z7 -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
-  //   "CMAKE_C_FLAGS_DEBUG": "-Z7 -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
+  //   "CMAKE_CXX_FLAGS_DEBUG": "-Zi -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
+  //   "CMAKE_C_FLAGS_DEBUG": "-Zi -Od -MDd -RTC1 -D_DEBUG -fp:precise -Oy-",
   //   "CMAKE_EXE_LINKER_FLAGS_DEBUG": "-DEBUG:FULL -INCREMENTAL",
   //   // 2. Release版本优化
   //   // /Ox: 最大速度优化（等同于 /Og /Oi /Ot /Oy /Ob2 /Gs /GF /Gy）
@@ -293,6 +294,7 @@
   //   "CMAKE_C_STANDARD_REQUIRED": "ON",
   //   // 各构建类型均有的安全及其他设置
   //   // /W4: 启用4级警告（高级警告，推荐用于代码质量检查）
+  //   // /Wall: 启用所有警告（包括一些冗长的警告，一般不推荐开启）
   //   // /WX-: 警告不视为错误（设为/WX则警告当错误处理）
   //   // /permissive-: 严格C++标准合规模式，禁用Microsoft扩展
   //   // /EHsc: C++异常处理模型（同步异常，extern "C"函数不抛异常）
@@ -665,6 +667,8 @@
   "telemetry.telemetryLevel": "off", // 关闭遥测
   "gitlens.telemetry.enabled": false,
   "redhat.telemetry.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
 
   // 文件关联设置
   "workbench.editorAssociations": {
@@ -681,4 +685,5 @@
   "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
   "kilo-code.deniedCommands": [],
   "d.servedPath": "/home/dony/.local/share/code-d/bin/serve-d",
+  "chat.mcp.gallery.enabled": true,
 }
