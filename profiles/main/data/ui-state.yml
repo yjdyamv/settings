@@ -179,7 +179,7 @@ ms-python.python: "{\"PYTHON_WAS_DISCOVERY_TRIGGERED_C:\\\\USERS\\\\YUAN\\\\DES\
   true}"
 ms-toolsai.jupyter: '{"CACHE_KEY_FOR_JUPYTER_KERNELSPEC_ROOT_PATH.":"file:///c%3A/Users/yuan/AppData/Roaming/jupyter/kernels","INTERPRETER_PATH_WAS_SELECTED_FOR_JUPYTER_SERVER":true,"CONDA_INFORMATION_CACHE":{"version":"25.9.1","file":"\\conda","fileHash":""}}'
 ms-vscode-remote.remote-containers: "{}"
-ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":false,"wsl.lastUpdateCheck":1772096979116}'
+ms-vscode-remote.remote-wsl: '{"wsl.downloadInProgress":true,"wsl.lastUpdateCheck":1772098149377}'
 ms-vscode.cmake-tools: '{"c:\\Users\\yuan\\Desktop\\testactiveVariantSettings":[["buildType","debug"]],"kitsVersionSaved":2,"c:\\Users\\yuan\\Desktop\\testcactiveVariantSettings":[["buildType","release"]],"c:\\Users\\yuan\\Desktop\\testcactiveKitName":"GCC
   15.2.0 x86_64-w64-mingw32
   (ucrt64)","c:\\Users\\yuan\\Desktop\\testclaunchTargetName":"testc","\\activeVariantSettings":[["buildType","debug"]],"c:\\Users\\yuan\\Desktop\\course-reportactiveVariantSettings":[["buildType","debug"]],"c:\\Users\\yuan\\Desktop\\vscode-cpptoolsactiveVariantSettings":[["buildType","debug"]],"c:\\Users\\yuan\\Downloads\\Buildings_Mesh_ScriptactiveVariantSettings":[["buildType","debug"]]}'
