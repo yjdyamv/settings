@@ -84,6 +84,8 @@ enabled:
     uuid: 0cb81da2-1880-4755-9995-0ae9cc728e20
   - id: dracula-theme.theme-dracula
     uuid: 4e44877c-1c8d-4f9c-ba86-1372d0fbeeb1
+  - id: dsznajder.es7-react-js-snippets
+    uuid: 19804510-b475-4dae-b0f7-6ca08fd1af0c
   - id: dzhavat.css-initial-value
     uuid: 8c2377ea-596d-46c3-92fa-1c5b66bb9d1c
   - id: eamodio.gitlens
@@ -106,6 +108,8 @@ enabled:
     uuid: ff96f1b4-a4b8-45ef-8ecf-c232c0cb75c8
   - id: hediet.vscode-drawio
     uuid: ea6a6046-2132-421f-a984-664909fcf0b8
+  - id: hollowtree.vue-snippets
+    uuid: 3620b114-6fe8-459b-8c68-99943147069b
   - id: James-Yu.latex-workshop
     uuid: 61d03280-3919-4dd1-bce1-178ca21fdeaf
   - id: johnpapa.Angular2
@@ -122,6 +126,8 @@ enabled:
     uuid: 2e0d34f4-f7bd-4ee3-a6e8-341db09e58a8
   - id: LeetCode.vscode-leetcode
     uuid: 66682185-9f80-4b70-8b8c-9e492935c105
+  - id: lindacong.vscode-book-reader
+    uuid: eb7ccc82-26f7-4b91-805e-09862387ed01
   - id: llvm-vs-code-extensions.lldb-dap
     uuid: 8f0e51b3-cc69-4cf9-abab-97289d29d6de
   - id: llvm-vs-code-extensions.vscode-clangd
@@ -242,6 +248,8 @@ enabled:
     uuid: bee31e34-a44b-4a76-9ec2-e9fd1439a0f6
   - id: vsls-contrib.gistfs
     uuid: 0cfb9d1d-3e59-4c36-a597-157b54e4442b
+  - id: Vue.volar
+    uuid: a95ee795-1576-4ffa-acda-8d6e6a95c584
   - id: WakaTime.vscode-wakatime
     uuid: f2fd462f-f1bd-4c62-b54f-59a4e5ffc6a3
   - id: WallabyJs.quokka-vscode

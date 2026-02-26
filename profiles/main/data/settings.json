@@ -32,6 +32,7 @@
   // "editor.fontLigatures": true, // 启用连字，让代码更美观
   "editor.linkedEditing": true, // 启用关联编辑标签
   "editor.unicodeHighlight.nonBasicASCII": false,
+  "clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
   // 当设置为true时，VSCode会根据系统的亮暗模式自动切换为以下主题
   "window.autoDetectColorScheme": false,
   "workbench.colorTheme": "Catppuccin Latte",
@@ -86,6 +87,15 @@
   "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.outDir": "./build",
 
+  // typst
+  "tinymist.formatterMode": "typstyle",
+  "tinymist.lint.enabled": true,
+  "[typst]": {
+    "editor.formatOnSave": true,
+  },
+  "tinymist.formatterPrintWidth": 120,
+
+  // c/c++
   "[c]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     "editor.formatOnSave": true,
@@ -216,6 +226,7 @@
     // 编译器警告设置 - 启用全面的代码质量检查
     // "CMAKE_CXX_FLAGS": "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",  // -Wall:常见警告 -Wextra:额外警告 -Wpedantic:严格标准合规警告 -Wconversion 隐式转换警告 -Wshadow 变量遮蔽警告
     // "CMAKE_C_FLAGS": "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",      // 同上，针对C语言代码
+    // 另：-Werror：将warning视作error
     // 显示详细的编译信息 - 用于调试构建过程
     "CMAKE_VERBOSE_MAKEFILE": "OFF", // 设为ON可以看到完整的编译命令，用于调试构建问题，一般设置为OFF即可
     // 着色输出设置 - 让编译错误和警告信息更易读
@@ -487,14 +498,6 @@
   "notebook.lineNumbers": "on", // 显示行号
   "notebook.showCellStatusBar": "visible", // 显示单元格状态栏
 
-  // typst
-  "tinymist.formatterMode": "typstyle",
-  "tinymist.lint.enabled": true,
-  "[typst]": {
-    "editor.formatOnSave": true,
-  },
-  "tinymist.formatterPrintWidth": 200,
-
   // TS 和 JS
   "[typescript]": {
     "editor.maxTokenizationLineLength": 2500,
@@ -682,6 +685,5 @@
   "kilo-code.debug": false,
   "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
   "kilo-code.deniedCommands": [],
-  "d.servedPath": "/home/dony/.local/share/code-d/bin/serve-d",
   "chat.mcp.gallery.enabled": true,
 }
