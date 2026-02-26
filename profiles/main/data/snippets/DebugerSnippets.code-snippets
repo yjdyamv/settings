@@ -1,0 +1,81 @@
+{	
+
+    "CodeLLDB Debug Configuration": {
+        "prefix": "codelldb-config",
+        "body": [
+            "{",
+            "    \"name\": \"${1:CodeLLDB Debug}\",",
+            "    \"type\": \"lldb\",",
+            "    \"request\": \"launch\",",
+            "    \"program\": \"\\${workspaceFolder}/${2:build/program}\",",
+            "    \"args\": [${3}],",
+            "    \"cwd\": \"\\${workspaceFolder}\",",
+            "    \"stopOnEntry\": ${4:true},",
+            "    \"terminal\": \"integrated\",",
+            "    \"console\": \"integratedTerminal\"",
+            "    \"expressions\": \"native\",",
+            "    \"initCommands\": [",
+            "        \"settings set target.x86-disassembly-flavor intel\",",
+            "        \"settings set target.prefer-dynamic-value run-target\",",
+            "        \"settings set target.max-string-summary-length 512\",",
+            "    ],",
+            "    \"preRunCommands\": [",
+            "        \"process handle SIGPIPE -n true -p true -s false\"${5}",
+            "    ]",
+            "},"
+        ],
+        "description": "CodeLLDB debug configuration with enhanced LLDB setup and formatting"
+    },
+    
+    "GDB Debug Configuration": {
+        "prefix": "gdb-config",
+        "body": [
+            "{",
+            "    \"name\": \"${1:GDB Debug}\",",
+            "    \"type\": \"cppdbg\",",
+            "    \"request\": \"launch\",",
+            "    \"program\": \"\\${workspaceFolder}/${2:build/program}\",",
+            "    \"args\": [${3}],",
+            "    \"stopAtEntry\": ${4:true},",
+            "    \"cwd\": \"\\${workspaceFolder}\",",
+            "    \"environment\": [],",
+            "    \"externalConsole\": false,",
+            "    \"MIMode\": \"gdb\",",
+            "    \"setupCommands\": [",
+            "        {",
+            "            \"description\": \"Enable pretty printing\",",
+            "            \"text\": \"-enable-pretty-printing\",",
+            "            \"ignoreFailures\": true",
+            "        },",
+            "        {",
+            "            \"description\": \"Set assembly to Intel syntax\",",
+            "            \"text\": \"-gdb-set disassembly-flavor intel\",",
+            "            \"ignoreFailures\": true",
+            "        }",
+            "    ]",
+            "},"
+        ],
+        "description": "Custom GDB debug configuration with enhanced setup"
+    },
+
+    "MSVC Debug Configuration": {
+        "prefix": "msvc-config",
+        "body": [
+            "{",
+            "    \"name\": \"${1:(MSVC) Launch}\",",
+            "    \"type\": \"cppvsdbg\",",
+            "    \"request\": \"launch\",",
+            "    \"program\": \"\\${workspaceFolder}/${2:build/<yourprogram>}\",",
+            "    \"args\": [${3}],",
+            "    \"stopAtEntry\": ${4:true},",
+            "    \"cwd\": \"\\${workspaceFolder}\",",
+            "    \"environment\": [],",
+            "    \"console\": \"${5|internalConsole,integratedTerminal,externalTerminal|}\",",
+            "    \"visualizerFile\": \"${6}\",",
+            "    \"enableDebugHeap\": ${7:true}",
+            "},"
+        ],
+        "description": "MSVC debug configuration"
+    },
+
+}
