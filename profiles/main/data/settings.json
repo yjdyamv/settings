@@ -245,7 +245,7 @@
     "CMAKE_BUILD_WITH_INSTALL_RPATH": "OFF", // 构建时不使用安装RPATH
     "CMAKE_INSTALL_RPATH_USE_LINK_PATH": "ON", // 安装时使用链接路径
   },
-  // // 2. CMake设置 适用于MSVC/clang-cl(msvc) clang-cl可以接受大部分MSVC选项，及部分gcc/clang
+  // // 2. CMake设置 适用于MSVC/clang-cl(msvc) clang-cl可以接受大部分MSVC选项，及部分gcc/clang选项
   // // cl选项以"/"或"-"开头，都可以
   // "cmake.configureSettings": {
   //   // 定义Ninja Multi-Config列表 效果和传`-DCMAKE_CONFIGURATION_TYPES=Debug;Release;RelWithDebInfo;MinSizeRel`一样
