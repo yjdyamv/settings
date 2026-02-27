@@ -237,7 +237,7 @@
     // 并行编译设置 - 提高编译速度
     "CMAKE_BUILD_PARALLEL_LEVEL": "0", // 0表示使用所有可用CPU核心进行并行编译
     // IPO/LTO似乎有点问题就不启用了
-    // 还是设置下好...
+    // 关于windows上的动态库符号导出还是设置下好...
     "CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
     // RPATH设置 - 确保运行时能找到共享库
     "CMAKE_MACOSX_RPATH": "ON", // macOS RPATH设置

@@ -32,7 +32,7 @@ disabled:
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.java
-    uuid: 00000000-0000-0000-0000-000000000000
+    uuid: 198a707e-28af-4e84-8610-6e2f628dd12d
   - id: Shopify.ruby-lsp
     uuid: 00000000-0000-0000-0000-000000000000
   - id: sorbet.sorbet-vscode-extension
