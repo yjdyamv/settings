@@ -31,9 +31,7 @@
   // "editor.scrollBeyondLastLine": false, // 不允许滚动到最后一行之后
   // "editor.fontLigatures": true, // 启用连字，让代码更美观
   "editor.linkedEditing": true, // 启用关联编辑标签
-  "editor.unicodeHighlight.nonBasicASCII": false, // 关闭非基本ASCII字符高亮
-  // 窗口和主题设置
-  "window.newWindowProfile": "Default",
+  "editor.unicodeHighlight.nonBasicASCII": false,
   // 当设置为true时，VSCode会根据系统的亮暗模式自动切换为以下主题
   "window.autoDetectColorScheme": false,
   "workbench.colorTheme": "Catppuccin Latte",
@@ -88,6 +86,15 @@
   "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.outDir": "./build",
 
+  // typst
+  "tinymist.formatterMode": "typstyle",
+  "tinymist.lint.enabled": true,
+  "[typst]": {
+    "editor.formatOnSave": true,
+  },
+  "tinymist.formatterPrintWidth": 120,
+
+  // c/c++
   "[c]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     "editor.formatOnSave": true,
@@ -202,7 +209,6 @@
     // -s: 删除符号表，进一步减小文件大小
     "CMAKE_CXX_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
     "CMAKE_C_FLAGS_MINSIZEREL": "-Os -DNDEBUG -ffunction-sections -fdata-sections",
-    // MinSizeRel链接器设置
     "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
     "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL": "-Wl,--gc-sections -s",
     // 各构建类型均有的安全设置
@@ -217,8 +223,10 @@
     "CMAKE_CXX_STANDARD_REQUIRED": "ON", // 强制要求指定的C++标准，如果不支持则编译失败
     "CMAKE_C_STANDARD_REQUIRED": "ON", // 同上
     // 编译器警告设置 - 启用全面的代码质量检查
-    // "CMAKE_CXX_FLAGS": "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",  // -Wall:常见警告 -Wextra:额外警告 -Wpedantic:严格标准合规警告 -Wconversion 隐式转换警告 -Wshadow 变量遮蔽警告
-    // "CMAKE_C_FLAGS": "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",      // 同上，针对C语言代码
+    // -Wall：常见警告 -Wextra：额外警告 -Wpedantic：严格标准合规警告 -Wconversion：隐式转换警告 -Wshadow：变量遮蔽警告
+    // "CMAKE_CXX_FLAGS": "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",
+    // "CMAKE_C_FLAGS": "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",
+    // 另：-Werror：将warning视作error
     // 显示详细的编译信息 - 用于调试构建过程
     "CMAKE_VERBOSE_MAKEFILE": "OFF", // 设为ON可以看到完整的编译命令，用于调试构建问题，一般设置为OFF即可
     // 着色输出设置 - 让编译错误和警告信息更易读
@@ -229,7 +237,7 @@
     // 并行编译设置 - 提高编译速度
     "CMAKE_BUILD_PARALLEL_LEVEL": "0", // 0表示使用所有可用CPU核心进行并行编译
     // IPO/LTO似乎有点问题就不启用了
-    // 还是设置下好...
+    // 关于windows上的动态库符号导出还是设置下好...
     "CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
     // RPATH设置 - 确保运行时能找到共享库
     "CMAKE_MACOSX_RPATH": "ON", // macOS RPATH设置
@@ -237,7 +245,7 @@
     "CMAKE_BUILD_WITH_INSTALL_RPATH": "OFF", // 构建时不使用安装RPATH
     "CMAKE_INSTALL_RPATH_USE_LINK_PATH": "ON", // 安装时使用链接路径
   },
-  // // 2. CMake设置 适用于MSVC/clang-cl(msvc) clang-cl可以接受大部分MSVC选项，及部分gcc/clang
+  // // 2. CMake设置 适用于MSVC/clang-cl(msvc) clang-cl可以接受大部分MSVC选项，及部分gcc/clang选项
   // // cl选项以"/"或"-"开头，都可以
   // "cmake.configureSettings": {
   //   // 定义Ninja Multi-Config列表 效果和传`-DCMAKE_CONFIGURATION_TYPES=Debug;Release;RelWithDebInfo;MinSizeRel`一样
@@ -311,7 +319,7 @@
   //   // 生成位置无关代码
   //   "CMAKE_POSITION_INDEPENDENT_CODE": "ON",
   //   // 调试和开发相关设置
-  //   "CMAKE_VERBOSE_MAKEFILE": "OFF",
+  //   "CMAKE_VERBOSE_MAKEFILE": "OFF", // 设为ON可以看到完整的编译命令，用于调试构建问题，一般设置为OFF即可
   //   "CMAKE_COLOR_DIAGNOSTICS": "ON",
   //   // LTO/IPO这个优化在MSVC下有问题，关掉
   //   // MSVC 特定优化
@@ -423,7 +431,7 @@
     ],
   },
   // // 2. 适用于MSVC的调试
-  // // 使用MSVC的调试器
+  // // 使用MSVC的调试器，相比于lldb体验更好
   // "cmake.debugConfig": {
   // 	"type": "cppvsdbg", // 使用VS的调试器
   // 	"cwd": "${workspaceFolder}",
@@ -489,14 +497,6 @@
   },
   "notebook.lineNumbers": "on", // 显示行号
   "notebook.showCellStatusBar": "visible", // 显示单元格状态栏
-
-  // typst
-  "tinymist.formatterMode": "typstyle",
-  "tinymist.lint.enabled": true,
-  "[typst]": {
-    "editor.formatOnSave": true,
-  },
-  "tinymist.formatterPrintWidth": 200,
 
   // TS 和 JS
   "[typescript]": {

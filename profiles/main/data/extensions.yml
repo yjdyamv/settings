@@ -126,6 +126,8 @@ enabled:
     uuid: 2e0d34f4-f7bd-4ee3-a6e8-341db09e58a8
   - id: LeetCode.vscode-leetcode
     uuid: 66682185-9f80-4b70-8b8c-9e492935c105
+  - id: lindacong.vscode-book-reader
+    uuid: eb7ccc82-26f7-4b91-805e-09862387ed01
   - id: llvm-vs-code-extensions.lldb-dap
     uuid: 8f0e51b3-cc69-4cf9-abab-97289d29d6de
   - id: llvm-vs-code-extensions.vscode-clangd
