@@ -465,7 +465,7 @@
   "lldb.launch.expressions": "native", // 表达式求值模式
   "lldb.useNativePDBReader": true,
 
-  // python languageServer
+  // python
   "python.languageServer": "Pylance",
   "python.analysis.autoImportCompletions": true, // 启用自动导入补全
   "python.analysis.indexing": true, // 启用索引以提高性能
