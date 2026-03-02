@@ -472,6 +472,7 @@
   "python.analysis.inlayHints.variableTypes": true, // 显示变量类型的内联提示（在变量旁边显示其类型信息）
   "python.analysis.inlayHints.functionReturnTypes": true, // 显示函数返回值类型的内联提示（在函数定义处显示返回类型）
   "python.analysis.inlayHints.callArgumentNames": "all", // 显示函数调用时所有参数名称的内联提示（帮助理解参数含义）
+  "ty.logLevel": "debug",
   "ruff.exclude": [
     // 排除的文件或目录
   ],
@@ -479,7 +480,6 @@
     // 忽略的规则列表
     "F401", // 忽略未使用的导入
   ],
-  "ty.logLevel": "debug",
   // Python配置 默认使用ruff格式化(记得在环境里装好ruff) `pip install ruff`
   "[python]": {
     "editor.inlayHints.enabled": "on",
@@ -685,8 +685,20 @@
   },
 
   "vscode-edge-devtools.webhintInstallNotification": true,
-  "kilo-code.debug": false,
+
+  "kilo-code.debug": true,
   "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
-  "kilo-code.deniedCommands": [],
+  "kilo-code.deniedCommands": [
+    // 不允许执行的命令
+    "sudo rm -rf /*",
+    "rm -rf /*",
+    "rm -rf /",
+    "sudo rm -rf /",
+    "sudo chmod -R 777 /", // 改坏系统权限
+    ":(){ :|:& };:", // fork炸弹
+    "mv /* /dev/null",
+  ],
+
+  // 开启mcp插件商店
   "chat.mcp.gallery.enabled": true,
 }
