@@ -219,17 +219,15 @@
     // -fstack-protector-strong: 强化的栈溢出保护
     // -D_FORTIFY_SOURCE=2: 编译时检测缓冲区溢出和其他常见的内存安全问题，
     // -fstack-clash-protection: 防止栈冲突攻击
-    "CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
-    "CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection",
+    // 编译器警告设置 - 启用全面的代码质量检查
+    // -Wall：常见警告 -Wextra：额外警告 -Wpedantic：严格标准合规警告 -Wconversion：隐式转换警告 -Wshadow：变量遮蔽警告
+    "CMAKE_CXX_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection -Wall -Wextra -Wpedantic",
+    "CMAKE_C_FLAGS": "-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fstack-clash-protection -Wall -Wextra -Wpedantic",
     // C/C++标准设置
     "CMAKE_CXX_STANDARD": "23", // 98 11 14 17 20 23 26
     "CMAKE_C_STANDARD": "23", // 90 99 11 17 23
     "CMAKE_CXX_STANDARD_REQUIRED": "ON", // 强制要求指定的C++标准，如果不支持则编译失败
     "CMAKE_C_STANDARD_REQUIRED": "ON", // 同上
-    // 编译器警告设置 - 启用全面的代码质量检查
-    // -Wall：常见警告 -Wextra：额外警告 -Wpedantic：严格标准合规警告 -Wconversion：隐式转换警告 -Wshadow：变量遮蔽警告
-    // "CMAKE_CXX_FLAGS": "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",
-    // "CMAKE_C_FLAGS": "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Wshadow",
     // 另：-Werror：将warning视作error
     // 显示详细的编译信息 - 用于调试构建过程
     "CMAKE_VERBOSE_MAKEFILE": "OFF", // 设为ON可以看到完整的编译命令，用于调试构建问题，一般设置为OFF即可
@@ -400,7 +398,7 @@
   // // 1.2 使用LLDB
   "cmake.debugConfig": {
     "type": "lldb",
-    // "MIMode": "lldb", // 哥们，必不可少啊，不然默认是gdb(~~呜呜，有点玄幻)
+    "MIMode": "lldb", // 不然默认是gdb(~~呜呜，有点玄幻)，这个本来不是codelldb的，可恶的ms
     "cwd": "${workspaceFolder}",
     "environment": [],
     "console": "integratedTerminal",
@@ -698,6 +696,8 @@
     ":(){ :|:& };:", // fork炸弹
     "mv /* /dev/null",
   ],
+
+  "makefile.configureOnOpen": true,
 
   // 开启mcp插件商店
   "chat.mcp.gallery.enabled": true,
