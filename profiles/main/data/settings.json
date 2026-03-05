@@ -60,6 +60,7 @@
   "catppuccin.customUIColors": {
     "latte": {},
   },
+  "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.inheritEnv": false,
   // decompiler
   "vscode-decompiler.tool.ghidra.path": "D:\\ghidra_12.0_PUBLIC\\support\\analyzeHeadless.bat",
@@ -675,8 +676,9 @@
   // 文件关联设置
   "workbench.editorAssociations": {
     "{hexdiff}:/**/*.*": "hexEditor.hexedit",
-    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui": "default",
     "*.copilotmd": "vscode.markdown.preview.editor",
+    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
+    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui": "default",
     "*.pdf": "latex-workshop-pdf-hook",
     "*.pcd": "plyViewer.plyEditor",
     "*.ply": "plyViewer.plyEditor",
@@ -687,13 +689,12 @@
   "kilo-code.debug": true,
   "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
   "kilo-code.deniedCommands": [
-    // 不允许执行的命令
     "sudo rm -rf /*",
     "rm -rf /*",
     "rm -rf /",
     "sudo rm -rf /",
-    "sudo chmod -R 777 /", // 改坏系统权限
-    ":(){ :|:& };:", // fork炸弹
+    "sudo chmod -R 777 /",
+    ":(){ :|:& };:",
     "mv /* /dev/null",
   ],
 
