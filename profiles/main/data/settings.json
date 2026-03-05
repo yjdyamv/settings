@@ -637,7 +637,7 @@
     "remotes": true,
     "stashes": true,
     "tags": true,
-    "worktrees": false,
+    "worktrees": true,
     "contributors": true,
     "fileHistory": true,
     "repositories": true,
