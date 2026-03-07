@@ -15,6 +15,8 @@ disabled:
     uuid: d6f6cfea-4b6f-41f4-b571-6ad2ab7918da
   - id: hverlin.mise-vscode
     uuid: 92fb523e-77c1-43a6-81f9-859a220809ec
+  - id: jnoortheen.nix-ide
+    uuid: 0ffebccd-4265-4f2d-a855-db1adcf278c7
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
   - id: ms-dotnettools.csdevkit
@@ -60,6 +62,8 @@ disabled:
 enabled:
   - id: astro-build.astro-vscode
     uuid: 1fbbc8b0-7432-4b7e-8774-3336151da2f3
+  - id: BatchNepal.vscode-video-preview
+    uuid: 89ba495d-4790-4ef2-9f55-10d6e4dc0a92
   - id: batisteo.vscode-django
     uuid: 4b41a5a8-170e-4156-b2c0-10efb270abbc
   - id: bmalehorn.vscode-fish
@@ -120,6 +124,8 @@ enabled:
     uuid: edc1171f-618a-4985-8d5c-fc283687de70
   - id: kvoon.preferred-icon-theme
     uuid: 2e0d34f4-f7bd-4ee3-a6e8-341db09e58a8
+  - id: leanprover.lean4
+    uuid: ddb6b8b1-9e92-40ce-90d4-45bb5f345ef9
   - id: LeetCode.vscode-leetcode
     uuid: 66682185-9f80-4b70-8b8c-9e492935c105
   - id: lindacong.vscode-book-reader
@@ -216,10 +222,14 @@ enabled:
     uuid: ac7f37ee-52e3-4ff6-a0cf-95c8cb5cabf8
   - id: shd101wyy.markdown-preview-enhanced
     uuid: 3b1db1fc-c7f7-4bd6-9fa4-b499dfa99a8a
+  - id: sukumo28.wav-preview
+    uuid: 24b1a1f1-01fe-4c8f-ae63-988f9ca5a68f
   - id: sumneko.lua
     uuid: 3a15b5a7-be12-47e3-8445-88ee3eabc8b2
   - id: svelte.svelte-vscode
     uuid: c5463f77-75d9-4a25-8cc4-d8541a461285
+  - id: tamasfe.even-better-toml
+    uuid: b2215d5f-675e-4a2b-b6ac-1ca737518b78
   - id: tauri-apps.tauri-vscode
     uuid: 53763e89-ec31-4d0c-b220-f714761180e5
   - id: tboox.xmake-vscode
