@@ -32,6 +32,7 @@
   // "editor.fontLigatures": true, // 启用连字，让代码更美观
   "editor.linkedEditing": true, // 启用关联编辑标签
   "editor.unicodeHighlight.nonBasicASCII": false,
+  "clangd.path": "c:\\Users\\yuan\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
   // 当设置为true时，VSCode会根据系统的亮暗模式自动切换为以下主题
   "window.autoDetectColorScheme": false,
   "workbench.colorTheme": "Catppuccin Latte",
@@ -75,16 +76,37 @@
         "-file-line-error",
         "%DOC%",
       ],
+      "env": {},
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"],
+      "env": {},
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"],
+      "env": {},
     },
   ],
   "latex-workshop.latex.recipes": [
+    // 没有参考文献的编译方式
+    // 为了正确生成目录项，一般需要编译两次源代码
     {
       "name": "xelatex",
-      "tools": ["xelatex"],
+      "tools": ["xelatex", "xelatex"],
     },
+    // 使用 BibTeX 参考文献工具的编译方式
     {
-      "name": "xelatex -> bibtex -> xelatex*2",
+      "name": "xelatex ➞ bibtex ➞ xelatex × 2",
       "tools": ["xelatex", "bibtex", "xelatex", "xelatex"],
+    },
+    // 使用 BibLaTeX 参考文献工具的编译方式
+    {
+      "name": "xelatex ➞ biber ➞ xelatex × 2",
+      "tools": ["xelatex", "biber", "xelatex", "xelatex"],
     },
   ],
   "latex-workshop.latex.autoClean.run": "never",
@@ -700,7 +722,6 @@
     ":(){ :|:& };:",
     "mv /* /dev/null",
   ],
-  "d.servedPath": "/home/dony/.local/share/code-d/bin/serve-d",
 
   "makefile.configureOnOpen": true,
 
