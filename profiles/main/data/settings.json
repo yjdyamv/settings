@@ -242,7 +242,7 @@
     // IPO/LTO似乎有点问题就不启用了
     // 关于windows上的动态库符号导出还是设置下好...
     "CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS": "ON",
-    // RPATH设置 - 确保运行时能找到共享库
+    // RPATH设置 - 确保运行时能找到共享库 // 在win上无用
     "CMAKE_MACOSX_RPATH": "ON", // macOS RPATH设置
     "CMAKE_SKIP_BUILD_RPATH": "OFF", // 构建时保留RPATH
     "CMAKE_BUILD_WITH_INSTALL_RPATH": "OFF", // 构建时不使用安装RPATH
@@ -337,10 +337,10 @@
   "cmake.preferredGenerators": [
     "Ninja Multi-Config", // 优先使用Ninja Multi-Config/Ninja 快且跨平台
     "Ninja", // Ninja单配置
-    "Unix Makefiles", // 类Unix makefile
-    "NMake Makefiles", // Windows NMake
-    "MinGW Makefiles", // Windows MinGW make
-    // "Visual Studio 18 2026"
+    // "Unix Makefiles", // 类Unix makefile
+    // "NMake Makefiles", // Windows NMake
+    // "MinGW Makefiles", // Windows MinGW make
+    // "Visual Studio 18 2026" // 生成vs工程文件，版本有点多（
   ],
   "cmake.configureOnOpen": false, // 打开文件夹不自动构建
   "cmake.buildBeforeRun": true, // 运行前自动构建
