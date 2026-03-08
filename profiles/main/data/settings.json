@@ -357,6 +357,16 @@
   //   // 防止找不到dll，所以把dll也放在bin目录下，即设置 `LIBRARY DESTINATION`为`bin`
   //   // win上RPath无效，不设置了
   // },
+
+  // // cmake install 示例
+  // // ```
+  // // install(TARGETS "testc" "hello_lib"
+  // //   RUNTIME DESTINATION bin   # 可执行文件和DLL
+  // //   LIBRARY DESTINATION lib   # 非Windows系统的共享库（如.so），Windows上DLL属于RUNTIME
+  // //   ARCHIVE DESTINATION lib   # 静态库和导入库
+  // // )
+  // // ```
+
   "cmake.buildDirectory": "${workspaceFolder}/build",
   "cmake.generator": "Ninja Multi-Config", // cmake的生成器为Ninja Multi-Config
   "cmake.preferredGenerators": [
