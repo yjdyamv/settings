@@ -382,6 +382,7 @@
   "cmake.clearOutputBeforeBuild": true, // 构建前清除输出
   "cmake.launchBehavior": "reuseTerminal",
   "cmake.installPrefix": "install",
+
   // // 1.适用于GCC/Clang的调试
   // // 1.1.1 使用GDB(MS C/C++ Extension)
   // "cmake.debugConfig": {
