@@ -17,6 +17,8 @@ disabled:
     uuid: be03d67e-ad80-49be-8d43-4980217403b0
   - id: oderwat.indent-rainbow
     uuid: eaa2127d-cb69-4ab9-8505-a60c9ee5f28b
+  - id: Oracle.oracle-java
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
   - id: redhat.java
@@ -148,16 +150,12 @@ enabled:
     uuid: b35cd5b4-18db-46f9-ba9e-06096c3b22d3
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
-  - id: Oracle.oracle-java
-    uuid: 17ce260e-a479-4289-b71d-93cf366d3708
   - id: oxc.oxc-vscode
     uuid: 1303f9b3-746c-42de-869c-5f72364302f5
   - id: piotrpalarz.vscode-gitignore-generator
     uuid: c0c04a3d-f3cd-44ce-a9dd-61ad33504bc7
   - id: pranaygp.vscode-css-peek
     uuid: 0b8f8d63-11a2-4194-969c-ca7488b3413a
-  - id: RandomFractalsInc.geo-data-viewer
-    uuid: d1b606b4-7db2-45fb-b5b9-6637d0895a3c
   - id: redhat.vscode-xml
     uuid: 6703768d-d42f-474e-9f6e-5f288d53f6e8
   - id: redhat.vscode-yaml
