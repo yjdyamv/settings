@@ -45,7 +45,8 @@
   "catppuccin.colorOverrides": {
     "latte": {
       "base": "#FAF9F5", // 调节下背景颜色，更加暖色调，护眼
-      // tuta 主题 #fcf9f6 claude 主题 #FAF9F5
+      // - tuta 主题 #fcf9f6
+      // - claude 主题 #FAF9F5
       // "mantle": "#f5eeea", // 活动栏（如file explorer还有顶部栏）的背景颜色
       // "crust": "#f5eeea", // 侧边栏（插件栏等放图标的地方）的颜色
 
@@ -347,8 +348,7 @@
   //   "CMAKE_VERBOSE_MAKEFILE": "OFF", // 设为ON可以看到完整的编译命令，用于调试构建问题，一般设置为OFF即可
   //   "CMAKE_COLOR_DIAGNOSTICS": "ON",
   //   // LTO/IPO这个优化在MSVC下有问题，关掉
-  //   // MSVC 特定优化
-  //   "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDLL", // Release用MD，Debug会自动用MDd
+  //   // MSVC 特定
   //   "CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD": "ON", // 在Visual Studio中包含安装目标
   //   // 并行编译
   //   "CMAKE_BUILD_PARALLEL_LEVEL": "0",
@@ -469,7 +469,7 @@
     ],
   },
   // // 2. 适用于MSVC的调试
-  // // 使用MSVC的调试器，相比于lldb体验更好
+  // // 调试MSVC编译的项目相比于lldb体验更好（毕竟是亲儿子
   // "cmake.debugConfig": {
   // 	"type": "cppvsdbg", // 使用VS的调试器
   // 	"cwd": "${workspaceFolder}",
