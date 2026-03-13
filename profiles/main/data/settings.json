@@ -99,15 +99,28 @@
       "name": "xelatex",
       "tools": ["xelatex", "xelatex"],
     },
+    // 使用lualatex
+    {
+      "name": "lualatex",
+      "tools": ["lualatex", "lualatex"],
+    },
     // 使用 BibTeX 参考文献工具的编译方式
     {
       "name": "xelatex ➞ bibtex ➞ xelatex × 2",
       "tools": ["xelatex", "bibtex", "xelatex", "xelatex"],
     },
+    {
+      "name": "lualatex ➞ bibtex ➞ lualatex × 2",
+      "tools": ["lualatex", "bibtex", "lualatex", "lualatex"],
+    },
     // 使用 BibLaTeX 参考文献工具的编译方式
     {
       "name": "xelatex ➞ biber ➞ xelatex × 2",
       "tools": ["xelatex", "biber", "xelatex", "xelatex"],
+    },
+    {
+      "name": "lualatex ➞ biber ➞ lualatex × 2",
+      "tools": ["lualatex", "biber", "lualatex", "lualatex"],
     },
   ],
   "latex-workshop.latex.autoClean.run": "never",
@@ -562,6 +575,7 @@
     "editor.formatOnType": true,
   },
   "[json]": {
+    "editor.indentSize": "2",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
@@ -575,6 +589,14 @@
     {
       "fileMatch": ["/.docx.json"],
       "url": "https://raw.githubusercontent.com/Mehdi-Verfaillie/docx/main/src/config/.docx.schema.json",
+    },
+    {
+      "fileMatch": ["vcpkg.json"], // 对vcpkg.json的schemas
+      "url": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+    },
+    {
+      "fileMatch": ["vcpkg-configuration.json"], // 对vcpkg-configuration.json的schemas
+      "url": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg-configuration.schema.json",
     },
   ],
 
