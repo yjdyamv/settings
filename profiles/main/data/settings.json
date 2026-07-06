@@ -28,7 +28,7 @@
   "editor.overtypeCursorStyle": "block-outline", // 按了insert键后的光标样式
   // "editor.cursorBlinking": "smooth", // 光滑的光标闪烁
   // "editor.cursorSmoothCaretAnimation": "on", // 光标移动动画
-  "editor.smoothScrolling": true, // 平滑滚动
+  // "editor.smoothScrolling": true, // 平滑滚动
   // "editor.scrollBeyondLastLine": false, // 不允许滚动到最后一行之后
   // "editor.fontLigatures": true, // 启用连字，让代码更美观
   "editor.linkedEditing": true, // 启用关联编辑标签
