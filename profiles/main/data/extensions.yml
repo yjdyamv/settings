@@ -4,7 +4,7 @@ disabled:
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: bradlc.vscode-tailwindcss
-    uuid: 4db62a7c-7d70-419c-96d2-6c3a4dc77ea5
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: cweijan.vscode-office
     uuid: 936b1be7-8595-4f76-b102-aa6bb915da73
     version: 4.1.3
