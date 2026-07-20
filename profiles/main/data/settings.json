@@ -45,17 +45,16 @@
   "preferredIconTheme.dark": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
-  "catppuccin.colorOverrides": {
-    "latte": {
-      "base": "#FAF9F5", // 调节下背景颜色，更加暖色调，护眼
-      // - tuta 主题 #fcf9f6
-      // - claude 主题 #FAF9F5
-    },
-  },
-  "catppuccin.customUIColors": {
-    "latte": {},
-  },
+  // "catppuccin.customUIColors": {
+  //   "latte": {
+  //     "editor.background": "#FAF9F5",
+  //   },
+  // },
+  // // 调节下背景颜色，更加暖色调，护眼
+  // - tuta 主题 #fcf9f6
+  // - claude 主题 #FAF9F5
   "workbench.colorTheme": "Light 2026",
+  "workbench.experimental.modernUI": true, // vsc的最新版本ui，自1.129.1存在
 
   // ===================================================
   // 终端
