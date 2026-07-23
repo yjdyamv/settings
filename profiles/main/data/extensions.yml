@@ -4,14 +4,16 @@ disabled:
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: bradlc.vscode-tailwindcss
-    uuid: 00000000-0000-0000-0000-000000000000
+    uuid: 4db62a7c-7d70-419c-96d2-6c3a4dc77ea5
+    version: 0.16.0
   - id: cweijan.vscode-office
     uuid: 936b1be7-8595-4f76-b102-aa6bb915da73
-    version: 4.1.3
+    version: 4.1.5
   - id: esbenp.prettier-vscode
     uuid: 96fa4707-6983-4489-b7c5-d5ffdfdcce90
   - id: jnoortheen.nix-ide
     uuid: 0ffebccd-4265-4f2d-a855-db1adcf278c7
+    version: 0.5.10
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
   - id: rangav.vscode-thunder-client
