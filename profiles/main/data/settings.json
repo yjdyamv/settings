@@ -53,7 +53,7 @@
   // // 调节下背景颜色，更加暖色调，护眼
   // - tuta 主题 #fcf9f6
   // - claude 主题 #FAF9F5
-  "workbench.colorTheme": "Light 2026",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.experimental.modernUI": true, // vsc的最新版本ui，自1.129.1存在
 
   // ===================================================
@@ -159,14 +159,15 @@
   ],
   // 允许下载的JSON Schema域名列表，防止恶意下载
   "json.schemaDownload.trustedDomains": {
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://json-schema.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.40.0/schema/markdownlint-config-schema.json": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
     "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
     "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.40.0/schema/markdownlint-config-schema.json": true,
+    "https://biomejs.dev": true,
   },
 
   // ===================================================
@@ -985,8 +986,6 @@
     "launchpad": false,
   },
   "gitlens.codeLens.authors.enabled": false,
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "gitlens.graph.minimap.additionalTypes": ["stashes", "localBranches"],
   "gitlens.graph.statusBar.enabled": false,
   "git.openRepositoryInParentFolders": "never",
@@ -994,4 +993,6 @@
 
   // ---- LeetCode ----
   "leetcode.endpoint": "leetcode-cn",
+  "gitlens.graph.details.location": "auto",
+  "gitlens.graph.changesColumn.enabled": true,
 }

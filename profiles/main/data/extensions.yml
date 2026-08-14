@@ -7,18 +7,17 @@ disabled:
     uuid: 4db62a7c-7d70-419c-96d2-6c3a4dc77ea5
     version: 0.16.0
   - id: cweijan.vscode-office
-    uuid: 936b1be7-8595-4f76-b102-aa6bb915da73
-    version: 4.1.5
+    uuid: 00000000-0000-0000-0000-000000000000
   - id: esbenp.prettier-vscode
     uuid: 96fa4707-6983-4489-b7c5-d5ffdfdcce90
   - id: jnoortheen.nix-ide
     uuid: 0ffebccd-4265-4f2d-a855-db1adcf278c7
-    version: 0.5.10
+    version: 0.5.13
   - id: mathiasfrohlich.Kotlin
     uuid: d36bad53-910d-481a-a7ee-8992450665f6
   - id: rangav.vscode-thunder-client
     uuid: 2fd56207-78ef-49d4-95d2-9b801eee4dbf
-    version: 2.41.0
+    version: 2.41.1
   - id: vmware.vscode-boot-dev-pack
     uuid: 26069f6b-56ea-4c29-8e28-371698a60020
   - id: vmware.vscode-spring-boot
@@ -121,17 +120,23 @@ enabled:
     uuid: 4bd5d2c9-9d65-401a-b0b2-7498d9f17615
   - id: ms-python.python
     uuid: f1f59ae4-9318-4f3c-a9b5-81b2eaa5f8a5
+  - id: ms-python.vscode-pylance
+    uuid: 364d2426-116a-433a-a5d8-a5098dc3afbd
   - id: ms-python.vscode-python-envs
     uuid: b41d8e8a-b6d4-4202-8f07-7189bdda81be
   - id: ms-toolsai.jupyter
     uuid: 6c2f1801-1e7f-45b2-9b5c-7782f1e076e8
     version: 2025.9.1
+  - id: ms-toolsai.jupyter-keymap
+    uuid: 9f6dc8db-620c-4844-b8c5-e74914f1be27
   - id: ms-toolsai.jupyter-renderers
     uuid: b15c72f8-d5fe-421a-a4f7-27ed9f6addbf
     version: 1.3.0
   - id: ms-toolsai.vscode-jupyter-cell-tags
     uuid: ab4fb32a-befb-4102-adf9-1652d0cd6a5e
     version: 0.1.9
+  - id: ms-toolsai.vscode-jupyter-slideshow
+    uuid: e153ca70-b543-4865-b4c5-b31d34185948
   - id: ms-vscode-remote.remote-containers
     uuid: 93ce222b-5f6f-49b7-9ab1-a0463c6238df
   - id: ms-vscode-remote.remote-ssh
@@ -144,6 +149,8 @@ enabled:
     uuid: 25cfa506-1433-4595-a73f-61666807126d
   - id: ms-vscode.cmake-tools
     uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
+  - id: ms-vscode.cpp-devtools
+    uuid: a71e0b52-0402-498f-a148-d2e344390f14
   - id: ms-vscode.extension-test-runner
     uuid: 7e432283-63e6-4ef9-83f7-fc6249d1aa11
   - id: ms-vscode.hexeditor
@@ -196,8 +203,6 @@ enabled:
     uuid: ac7f37ee-52e3-4ff6-a0cf-95c8cb5cabf8
   - id: shd101wyy.markdown-preview-enhanced
     uuid: 3b1db1fc-c7f7-4bd6-9fa4-b499dfa99a8a
-  - id: Slint.slint
-    uuid: 418618c9-e165-483c-ae50-4046cb7c1906
   - id: sukumo28.wav-preview
     uuid: 24b1a1f1-01fe-4c8f-ae63-988f9ca5a68f
   - id: sumneko.lua
@@ -244,7 +249,6 @@ enabled:
     uuid: 2aa040bf-c73a-455d-8946-5c6cc83b8019
     version: 1.0.0
   - id: yjdyamv.smart-archive
-    uuid: da898a2e-5f6f-4fde-9af2-02eeafdb1307
   - id: yzhang.markdown-all-in-one
     uuid: 98790d67-10fa-497c-9113-f6c7489207b2
   - id: zhuangtongfa.material-theme
