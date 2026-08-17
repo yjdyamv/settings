@@ -7,7 +7,8 @@ disabled:
     uuid: 4db62a7c-7d70-419c-96d2-6c3a4dc77ea5
     version: 0.16.0
   - id: cweijan.vscode-office
-    uuid: 00000000-0000-0000-0000-000000000000
+    uuid: 936b1be7-8595-4f76-b102-aa6bb915da73
+    version: 4.1.9
   - id: esbenp.prettier-vscode
     uuid: 96fa4707-6983-4489-b7c5-d5ffdfdcce90
   - id: jnoortheen.nix-ide
@@ -248,7 +249,8 @@ enabled:
   - id: wmaurer.change-case
     uuid: 2aa040bf-c73a-455d-8946-5c6cc83b8019
     version: 1.0.0
-  - id: yjdyamv.smart-archive
+  - id: yjdyamv.smart-archiver
+    uuid: 960f2ea9-c033-43e6-8c70-104f240e2e30
   - id: yzhang.markdown-all-in-one
     uuid: 98790d67-10fa-497c-9113-f6c7489207b2
   - id: zhuangtongfa.material-theme
