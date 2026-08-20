@@ -1,6 +1,4 @@
 disabled:
-  - id: aooiu.any-reader
-    uuid: ff841c2e-6364-4fe7-91bb-0d6ace1c3a84
   - id: biomejs.biome
     uuid: 2c992d35-3965-4369-856e-fdfbb0af2ce2
   - id: bradlc.vscode-tailwindcss
@@ -8,7 +6,9 @@ disabled:
     version: 0.16.0
   - id: cweijan.vscode-office
     uuid: 936b1be7-8595-4f76-b102-aa6bb915da73
-    version: 4.1.9
+    version: 4.2.0
+  - id: Dart-Code.dart-code
+    uuid: f57f68ea-9ee8-42b5-9a97-041d3e4278c4
   - id: esbenp.prettier-vscode
     uuid: 96fa4707-6983-4489-b7c5-d5ffdfdcce90
   - id: jnoortheen.nix-ide
@@ -23,6 +23,7 @@ disabled:
     uuid: 26069f6b-56ea-4c29-8e28-371698a60020
   - id: vmware.vscode-spring-boot
     uuid: 0efda145-8595-4ff7-98ef-1e3abc5e5757
+    version: 2.3.0
   - id: vscjava.vscode-spring-boot-dashboard
     uuid: 27fc0e8e-1341-4f52-9219-4e0f81590937
     version: 0.14.0
@@ -146,12 +147,8 @@ enabled:
     uuid: bfeaf631-bcff-4908-93ed-fda4ef9a0c5c
   - id: ms-vscode-remote.remote-wsl
     uuid: f0c5397b-d357-4197-99f0-cb4202f22818
-  - id: ms-vscode.azure-repos
-    uuid: 25cfa506-1433-4595-a73f-61666807126d
   - id: ms-vscode.cmake-tools
     uuid: 7c889349-8749-43d4-8b5e-08939936d7f4
-  - id: ms-vscode.cpp-devtools
-    uuid: a71e0b52-0402-498f-a148-d2e344390f14
   - id: ms-vscode.extension-test-runner
     uuid: 7e432283-63e6-4ef9-83f7-fc6249d1aa11
   - id: ms-vscode.hexeditor
@@ -176,8 +173,6 @@ enabled:
     uuid: 15305aca-2588-4ca0-8147-ab2c64730b82
   - id: msjsdiag.vscode-react-native
     uuid: b35cd5b4-18db-46f9-ba9e-06096c3b22d3
-  - id: mutantdino.resourcemonitor
-    uuid: 6efd3abb-3c6e-49c8-b8ce-6df58982255b
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
   - id: OrangeX4.vscode-typst-sync
@@ -204,8 +199,8 @@ enabled:
     uuid: ac7f37ee-52e3-4ff6-a0cf-95c8cb5cabf8
   - id: shd101wyy.markdown-preview-enhanced
     uuid: 3b1db1fc-c7f7-4bd6-9fa4-b499dfa99a8a
-  - id: sukumo28.wav-preview
-    uuid: 24b1a1f1-01fe-4c8f-ae63-988f9ca5a68f
+  - id: Slint.slint
+    uuid: 418618c9-e165-483c-ae50-4046cb7c1906
   - id: sumneko.lua
     uuid: 3a15b5a7-be12-47e3-8445-88ee3eabc8b2
   - id: svelte.svelte-vscode
