@@ -40,7 +40,7 @@
   // 当设置为true时，VSCode会根据系统的亮暗模式自动切换为以下主题
   "window.autoDetectColorScheme": false,
   // 使用preferred icon theme 插件来设置亮色和暗色主题的icon
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.iconTheme": "catppuccin-latte",
   "preferredIconTheme.light": "catppuccin-latte",
   "preferredIconTheme.dark": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
@@ -53,7 +53,7 @@
   // // 调节下背景颜色，更加暖色调，护眼
   // - tuta 主题 #fcf9f6
   // - claude 主题 #FAF9F5
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.experimental.modernUI": true, // vsc的最新版本ui，自1.129.1存在
 
   // ===================================================
