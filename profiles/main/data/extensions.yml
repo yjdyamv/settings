@@ -61,7 +61,6 @@ enabled:
     uuid: 8c2377ea-596d-46c3-92fa-1c5b66bb9d1c
   - id: eamodio.gitlens
     uuid: 4de763bd-505d-4978-9575-2b7696ecf94e
-    version: 19.0.1
   - id: firefox-devtools.vscode-firefox-debug
     uuid: c5f4d87f-a524-462c-ac01-923eb19cf3e9
   - id: FleeXo.cpp-class-creator
