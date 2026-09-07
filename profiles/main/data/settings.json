@@ -76,7 +76,7 @@
       "source": "Git Bash",
       "icon": "terminal-git-bash",
     },
-    // 默认x64，包括stable和insider的VS
+    // 默认x64，包括stable和insider的VS及Build Tools
     "VS Dev Terminal": {
       "source": "PowerShell",
       "icon": "terminal-powershell",
@@ -971,7 +971,7 @@
   },
 
   // ---- Hex Editor ----
-  "hexeditor.columnWidth": 16,
+  "hexeditor.columnWidth": 32,
   "hexeditor.showDecodedText": true,
   "hexeditor.defaultEndianness": "little",
   "hexeditor.inspectorType": "aside",

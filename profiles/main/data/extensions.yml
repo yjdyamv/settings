@@ -188,7 +188,7 @@ enabled:
     version: 4.4.3
   - id: redhat.java
     uuid: 198a707e-28af-4e84-8610-6e2f628dd12d
-    version: 1.55.0
+    version: 1.56.0
   - id: redhat.vscode-xml
     uuid: 6703768d-d42f-474e-9f6e-5f288d53f6e8
   - id: redhat.vscode-yaml
