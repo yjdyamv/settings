@@ -175,6 +175,8 @@ enabled:
     uuid: b35cd5b4-18db-46f9-ba9e-06096c3b22d3
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
+  - id: myriad-dreamin.tinymist-gpu-viewer
+    uuid: 27b9440a-4d7c-476f-8832-e9f60c22bf9b
   - id: OrangeX4.vscode-typst-sync
     uuid: 1144f210-711a-4f9f-894c-7b027d2bf486
   - id: oven.bun-vscode
