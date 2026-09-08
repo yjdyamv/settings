@@ -905,7 +905,8 @@
   // Typst
   // ===================================================
   "tinymist.formatterMode": "typstyle",
-  "tinymist.previewer": "myriad-dreamin.tinymist-gpu-viewer",
+  // "tinymist.previewer": "myriad-dreamin.tinymist-gpu-viewer",
+  // "tinymist.gpuViewer.windowLayout": "disabled",
   "tinymist.lint.enabled": true,
   "tinymist.onEnterEvent": false,
   "tinymist.formatterPrintWidth": 80,
