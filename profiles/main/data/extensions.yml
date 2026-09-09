@@ -21,7 +21,7 @@ disabled:
     uuid: 26069f6b-56ea-4c29-8e28-371698a60020
   - id: vmware.vscode-spring-boot
     uuid: 0efda145-8595-4ff7-98ef-1e3abc5e5757
-    version: 2.3.0
+    version: 2.4.0
   - id: vscjava.vscode-spring-boot-dashboard
     uuid: 27fc0e8e-1341-4f52-9219-4e0f81590937
     version: 0.14.0
@@ -175,8 +175,6 @@ enabled:
     uuid: b35cd5b4-18db-46f9-ba9e-06096c3b22d3
   - id: myriad-dreamin.tinymist
     uuid: e15002cc-f2ff-4c29-b86a-7504683a0369
-  - id: myriad-dreamin.tinymist-gpu-viewer
-    uuid: 27b9440a-4d7c-476f-8832-e9f60c22bf9b
   - id: OrangeX4.vscode-typst-sync
     uuid: 1144f210-711a-4f9f-894c-7b027d2bf486
   - id: oven.bun-vscode
@@ -248,6 +246,7 @@ enabled:
     version: 1.0.0
   - id: yjdyamv.smart-archiver
     uuid: 960f2ea9-c033-43e6-8c70-104f240e2e30
+    version: 2.6.5
   - id: yzhang.markdown-all-in-one
     uuid: 98790d67-10fa-497c-9113-f6c7489207b2
   - id: zhuangtongfa.material-theme
