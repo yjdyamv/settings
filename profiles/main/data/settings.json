@@ -665,6 +665,7 @@
   // Rust
   // ===================================================
   "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.files.watcher": "server", // 让提示更快，避免提示不及时
   "[rust]": {
     "editor.formatOnSave": true,
     "editor.formatOnPaste": false,
